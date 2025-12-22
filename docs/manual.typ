@@ -2,7 +2,7 @@
 #import "@preview/showybox:2.0.4": *
 #import "@preview/swank-tex:0.1.0": LaTeX
 #import "@preview/cheq:0.2.2": *
-#import "@preview/bookly:1.1.1": *
+#import "@preview/bookly:1.1.2": *
 
 #show: checklist.with(fill: eastern.lighten(95%), stroke: eastern, radius: .2em)
 
@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "1.1.1",
+  version: "1.1.2",
   authors: ("Mathieu Aucejo"),
   license: "MIT",
   description: "Write beautiful scientific book or thesis with Typst",
@@ -32,7 +32,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:1.1.0": *
+#import "@preview/bookly:1.1.2": *
 ```
 ]
 

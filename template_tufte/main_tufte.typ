@@ -1,4 +1,4 @@
-#import "@preview/bookly:1.1.1": *
+#import "@preview/bookly:1.1.2": *
 // #import "../src/bookly.typ": *
 // #import "custom-theme.typ": *
 
@@ -44,11 +44,11 @@
 
 #include "chapters_tufte/ch_main_tufte.typ"
 
-// #part("Second part")
+#part("Second part")
 
-// #show: appendix
+#show: appendix
 
-// #include "appendix_tufte/app_main_tufte.typ"
+#include "appendix_tufte/app_main_tufte.typ"
 
 // #bibliography("bibliography/sample.yml")
 #bibliography("bibliography/sample.bib")

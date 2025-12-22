@@ -1,6 +1,4 @@
-#import "@preview/bookly:1.1.1": *
-// #import "../src/bookly.typ": *
-// #import "custom-theme.typ": *
+#import "@preview/bookly:1.1.2": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
