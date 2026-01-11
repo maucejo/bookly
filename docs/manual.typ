@@ -572,7 +572,7 @@ A back cover of the document is automatically generated using the #cmd("back-cov
 #command("back-cover", ..args(
 	resume: none,
 	abstract: none,
-	abstracts: none,
+	abstracts: (),
 	logo: none
 ))[
 	#argument("resume", types: "content")[Summary of the document in French.]
@@ -876,4 +876,5 @@ The template is under development. Here is the list of features that are impleme
 
 - [x] Verification of the reference list via `bibtex`
 - [x] Same for `hayagriva` (see #link("https://github.com/typst/hayagriva/blob/main/docs/file-format.md", text("documentation", fill: typst-color)))
+
 
