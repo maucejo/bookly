@@ -567,25 +567,58 @@ The template provides two functions to create title pages: one for a book and on
 
 == Back cover
 
-A back cover of the document is automatically generated using the #cmd("back-cover") function, which displays information about the thesis (title and author), as well as a summary in French and English.
+A back cover of the document is automatically generated using the #cmd("back-cover") function, which displays information about the thesis (title and author), as well as a summary.
 
 #command("back-cover", ..args(
 	resume: none,
 	abstract: none,
+	abstracts: (),
 	logo: none
 ))[
 	#argument("resume", types: "content")[Summary of the document in French.]
 
 	#argument("abstract", types: "content")[Summary of the document in English.]
 
-	#argument("logo", types: array)[Logo of the back cover.
-	#codesnippet[
-		```typ
-		#let logos = (align(left)[#image("images/devise_cnam.svg", width: 45%)], align(right)[#image("images/logo_cnam.png", width: 50%)])
+	#argument("abstracts", types: "dictionary")[Title and Summary of the document.
+		#codesnippet[
+			```typ
+			#let abstracts-en-fr-de = (
+				(
+					title: [#set text(lang: "en", region: "gb"); Abstract],
+					text: [#set text(lang: "en", region: "gb")
+						This paper presents the objectives, methodology, and main results of the work.
+					]
+				),
+				(
+					title: [#set text(lang: "fr"); Résumé],
+					text: [#set text(lang: "fr")
+						Cet article présente les objectifs, la méthodologie et les principaux résultats du travail.
+					]
+				),
+				(
+					title: [#set text(lang: "de"); Zusammenfassung],
+					text: [#set text(lang: "de")
+						Diese Arbeit beschreibt die Ziele, die Methodik und die wichtigsten Ergebnisse.
+					]
+				)
+			)
 
-		#back-cover(lorem(10), lorem(10), logos)
-		```
+			#back-cover(abstracts: abstracts-en-fr-de, logo: box[logo])
+			```
+		]
 	]
+
+	#argument("logo", types: array)[Logo of the back cover.
+		#codesnippet[
+			```typ
+			#let logos = (
+				align(left)[#image("images/devise_cnam.svg", width: 45%)],
+				align(right)[#image("images/logo_cnam.png", width: 50%)]
+			)
+
+			#back-cover(resume: lorem(10), abstract: lorem(10), logo: logos)
+			```
+		]
 	]
 ]
 
@@ -843,4 +876,5 @@ The template is under development. Here is the list of features that are impleme
 
 - [x] Verification of the reference list via `bibtex`
 - [x] Same for `hayagriva` (see #link("https://github.com/typst/hayagriva/blob/main/docs/file-format.md", text("documentation", fill: typst-color)))
+
 
