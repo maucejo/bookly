@@ -11,7 +11,6 @@
   in-outline: state("in-outline", false),
   isappendix: state("isappendix", false),
   isfrontmatter: state("isfrontmatter", false),
-  tufte: state("tufte", false),
   localization: state("localization"),
   num-heading: state("num-heading", "1"),
   num-pattern: state("num-pattern", "1.1."),
@@ -24,6 +23,7 @@
   sidenotecounter: counter("sidenotecounter"),
   theme: state("theme", "fancy"),
   title: state("title", none),
+  tufte: state("tufte", false),
 )
 
 #let default-language = ("en", "de", "fr",  "es", "it", "pt")

@@ -684,10 +684,12 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 
 The theming system is designed to be flexible and customizable, allowing users to define their own themes.
 
+== Custom theme definition
+
 To implement a custom theme, you have to define a function that includes the `show` and `set` rules defining the style of the document (headings, footnotes, references, #sym.dots). Basically, a theme should be structured as follows:
 #codesnippet[
 ```typ
-#import "@preview/bookly:1.1.0": *
+#import "@preview/bookly:1.2.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	show heading.where(level: 1): it => {
@@ -731,10 +733,24 @@ Then, you can initialize the template with your custom theme as follows:
 	```
 ]
 
-Finally, `bookly` provides some states that can be useful when designing a custom theme. The states are used to store information about the current state of the document. They are collected in a #dtype(dictionary). The following states are available:
+== Template states
+
+`bookly` provides some states that can be useful when designing a custom theme. The states are used to store information about the current state of the document. They are collected in a #dtype(dictionary). The following states are available:
 
 #v(1em)
+- `states.author` -- #dtype(str): Author of the document.
+
+- `states.colors` -- #dtype(dictionary): Color scheme for the document.
+
+- `states.counter-part` -- #dtype(str): Counter for parts.
+
 - `states.localization` -- #dtype(dictionary): Dictionary of terms used in the document (e.g., "chapter", etc.) in the selected language.
+
+- `states.in-outline` -- #dtype(bool): Indicates whether the current section is in the outline.
+
+- `states.isappendix` -- #dtype(bool): Indicates whether the current section is an appendix.
+
+- `states.isfrontmatter` -- #dtype(bool): Indicates whether the current section is front matter.
 
 #info-alert[If you need to use a language that is not supported by default, you can modify the `states.localization` dictionary when initializing the template.
 
@@ -771,39 +787,29 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 ```
 ]
 
-- `states.in-outline` -- #dtype(bool): Indicates whether the current section is in the outline.
-
-- `states.isfrontmatter` -- #dtype(bool): Indicates whether the current section is front matter.
-
-- `states.isappendix` -- #dtype(bool): Indicates whether the current section is an appendix.
+- `states.num-heading` -- #dtype(str): Numbering pattern for headings.
 
 - `states.num-pattern` -- #dtype(str): Numbering pattern for sections.
+
+- `states.num-pattern-eq` -- #dtype(str): Numbering pattern for equations.
 
 - `states.num-pattern-fig` -- #dtype(str): Numbering pattern for figures.
 
 - `states.num-pattern-subfig` -- #dtype(str): Numbering pattern for subfigures.
 
-- `states.num-pattern-eq` -- #dtype(str): Numbering pattern for equations.
-
-- `states.num-heading` -- #dtype(str): Numbering pattern for headings.
+- `states.open-right` -- #dtype(bool): Indicates whether parts and chapters start on a right-hand page.
 
 - `states.page-numbering` -- #dtype(str): Numbering pattern for pages.
 
 - `states.part-numbering` -- #dtype(str): Numbering pattern for parts.
 
-- `states.author` -- #dtype(str): Author of the document.
+- `states.sidenotecounter` -- #dtype(int): Counter for sidenotes.
 
 - `states.title` -- #dtype(str): Title of the document.
-
-- `states.counter-part` -- #dtype(str): Counter for parts.
-
-- `states.colors` -- #dtype(dictionary): Color scheme for the document.
 
 - `states.theme` -- #dtype(str): Current theme of the document.
 
 - `states.tufte` -- #dtype(bool): Indicates whether the current layout is Tufte style.
-
-- `states.sidenotecounter` -- #dtype(int): Counter for sidenotes.
 
 #info-alert[
 	`bookly` also comes with a function #cmd("reset-counters") to reset the counters for equations, figures, tables, sidenotes, and footnotes.
