@@ -822,6 +822,7 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 - `drafting:0.2.2`: for tufte layout.
 - `hydra:0.6.2` : for bibliography management.
 - `equate:0.3.2` : for advanced equation numbering.
+- `itemize:0.2.0"`: for lists and enumration customization.
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.

@@ -34,3 +34,7 @@ caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
 == Methodology
 
 #lorem(1000)
+
+- #lorem(20)
+
+- #lorem(20)
