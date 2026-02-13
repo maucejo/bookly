@@ -1,6 +1,5 @@
 // Exported packages
 #import "@preview/equate:0.3.2": *
-#import "@preview/itemize:0.2.0" as el
 // Internals
 #import "bookly-environments.typ": *
 #import "bookly-outlines.typ": *
@@ -113,11 +112,6 @@
     set figure.caption(position: top)
     it
   }
-
-  // Lists
-  show: el.default-enum-list
-  set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
-  set enum(numbering: n => text(fill:book-colors.primary)[#n.])
 
   // Title page
   if title-page != none {

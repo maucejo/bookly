@@ -69,7 +69,7 @@ set align(center)
   edition: "First edition",
   institution: "Institution",
   series: "Discipline",
-  year: datetime.today().year,
+  year: datetime.today().year(),
   cover: none,
   logo: none
 ) = context {

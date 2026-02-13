@@ -19,6 +19,7 @@
   let numbering = "1/1"
   set page(numbering: numbering)
 
+  states.isfrontmatter.update(false)
   states.page-numbering.update("1/1")
   states.num-heading.update("1")
   states.num-pattern.update("1.1.")

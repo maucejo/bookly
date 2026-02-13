@@ -1,5 +1,5 @@
 // #import "@preview/bookly:1.2.0": *
-#import "@preview/bookly:1.2.0": *
+#import "../src/bookly.typ": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -12,13 +12,15 @@
     body: "Lato",
     math: "Lete Sans Math"
   ),
+  // theme: custom,
   // theme: classic,
   // theme: fancy,
   // theme: modern,
   // theme: orly,
-  // theme: pretty,
+  theme: pretty,
+  // theme: custom,
   // tufte: true,
-  lang: "zh",
+  lang: "fr",
   // colors: config-colors,
   title-page: book-title-page(
     series: "Typst book series",
@@ -27,7 +29,7 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: false,
+    open-right: true,
   )
 )
 
@@ -36,6 +38,7 @@
 #include "front_matter/front_main.typ"
 
 #show: main-matter
+#states.isfrontmatter.update(true)
 
 #tableofcontents
 

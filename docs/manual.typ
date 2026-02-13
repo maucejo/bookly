@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "1.2.0",
+  version: "1.2.1",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:1.2.0": *
+#import "@preview/bookly:1.2.1": *
 ```
 ]
 
@@ -697,29 +697,28 @@ The theming system is designed to be flexible and customizable, allowing users t
 To implement a custom theme, you have to define a function that includes the `show` and `set` rules defining the style of the document (headings, footnotes, references, #sym.dots). Basically, a theme should be structured as follows:
 #codesnippet[
 ```typ
+// my-theme.typ
 #import "@preview/bookly:1.2.0": *
 
 #let my-theme(colors: default-colors, it) = {
+	// Update the theme state
+	states.theme.update("custom")
+
+	// Heading Level 1 style
 	show heading.where(level: 1): it => {
-		// Heading style
+		// Page break before each part
+		if not states.open-right.get() {pagebreak(weak: true)}
 		...
 	}
 
-	show heading.where(level: 2): it => {
-		// Heading style
-		...
-	}
+  // Heading Level 2 style
+	show heading.where(level: 2): it => {...}
 
-	show heading.where(level: 3): it => {
-		// Heading style
-		...
-	}
+	// Heading Level 3 style
+	show heading.where(level: 3): it => {...
 
-	show outline.entry: it => {
-		// Outline entry style
-		...
-	}
-
+	// Outline entry style
+	show outline.entry: it => {...}
 
 	// Other show and set rules
 	...
@@ -731,14 +730,27 @@ To implement a custom theme, you have to define a function that includes the `sh
 
 You can also define your own functions such as #cmd("part"), #cmd("minitoc") and other elements of the document.
 
+#info-alert[Examples of theming are available in the #link("https://github.com/maucejo/bookly")[Github repository] of the template.]
+
 Then, you can initialize the template with your custom theme as follows:
 #codesnippet[
 	```typ
+	#import "path_to_file/my-theme.typ": *
+
 	#show: bookly.with(
 		theme: my-theme,
 		...
 	)
 	```
+]
+
+#info-alert[If you use a multiple files structure with a #sym.ast\.typ file for each chapter, you can type at the top of each file the following code to access the functions like #cmd("part") or #cmd("minitoc") defined in the theme file.
+
+	#codesnippet[
+		```typ
+		#import "path_to_file/my-theme.typ": *
+		```
+	]
 ]
 
 == Template states
@@ -830,7 +842,7 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 - `drafting:0.2.2`: for tufte layout.
 - `hydra:0.6.2` : for bibliography management.
 - `equate:0.3.2` : for advanced equation numbering.
-- `itemize:0.2.0"`: for lists and enumration customization.
+- `itemize:0.2.0"`: for lists and enumerations customization.
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.

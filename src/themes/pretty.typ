@@ -1,5 +1,6 @@
 #import "@preview/showybox:2.0.4": *
 #import "@preview/hydra:0.6.2": hydra, anchor
+#import "@preview/itemize:0.2.0" as el
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -78,6 +79,11 @@
       #v(1em)
     ]
   }
+
+  // Lists
+  show: el.default-enum-list
+  set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
+  set enum(numbering: n => text(fill:book-colors.primary)[#n.])
 
   // Footnotes
   set footnote.entry(separator: none)

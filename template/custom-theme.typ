@@ -5,6 +5,10 @@
 
   // Headings
   show heading.where(level: 1): it => {
+    if not states.open-right.get() {
+      pagebreak(weak: true)
+    }
+
     // Reset counters
     reset-counters
 
@@ -25,7 +29,7 @@
     } else {
       v(1em)
       text(2em)[#it.body]
-      v(1em)
+      v(2em)
     }
   }
 
@@ -41,14 +45,26 @@
     ]
   }
 
+  // Tables
+  show table.cell.where(y: 0): set text(weight: "bold")
+  set table(
+    stroke: (_, y) => (
+      top: if y <= 1 {0.75pt} else {0pt},
+      bottom: 0.75pt
+    ),
+  )
+
   // Outline
+  set outline.entry(fill: box(width: 1fr, repeat(gap: 0.25em)[.]))
   show outline.entry: it => {
+    show linebreak: none
     if it.element.func() == heading {
       let number = it.prefix()
       let section = it.element.body
       let item = none
       if it.level == 1 {
         block(above: 1.25em, below: 0em)
+        v(0.5em)
         item = [*#number #it.inner()*]
       } else if it.level == 2 {
         block(above: 1em, below: 0em)
@@ -60,6 +76,7 @@
       link(it.element.location(), item)
     } else if it.element.func() == figure {
       block(above: 1.25em, below: 0em)
+      v(0.25em)
       link(it.element.location(), [#it.prefix(). #h(0.2em) #it.inner()])
     } else {
       it
@@ -68,6 +85,7 @@
 
   // Page style
   let page-header = context {
+    show linebreak: none
     show: fullwidth
     if calc.odd(here().page()) {
       align(left, hydra(2, display: (_, it) => [
@@ -112,6 +130,7 @@
   it
 }
 
+
 // Part
 #let part(title) = context {
   states.counter-part.update(i => i + 1)
@@ -123,7 +142,9 @@
 
   set align(center + horizon)
 
-  pagebreak(weak: true, to:"odd")
+  if states.open-right.get() {
+    pagebreak(weak: true, to:"odd")
+  }
 
   let dx = 0%
   if states.tufte.get() {
@@ -131,15 +152,20 @@
   }
 
   move(dx: dx)[
-    #text(size: 2.5em)[#states.localization.get().part #states.counter-part.get()]
+    #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
     #v(1em)
     #text(size: 3em)[*#title*]
   ]
 
   show heading: none
-  heading(numbering: none)[#box[#states.localization.get().part #states.counter-part.get() -- #title]]
+  heading(numbering: none)[
+    #v(1em)
+    #box[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+  ]
 
-  pagebreak(weak: true, to:"odd")
+  if states.open-right.get() {
+    pagebreak(weak: true, to:"odd")
+  }
 }
 
 #let minitoc = context {

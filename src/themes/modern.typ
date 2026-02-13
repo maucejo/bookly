@@ -1,4 +1,5 @@
 #import "@preview/hydra:0.6.2": hydra
+#import "@preview/itemize:0.2.0" as el
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -82,6 +83,11 @@
     fill: (_, y) => if y == 0 {colors.primary} else if calc.odd(y) {colors.secondary.lighten(60%)},
     stroke: none
   )
+
+  // Lists
+  show: el.default-enum-list
+  set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
+  set enum(numbering: n => text(fill:book-colors.primary)[#n.])
 
   // Footnotes
   set footnote.entry(separator: line(length: 30% + 0pt, stroke: 0.75pt + colors.primary))
