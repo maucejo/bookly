@@ -1,5 +1,5 @@
-// #import "../../src/bookly.typ": *
-#import "../../src/bookly.typ": *
+// #import "@preview/bookly:2.0.0": *
+#import "@preview/bookly:2.0.0": *
 
 // #show: chapter.with(
 //   title: "Introduction",

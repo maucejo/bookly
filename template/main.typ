@@ -1,5 +1,4 @@
-// #import "../../src/bookly.typ": *
-#import "../src/bookly.typ": *
+#import "@preview/bookly:2.0.0": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -20,7 +19,7 @@
   // theme: pretty,
   // theme: custom,
   // tufte: true,
-  lang: "fr",
+  lang: "en",
   // colors: config-colors,
   title-page: book-title-page(
     series: "Typst book series",

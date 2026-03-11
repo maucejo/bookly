@@ -1,4 +1,4 @@
-#import "../../src/bookly.typ": *
+#import "@preview/bookly:2.0.0": *
 
 // #show: chapter.with(title: "Abstract", toc: false)
 #show: chapter-nonum.with()

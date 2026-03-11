@@ -1,4 +1,4 @@
-#import "../../src/bookly.typ": *
+#import "@preview/bookly:2.0.0": *
 
 // #show: chapter.with(title: "First chapter")
 
@@ -11,7 +11,7 @@
 == Goals
 #lorem(100)
 
-Equations @eq:1 et @eq:2 are very important.
+Equations @eq:1 and @eq:2 are very important.
 $
 integral_0^1 f(x) dif x = F(1) - F(0) "et voilà"
 $ <eq:1>
