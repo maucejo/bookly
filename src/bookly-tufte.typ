@@ -61,20 +61,23 @@
 }
 
 // Code from tufte-memo - thanks @nogula
-#let sidenote(dy: -1.5em, numbered: true, content) = context if states.tufte.get() {
+#let sidenote(dy: -1.5em, numbered: true, label: none, content) = context if states.tufte.get() {
   if numbered {
+    // Create a metadata entry for the sidenote
+    [#metadata("sidenote")#label]
+
+    // Update the sidenote counter
     states.sidenotecounter.step()
-    [ #super(context states.sidenotecounter.display())]
-  }
-  text(size: 0.9em, margin-note(
-    if numbered {
-    [#super(context states.sidenotecounter.display()) #content]
+    let n = states.sidenotecounter.display()
+
+    // Display the sidenote reference + marginal content
+    super(n)
+    text(size: 0.9em, margin-note([#super(n) #content], dy: dy))
   } else {
-    content
-  }, dy: dy)
-  )
+    text(size: 0.9em, margin-note(content, dy: dy))
+  }
 } else {
-  footnote(content)
+  [#footnote(content)#label]
 }
 
 #let sidecite(dy: -1.5em, supplement: none, key) = context if states.tufte.get() {

@@ -2,7 +2,7 @@
 #import "@preview/showybox:2.0.4": *
 #import "@preview/swank-tex:0.1.0": LaTeX
 #import "@preview/cheq:0.2.2": *
-#import "@preview/bookly:1.2.0": *
+#import "../src/bookly.typ": *
 
 #show: checklist.with(fill: eastern.lighten(95%), stroke: eastern, radius: .2em)
 
@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "1.2.1",
+  version: "2.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:1.2.1": *
+#import "@preview/bookly:2.0.0": *
 ```
 ]
 
@@ -635,15 +635,18 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 #command("sidenote", ..args(
 	dy: -1.5em,
 	numbered: true,
+	label: none,
 	[body]
 	)
 )[
 	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the sidenote position.]
 
 	#argument("numbered", default: true, types: "boolean")[Indicates whether the sidenote should be numbered.]
+
+	#argument("label", default: none, types: "label")[Label of the sidenote.]
 ]
 
-#info-alert[When the `layout` is set to `standard`, the #cmd("sidenote") function behaves like a standard #cmd("footnote").]
+#info-alert[When the `tufte` argument is set to `false`, the #cmd("sidenote") function behaves like a standard #cmd("footnote").]
 
 #command("sidecite", ..args(
 	"key",
@@ -657,8 +660,9 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 	#argument("supplement", default: none, types: "string")[Supplementary text to add before the citation (e.g., "see", "e.g.", etc.).]
 ]
 
-#info-alert[When the `layout` is set to `standard`, the #cmd("sidecite") function behaves like a standard #cmd("cite").]
+#info-alert[When `tufte` argument is set to `false`, the #cmd("sidecite") function behaves like a standard #cmd("cite").]
 
+#pagebreak()
 #command("sidefigure", ..args(
 	"content",
 	dy: - 1.5em,
@@ -686,7 +690,7 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 	#argument("label", default: none, types: "label")[Label of the figure.]
 ]
 
-#info-alert[When the `layout` is set to `standard`, #cmd("sidefigure") and #cmd("fullfigure") behave like a standard #cmd("figure").]
+#info-alert[When `tufte` argument is set to `false`, #cmd("sidefigure") and #cmd("fullfigure") behave like a standard #cmd("figure").]
 
 = Theming
 
@@ -698,7 +702,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:1.2.0": *
+#import "@preview/bookly:2.0.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state

@@ -8,7 +8,7 @@
   counter(figure.where(kind: image)).update(0)
   counter(figure.where(kind: table)).update(0)
   if states.tufte.get(){
-    states.sidenotecounter.update(0)
+    states.sidenotecounter.update(1)
   }
   counter(footnote).update(0)
 }

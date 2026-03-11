@@ -28,7 +28,6 @@
   states.title.update(title)
   states.tufte.update(tufte)
 
-
   // Book colors
   let book-colors = default-colors + colors
   states.colors.update(book-colors)
@@ -64,11 +63,31 @@
   // References
   set ref(supplement: none)
 
+  show ref: it => {
+    if tufte {
+      let target = query(it.target).first()
+      if (
+        type(target) != content
+          or target.func() != metadata
+          or target.value != "sidenote"
+      ) { return it }
+      let count = numbering("1", ..states.sidenotecounter.at(locate(it.target)))
+      link(it.target)[#super(count)]
+    } else {
+      it
+    }
+  }
+
   // Citations
   show cite: it => {
     show regex("\[|\]"): it => text(fill: black)[#it]
     it
   }
+
+  // Footnotes
+  // show footnote.entry: it => {
+  //   [#h(it.indent) #text(fill: book-colors.primary, it.note) #it.note.body]
+  // }
 
   // Outline entries
   set outline(depth: 3)
