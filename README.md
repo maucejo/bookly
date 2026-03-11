@@ -9,7 +9,7 @@ The `bookly` template is a Typst package designed for writing academic documents
 
 ## Basic usage
 
-This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](https://github.com/maucejo/book_template/blob/main/docs/manual.pdf).
+This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](https://github.com/maucejo/bookly/blob/2c85e55a47588136738ab426bf62a1a1812860b9/docs/manual.pdf).
 
 To use the `bookly` template, you need to include the following line at the beginning of your typ file:
 
