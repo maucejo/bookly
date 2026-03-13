@@ -276,6 +276,7 @@ Chapters can also be defined using the standard #Typst markup language. This tem
 	abstract: none,
 	toc: true,
 	numbered: true,
+	label: none,
 	[body],
 )
 )[
@@ -286,6 +287,8 @@ Chapters can also be defined using the standard #Typst markup language. This tem
 	#argument("toc", default: true, types: "boolean")[Indicates whether a mini table of contents should be displayed at the beginning of the chapter.]
 
 	#argument("numbered", default: true, types: "boolean")[Indicates whether the chapter should be numbered.]
+
+	#argument("label", default: none, types: "label")[Label for the chapter.]
 ]
 
 #codesnippet[
@@ -293,16 +296,17 @@ Chapters can also be defined using the standard #Typst markup language. This tem
 	#chapter(
 		"First chapter",
 		abstract: lorem(20),
-		)[
-			// Content of the chapter
-		]
+		label: <ch:1>
+	)[
+		// Content of the chapter
+	]
 ```
 ]
 #info-alert[If you use a #sym.ast\.typ file for each chapter, you can type at the top of the file the following code.
 
 	#codesnippet[
 		```typ
-		#show: chapter.with("First chapter", abstract: lorem(20), toc: true)
+		#show: chapter.with("First chapter", abstract: lorem(20), toc: true, label: <ch:1>)
 
 		// Content of the chapter
 		== First section

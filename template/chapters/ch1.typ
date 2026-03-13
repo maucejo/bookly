@@ -1,6 +1,6 @@
 #import "@preview/bookly:2.0.0": *
 
-// #show: chapter.with(title: "First chapter")
+// #show: chapter.with(title: "First chapter", abstract: lorem(100), label: <ch:1>)
 
 = First chapter
 
@@ -88,5 +88,3 @@ label: <fig:subfig>,
 ]
 
 #lorem(1000)#footnote("This is a footnote")
-
-dsflkv,dflkb
