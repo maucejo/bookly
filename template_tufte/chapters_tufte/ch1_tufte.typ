@@ -1,5 +1,5 @@
-// #import "@preview/bookly:1.0.0": *
-#import "@preview/bookly:2.0.0": *
+#import "@preview/bookly:2.1.0": *
+// #import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "First chapter")
 
@@ -34,8 +34,7 @@ Figure @fig:1 is a beautiful typst logo.
 
 #lorem(50)
 
-Figure @fig:subfig the Typst logo. Figure @b is a Typst logo.
-
+Figure @fig:subfig shows the Typst logo. Figure @b is a Typst logo. #sidecite(<Smi21>)
 #subfigure(
 figure(image("../images/typst-logo.svg"), caption: []),
 figure(image("../images/typst-logo.svg"), caption: []), <b>,
@@ -88,6 +87,7 @@ label: <fig:subfig>,
   #lorem(10)
 ]
 
+#pagebreak()
 #question-box[
   #lorem(10)
 ]

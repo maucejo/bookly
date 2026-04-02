@@ -155,6 +155,9 @@
     let dx = 0%
     if states.tufte.get() {
       dx = 15.04%
+      // if states.alt-margins.get() and calc.even(here().page()) {
+      //   dx = 17.04%
+      // }
     }
     set align(center)
     show: fullwidth

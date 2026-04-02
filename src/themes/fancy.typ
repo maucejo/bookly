@@ -138,6 +138,9 @@
     let page-final = counter(page).final().first()
     if states.tufte.get() {
       dx = 21.65%
+      if states.alt-margins.get() and calc.even(here().page()) {
+        dx = -21.65%
+      }
     }
     set align(center)
     if states.isfrontmatter.get() {

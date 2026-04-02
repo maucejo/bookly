@@ -5,6 +5,7 @@
 #let paper-size = "a4"
 
 #let states = (
+  alt-margins: state("alt-margins", false),
   author: state("author", none),
   colors: state("theme-colors"),
   counter-part: counter("part"),
@@ -31,6 +32,7 @@
 #let default-config-options = (
   part-numbering: "1",
   open-right: true,
+  alt-margins: false
 )
 
 #let default-fonts = (

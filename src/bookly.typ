@@ -34,6 +34,7 @@
 
   // Configuration options
   let book-options = default-config-options + config-options
+  states.alt-margins.update(book-options.alt-margins)
   states.open-right.update(book-options.open-right)
   states.part-numbering.update(book-options.part-numbering)
 
@@ -107,7 +108,7 @@
   set figure.caption(position: top) if tufte
   show: show-if(tufte, it => {
     show figure.caption: content => margin-note({
-        text(size: 0.9em, content)
+        text(size: 0.9em, tufte-content(content))
       }
     )
     it
@@ -139,23 +140,14 @@
     default-title-page
   }
 
-  // Page properties for tufte layout
-  if tufte {
-    set-margin-note-defaults(
-      stroke: none,
-      side: right,
-      margin-right: 5.5cm,
-      margin-left: -1.5cm,
-    )
+  set-margin-note-defaults(stroke: none)
+  let margin-tufte = if book-options.alt-margins {
+    (inside: 1.47cm, outside: 6.93cm)
   } else {
-    set-margin-note-defaults(stroke: none)
+    (left: 1.47cm, right: 6.93cm)
   }
-
   set page(
-    margin: (
-      left: 1.47cm,
-      right: 6.93cm
-    )
+    margin: margin-tufte
   ) if tufte
 
   // Headings

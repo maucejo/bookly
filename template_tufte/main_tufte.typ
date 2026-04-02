@@ -1,4 +1,5 @@
-#import "@preview/bookly:2.0.0": *
+#import "@preview/bookly:2.1.0": *
+// #import "../src/bookly.typ": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -11,8 +12,9 @@
     body: "Lato",
     math: "Lete Sans Math"
   ),
-  // theme: modern,
   // theme: classic,
+  // theme: fancy,
+  // theme: modern,
   // theme: orly,
   // theme: pretty,
   tufte: true,
@@ -25,7 +27,8 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: false,
+    open-right: true,
+    alt-margins: true
   )
 )
 

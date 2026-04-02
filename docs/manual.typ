@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "2.0.0",
+  version: "2.1.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:2.0.0": *
+#import "@preview/bookly:2.1.0": *
 ```
 ]
 
@@ -70,8 +70,6 @@ After importing #package[bookly], you have to initialize the template by a show 
 		#argument("title", default: "Title", types: "string")[Title of the book or the thesis.]
 
 		#argument("author", default: "Author Name", types: "string")[Author of the book.]
-
-		#colbreak()
 
 		#argument("theme", default: "fancy", types: "function")[Theme of the document. Possible values are:
 			- `fancy` (default)
@@ -114,6 +112,7 @@ After importing #package[bookly], you have to initialize the template by a show 
 		#argument("config-options", default: "default-config-options", types: "dict")[Configuration options of the document. It allows a more fine-grained control of some aspects of the template. It contains the following keys:
 			- `part-numbering` #dtype(str) -- Numbering pattern (default: "1")
 			- `open-right` #dtype(bool) -- If `true`, parts start on a right-hand page (default: `true`)
+			- `alt-margins` #dtype(bool) -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
 		]
 ]
 
@@ -706,7 +705,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:2.0.0": *
+#import "@preview/bookly:2.1.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state

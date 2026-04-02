@@ -120,6 +120,9 @@
     let dx = 0%
     if states.tufte.get() {
       dx = 21.65%
+      if states.alt-margins.get() and calc.even(here().page()) {
+        dx = -21.65%
+      }
     }
     set align(center)
     move(dx: dx, current-page)
