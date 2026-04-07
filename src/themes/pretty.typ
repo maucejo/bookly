@@ -83,7 +83,7 @@
   // Lists
   show: el.default-enum-list
   set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
-  set enum(numbering: n => text(fill:book-colors.primary)[#n.])
+  set enum(numbering: n => text(fill:colors.primary)[#n.])
 
   // Footnotes
   set footnote.entry(separator: none)
