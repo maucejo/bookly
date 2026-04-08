@@ -23,7 +23,8 @@
   states.page-numbering.update("1/1")
   states.num-heading.update("1")
   states.num-pattern.update("1.1.")
-  states.num-pattern-fig.update("1.1a")
+  states.num-pattern-fig.update("1.1")
+  states.num-pattern-subfig.update("1.1a")
   states.num-pattern-eq.update("(1.1a)")
 
   if states.tufte.get() or not states.open-right.get() or not states.isfrontmatter.get() {

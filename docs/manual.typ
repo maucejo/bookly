@@ -665,6 +665,12 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 
 #info-alert[When `tufte` argument is set to `false`, the #cmd("sidecite") function behaves like a standard #cmd("cite").]
 
+#warning-alert[The implementation of the `tufte` layout is still a work in progress. It is based on the `drafting` package. All the ingredients are implemented and available. However, some of them doesn't work perfectly such as the positioning and numbering of figures when `alt-margins: true`.
+
+To solve these issues a major refactoring of the code will be necessary using `marginalia`.
+]
+
+
 #pagebreak()
 #command("sidefigure", ..args(
 	"content",

@@ -10,10 +10,7 @@
   let side = right
   let dxm = 0%
   if states.alt-margins.get() {
-    if calc.odd(here().page()) {
-      side = right
-      dxm = 0%
-    } else {
+    if calc.even(here().page()) {
       side = left
       dxm = page.margin.inside/margin-factor
     }
@@ -35,7 +32,7 @@
     set figure.caption(position: bottom)
     [#figure(
       content,
-      caption: caption
+      caption: caption,
     )#label]
     }, dy: dy, side: side
   )

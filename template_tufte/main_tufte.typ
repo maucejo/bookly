@@ -28,7 +28,7 @@
   ),
   config-options: (
     open-right: false,
-    alt-margins: true
+    // alt-margins: true
   )
 )
 
@@ -44,7 +44,6 @@
 
 #listoftables
 
-#part("First part")
 #part("First part")
 
 #include "chapters_tufte/ch_main_tufte.typ"

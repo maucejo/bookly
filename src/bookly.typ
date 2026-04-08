@@ -109,14 +109,14 @@
   show: show-if(tufte, it => {
     show figure.caption: content => {
       let dxm = 0%
+      let side = right
       if book-options.alt-margins {
-        if calc.odd(here().page()) {
-          dxm = 0%
-        } else {
+        if calc.even(here().page()) {
           dxm = page.margin.inside/margin-factor
+          side = left
         }
       }
-      margin-note({text(size: 0.9em, move(dx: dxm, tufte-content(content)))})
+      margin-note({text(size: 0.9em, move(dx: dxm, tufte-content(content)))}, side: side)
     }
     it
   })
@@ -147,6 +147,7 @@
     default-title-page
   }
 
+  set page(paper: "a4")
   set-margin-note-defaults(stroke: none)
   let margin-tufte = if book-options.alt-margins {
     (inside: 1.47cm, outside: 6.93cm)
