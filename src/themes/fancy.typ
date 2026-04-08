@@ -26,6 +26,13 @@
     let dx = 0%
     if states.tufte.get() {
       dx = 35.2%
+      if states.alt-margins.get() {
+        if calc.odd(here().page()) {
+          dx = page.margin.outside/1.562
+        } else {
+          dx = -(page.margin.outside - page.margin.inside)/5.32
+        }
+      }
     }
     show: move.with(dx: dx)
     if it.numbering != none {
@@ -122,7 +129,12 @@
   // Page style
   let page-header = context {
     show linebreak: none
-    show: fullwidth
+    let dx = 0%
+    if states.tufte.get() and states.alt-margins.get() {
+      dx = page.margin.outside - page.margin.inside
+    }
+
+    show: fullwidth.with(dx: dx)
     set text(style: "italic", fill: colors.header)
     if calc.odd(here().page()) {
       align(right, hydra(2))
@@ -204,7 +216,14 @@
   let dxr = 0%
   if states.tufte.get() {
     dxl = 21.68%
-    dxr = 3.1%
+    dxr = -16.4%
+    if states.alt-margins.get() {
+      if calc.odd(here().page()) {
+        dxl = page.margin.outside + page.margin.inside - 1.68%
+      } else {
+        dxl = page.margin.inside + 6.1%
+      }
+    }
   }
 
    move(dx: dxl)[

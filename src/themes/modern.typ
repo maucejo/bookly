@@ -18,18 +18,31 @@
       // Heading style
       let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
 
-      let dxr = 0%
+      let dxr = 1%
       let dxb = 0%
       let dxc = 0%
+      let dxm = 0%
       if states.tufte.get() {
-        dxr = 12.5%
-        dxb = 35.2%
         dxc = 8.2%
+        if states.alt-margins.get() {
+          if calc.odd(here().page()) {
+            dxr = page.margin.outside
+            dxb = (page.margin.outside - page.margin.inside)/1.23
+          } else {
+            dxr = page.margin.outside + page.margin.inside
+            dxm = page.margin.outside
+            dxb = -(page.margin.outside - page.margin.inside)/5.3
+          }
+        } else {
+          dxr = page.margin.right
+          dxb = 35.2%
+        }
+
       }
 
       if it.numbering != none {
         place(top, dx: -16%, dy: - 11%)[
-          #fullwidth[#rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: 132% - dxr, height: 35%)]
+          #rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: page.width + dxr, height: 35%)
         ]
 
         place(top, dx: dxc, dy: 10%)[
@@ -41,8 +54,8 @@
         ]
         v(15em)
       } else {
-        place(top, dx: -16%, dy: -11%)[
-          #fullwidth[#rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: 132% - dxr, height: 10%)]
+        place(top, dx: -16% - dxm, dy: -11%)[
+          #rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: page.width + dxr, height: 10%)
         ]
 
         place(top + right, dx: dxb, dy: -2.25%)[
@@ -127,7 +140,13 @@
   // Page style
   let page-header = context {
     show linebreak: none
-    show: fullwidth
+
+    let dx = 0%
+    if states.tufte.get() and states.alt-margins.get() {
+      dx = page.margin.outside - page.margin.inside
+    }
+
+    show: fullwidth.with(dx: dx)
     set text(style: "italic", fill: colors.header)
       if calc.odd(here().page()) {
         align(right)[
@@ -153,7 +172,7 @@
           }
           #let size = measure(head)
           #head
-          #place(dx: size.width + 1%, dy: -40%)[#line(length: 115%, stroke: 0.5pt + colors.primary)]
+          #place(dx: size.width + 0.9%, dy: -40%)[#line(length: 115%, stroke: 0.5pt + colors.primary)]
           #place(dx: size.width, dy: -75%)[#circle(fill: colors.primary, stroke: none, radius: 0.25em)]
           ]
         )
@@ -167,17 +186,29 @@
     show: fullwidth
     set text(fill: white, weight: "bold")
     v(1.5em)
+
+    let dx = 0%
     if calc.odd(cp) {
+      if states.tufte.get() and states.alt-margins.get() {
+        if states.open-right.get() {
+          dx = page.margin.outside - page.margin.inside
+        }
+      }
       set align(right)
-      box(outset: 6pt, fill: colors.primary, width: 1.5em, height: 100%)[
+      move(dx: dx,box(outset: 6pt, fill: colors.primary, width: 1.5em, height: 100%)[
         #set align(center)
         #current-page
-      ]
+      ])
     } else {
-      let dx = 0%
-      if states.tufte.get() {
-        dx = 8.2%
+      if states.tufte.get() and states.alt-margins.get() {
+        if states.open-right.get() {
+          dx = -page.margin.inside + 8.15%
+        } else {
+          dx = page.margin.outside - page.margin.inside
+        }
       }
+      show: move.with(dx: dx)
+
       set align(left)
       box(outset: 6pt, fill: colors.primary, width: 1.5em, height: 100%)[
         #set align(center)
@@ -231,11 +262,29 @@
     pagebreak(weak: true, to:"odd")
   }
 
+  // let dxr = 0%
+  // let dxb = 0%
+  // if states.tufte.get() {
+  //   dxr = 21.68%
+  //   dxb = 36%
+  // }
   let dxr = 0%
   let dxb = 0%
+  let dxm = 0%
   if states.tufte.get() {
     dxr = 21.68%
     dxb = 36%
+    dxm = dxr
+    if states.alt-margins.get() {
+      if calc.odd(here().page()) {
+        dxr = page.margin.outside + 10%
+        dxm = page.margin.inside + 10%
+      } else {
+        let dxe = (page.margin.outside - page.margin.inside)/2
+        dxr = dxe
+        dxm = -dxe
+      }
+    }
   }
 
   place(top + center, dx: dxr, dy: -11%)[
@@ -246,7 +295,7 @@
     ]]
   ]
 
-  place(center + horizon, dx: dxr)[
+  place(center + horizon, dx: dxm)[
     #box(outset: 1.25em, stroke: none, radius: 5em, fill: states.colors.get().primary)[
       #set text(fill: white, weight: "bold", size: 3em)
       #title

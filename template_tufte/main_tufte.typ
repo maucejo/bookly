@@ -1,5 +1,5 @@
-#import "@preview/bookly:2.1.0": *
-// #import "../src/bookly.typ": *
+// #import "@preview/bookly:2.1.1": *
+#import "../src/bookly.typ": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -27,7 +27,7 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: true,
+    open-right: false,
     alt-margins: true
   )
 )
@@ -44,6 +44,7 @@
 
 #listoftables
 
+#part("First part")
 #part("First part")
 
 #include "chapters_tufte/ch_main_tufte.typ"

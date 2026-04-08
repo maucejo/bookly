@@ -8,6 +8,9 @@
     if states.tufte.get() {
       dxl = 8.17%
       dxr = -17%
+      if states.alt-margins.get() and calc.odd(here().page()) {
+         dxl = page.margin.outside - page.margin.inside/3.35
+      }
     }
     show: move.with(dx: dxl)
     fullwidth(dx: dxr, it)
@@ -23,6 +26,9 @@
     if states.tufte.get() {
       dxl = 8.17%
       dxr = -17%
+      if states.alt-margins.get() and calc.odd(here().page()) {
+         dxl = page.margin.outside - page.margin.inside/3.35
+      }
     }
     show: move.with(dx: dxl)
     let entry = context {
@@ -44,6 +50,9 @@
     if states.tufte.get() {
       dxl = 8.17%
       dxr = -17%
+      if states.alt-margins.get() and calc.odd(here().page()) {
+         dxl = page.margin.outside - page.margin.inside/3.35
+      }
     }
     show: move.with(dx: dxl)
     let entry = context {

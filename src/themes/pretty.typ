@@ -16,7 +16,13 @@
     // Reset counters
     reset-counters
 
+    let dxm = 0%
+    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
+      dxm = page.margin.outside - page.margin.inside
+    }
+
     show: fullwidth
+    show: move.with(dx: dxm)
 
     // Heading style
     place(top, dy: -2.5em)[
@@ -138,7 +144,13 @@
   // Page style
   let page-header = context {
     show linebreak: none
-    show: fullwidth
+
+    let dx = 0%
+    if states.tufte.get() and states.alt-margins.get() {
+      dx = page.margin.outside - page.margin.inside
+    }
+
+    show: fullwidth.with(dx: dx)
     set text(style: "italic", fill: white)
     if calc.odd(here().page()) {
       set align(right)
@@ -155,9 +167,9 @@
     let dx = 0%
     if states.tufte.get() {
       dx = 15.04%
-      // if states.alt-margins.get() and calc.even(here().page()) {
-      //   dx = 17.04%
-      // }
+      if states.alt-margins.get() and calc.odd(here().page()) {
+        dx = page.margin.outside + page.margin.inside/1.18
+      }
     }
     set align(center)
     show: fullwidth
@@ -217,17 +229,26 @@
 
   let dxl = 0%
   let dxr = 0%
+  let dxm = 0%
   if states.tufte.get() {
     dxl = 21.68%
-    dxr = 17%
+    dxr = 16.34%
+    if states.alt-margins.get() {
+      dxm = -(page.margin.outside + page.margin.inside)/1.538
+      if calc.odd(here().page()) {
+        dxl = page.margin.outside + page.margin.inside - 1.68%
+      } else {
+        dxl = page.margin.inside + 6.1%
+      }
+    }
   }
   move(dx: dxl)[
     #stack(
       dir: ttb,
-      box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
+      move(dx: dxm, box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
         #set text(size: 4.5em, fill: white, weight: "bold")
         #states.localization.get().part #states.counter-part.display(states.part-numbering.get())
-      ],
+      ]),
       fullwidth(dx: -dxr, box(width: 90%, inset: 5em, stroke: 2pt + states.colors.get().primary, radius: 2em)[
       #set text(size: 3em)
 

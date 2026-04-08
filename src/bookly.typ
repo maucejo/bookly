@@ -107,10 +107,17 @@
 
   set figure.caption(position: top) if tufte
   show: show-if(tufte, it => {
-    show figure.caption: content => margin-note({
-        text(size: 0.9em, tufte-content(content))
+    show figure.caption: content => {
+      let dxm = 0%
+      if book-options.alt-margins {
+        if calc.odd(here().page()) {
+          dxm = 0%
+        } else {
+          dxm = page.margin.inside/margin-factor
+        }
       }
-    )
+      margin-note({text(size: 0.9em, move(dx: dxm, tufte-content(content)))})
+    }
     it
   })
   show figure: set figure.caption(separator: [ -- ])

@@ -1,5 +1,5 @@
-#import "@preview/bookly:2.1.0": *
-// #import "../../src/bookly.typ": *
+// #import "@preview/bookly:2.1.1": *
+#import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "Second chapter")
 
@@ -25,5 +25,6 @@ $
   )
 ]
 
-#lorem(100)#sidenote(dy: -4em)[#lorem(10)]
+#lorem(500)#sidenote(dy: -4em)[#lorem(10)]
 
+#fullwidth(lorem(500))

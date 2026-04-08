@@ -2,7 +2,8 @@
 #import "bookly-defaults.typ": *
 #import "bookly-helper.typ": *
 
-#let tufte-content(body) = block(width: 5.05cm, body)
+#let tufte-content(body) = block(width: 5cm, body)
+#let margin-factor = 1.4
 
 #let sidefigure(content, label: none, caption: none, dy: - 1.5em) = context if states.tufte.get() {
   // Check side
@@ -14,7 +15,7 @@
       dxm = 0%
     } else {
       side = left
-      dxm = 16%
+      dxm = page.margin.inside/margin-factor
     }
   }
 
@@ -55,7 +56,7 @@
       dxm = 0%
     } else {
       side = left
-      dxm = 16%
+      dxm = page.margin.inside/margin-factor
     }
   }
 
@@ -65,7 +66,7 @@
       [
         #set text(0.9em)
         #set align(left)
-        #let kind = none
+        #let kind
         #if it.supplement.text.contains("Fig") {
           kind = image
         } else if it.supplement.text.contains("Tab") {
@@ -101,7 +102,7 @@
       dxm = 0%
     } else {
       side = left
-      dxm = 16%
+      dxm = page.margin.inside/margin-factor
     }
   }
 
@@ -133,7 +134,7 @@
       dxm = 0%
     } else {
       side = left
-      dxm = 16%
+      dxm = page.margin.inside/margin-factor
     }
   }
 

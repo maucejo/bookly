@@ -90,8 +90,14 @@
   // Page style
   let page-header = context {
     show linebreak: none
+    let dxm = 0%
+    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
+      dxm = page.margin.outside - page.margin.inside
+    }
+
     show: fullwidth
     if calc.odd(here().page()) {
+      show: move.with(dx: dxm)
       align(left, hydra(2, display: (_, it) => [
       #let head = none
       #if it.numbering != none {
@@ -178,6 +184,14 @@
   let dx = 0%
   if states.tufte.get() {
     dx = 21.68%
+    if states.alt-margins.get() {
+      let interval = (page.margin.outside - page.margin.inside)/2
+      if calc.odd(here().page()) {
+        dx = interval
+      } else {
+        dx = -interval
+      }
+    }
   }
 
   move(dx: dx)[

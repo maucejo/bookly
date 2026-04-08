@@ -19,11 +19,11 @@
 // Fullwidth block
 #let fullwidth(dx: 0%, body) = context if states.tufte.get() {
   if states.alt-margins.get() {
-    let dxm = if calc.odd(here().page()) {0%} else {-43.9%}
-    show: move.with(dx: dxm)
-    block(width: 144% + dx, body)
+    let dxm = page.margin.outside - page.margin.inside
+    show: move.with(dx: -dxm)
+    block(width: 100% + page.margin.outside - page.margin.inside + dx, body)
   } else {
-    block(width: 144% + dx, body)
+    block(width: 100% + page.margin.right - page.margin.left + dx, body)
   }
 } else {
   block(width: 100% + dx, body)

@@ -20,8 +20,8 @@
     set align(right)
 
     let dx = 0%
-    if states.tufte.get() {
-      dx = 43.5%
+    if states.tufte.get() and states.alt-margins.get() {
+      dx = 2*(page.margin.outside - page.margin.inside)
     }
 
     show: move.with(dx: dx)
@@ -85,7 +85,14 @@
   let page-footer = context {
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
+
+    let dxm = 0%
+    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
+      dxm = page.margin.outside - page.margin.inside
+    }
+
     show: fullwidth
+    show: move.with(dx: dxm)
     set text(0.85em, weight: "bold")
     line(length: 100%, stroke: 0.5pt)
     v(-0.5em)
@@ -141,6 +148,14 @@
   let dx = 0%
   if states.tufte.get() {
     dx = 43.5%
+    if states.alt-margins.get() {
+      let interval = page.margin.outside - page.margin.inside
+      if calc.odd(here().page()) {
+        dx = 2*interval
+      } else {
+        dx = interval
+      }
+    }
   }
 
   move(dx: dx)[
