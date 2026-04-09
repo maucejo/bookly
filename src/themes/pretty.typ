@@ -1,5 +1,6 @@
 #import "@preview/showybox:2.0.4": *
-#import "@preview/hydra:0.6.2": hydra, anchor
+#import "@preview/hydra:0.6.2": hydra
+#import "@preview/marginalia:0.3.1" as marginalia: wideblock
 #import "@preview/itemize:0.2.0" as el
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
@@ -16,18 +17,12 @@
     // Reset counters
     reset-counters
 
-    let dxm = 0%
-    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
-      dxm = page.margin.outside - page.margin.inside
-    }
-
-    show: fullwidth
-    show: move.with(dx: dxm)
-
     // Heading style
-    place(top, dy: -2.5em)[
-      #rect(fill: white, width: 102%, height: 4%)
-    ]
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
+
     set align(left)
     let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
     if it.numbering != none {
@@ -145,21 +140,41 @@
   let page-header = context {
     show linebreak: none
 
-    let dx = 0%
-    if states.tufte.get() and states.alt-margins.get() {
-      dx = page.margin.outside - page.margin.inside
-    }
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
 
-    show: fullwidth.with(dx: dx)
     set text(style: "italic", fill: white)
     if calc.odd(here().page()) {
-      set align(right)
-      box(fill: states.colors.get().primary, inset: 0.5em, radius: (top-left: 2em, bottom-right: 2em))[#hydra(2)]
+      align(right)[
+        #hydra(2, display: (_, it) => [
+          #let head = none
+          #if it.numbering != none {
+            head = numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
+          } else {
+            head = it.body
+          }
+          #let size = measure(head)
+          #box(fill: states.colors.get().primary, inset: 0.5em, radius: (top-left: 2em, bottom-right: 2em))[#head]
+        ])
+      ]
     } else {
-      set align(left)
-      box(fill: states.colors.get().primary, inset: 0.5em, radius: (bottom-left: 2em, top-right: 2em))[#hydra(1)]
+      align(left)[
+        #hydra(1, display: (_, it) => [
+          #let head = none
+          #if it.numbering != none {
+            head = numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
+          } else {
+            head = it.body
+          }
+          #let size = measure(head)
+          #box(fill: states.colors.get().primary, inset: 0.5em, radius: (bottom-left: 2em, top-right: 2em))[#head]
+        ])
+      ]
     }
   }
+
 
   let page-footer = context {
     let cp = counter(page).get().first()
@@ -172,16 +187,22 @@
       }
     }
     set align(center)
-    show: fullwidth
-    move(dx: dx)[
-      #grid(
-        columns: (1fr, auto, 1fr),
-        align: center + horizon,
-        [#line(length: 100%, stroke: 0.75pt + states.colors.get().primary)],
-        [#box(stroke: 1pt + states.colors.get().primary, inset: 0.3em, radius: 0.25em)[#current-page]],
-        [#line(length: 100%, stroke: 0.75pt + states.colors.get().primary)]
-      )
-    ]
+    // show: fullwidth
+    // move(dx: dx)[
+
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
+
+    grid(
+      columns: (1fr, auto, 1fr),
+      align: center + horizon,
+      [#line(length: 100%, stroke: 0.75pt + states.colors.get().primary)],
+      [#box(stroke: 1pt + states.colors.get().primary, inset: 0.3em, radius: 0.25em)[#current-page]],
+      [#line(length: 100%, stroke: 0.75pt + states.colors.get().primary)]
+    )
+    // ]
   }
 
   set page(
@@ -227,35 +248,24 @@
     pagebreak(weak: true, to:"odd")
   }
 
-  let dxl = 0%
-  let dxr = 0%
-  let dxm = 0%
-  if states.tufte.get() {
-    dxl = 21.68%
-    dxr = 16.34%
-    if states.alt-margins.get() {
-      dxm = -(page.margin.outside + page.margin.inside)/1.538
-      if calc.odd(here().page()) {
-        dxl = page.margin.outside + page.margin.inside - 1.68%
-      } else {
-        dxl = page.margin.inside + 6.1%
-      }
-    }
-  }
-  move(dx: dxl)[
-    #stack(
-      dir: ttb,
-      move(dx: dxm, box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
-        #set text(size: 4.5em, fill: white, weight: "bold")
-        #states.localization.get().part #states.counter-part.display(states.part-numbering.get())
-      ]),
-      fullwidth(dx: -dxr, box(width: 90%, inset: 5em, stroke: 2pt + states.colors.get().primary, radius: 2em)[
-      #set text(size: 3em)
+  show: show-if(states.tufte.get(), it => {
+    show: wideblock.with(side: "both")
+    it
+  })
 
-      *#title*
-    ])
-    )
-  ]
+  let width = if states.tufte.get() {77.9%} else {90%}
+
+  stack(
+    dir: ttb,
+    box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
+      #set text(size: 4.5em, fill: white, weight: "bold")
+      #states.localization.get().part #states.counter-part.display(states.part-numbering.get())
+    ],
+    box(width: width, inset: 5em, stroke: 2pt + states.colors.get().primary, radius: 2em)[
+    #set text(size: 3em)
+
+    *#title*
+  ])
 
   show heading: none
   heading(numbering: none)[

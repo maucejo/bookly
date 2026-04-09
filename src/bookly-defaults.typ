@@ -1,5 +1,3 @@
-
-
 #let fig-supplement = [Figure]
 #let text-size = 11pt
 #let paper-size = "a4"

@@ -1,6 +1,6 @@
 [package]
 name = "bookly"
-version = "2.1.2"
+version = "3.0.0"
 authors = ["Mathieu Aucejo"]
 license = "MIT"
 description = "Book template for Typst"

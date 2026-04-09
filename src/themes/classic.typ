@@ -1,5 +1,6 @@
 
 #import "@preview/hydra:0.6.2": hydra
+#import "@preview/marginalia:0.3.1" as marginalia: wideblock
 #import "@preview/showybox:2.0.4": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
@@ -20,7 +21,13 @@
     place(top)[
       #rect(fill: white, width: 1%, height: 1%)
     ]
+
+    let side = auto
+    if states.tufte.get() {
+      side = "both"
+    }
     set align(left)
+    show: wideblock.with(side: side)
     let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
     if it.numbering != none {
       v(4em)
@@ -90,14 +97,17 @@
   // Page style
   let page-header = context {
     show linebreak: none
-    let dxm = 0%
-    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
-      dxm = page.margin.outside - page.margin.inside
+
+    let length = 89%
+    let side = auto
+    if states.tufte.get() {
+      side = "both"
+      length = 100%
     }
 
-    show: fullwidth
+    show: wideblock.with(side: side)
     if calc.odd(here().page()) {
-      show: move.with(dx: dxm)
+      // show: move.with(dx: dxm)
       align(left, hydra(2, display: (_, it) => [
       #let head = none
       #if it.numbering != none {
@@ -106,7 +116,7 @@
         head = it.body
       }
       #head
-      #place(dx: 0%, dy: 52%)[#line(length: 100%, stroke: 0.75pt)]
+      #place(dx: 0%, dy: 52%)[#line(length: length, stroke: 0.75pt)]
     ]))
     } else {
       align(left, hydra(1, display: (_, it) => [
@@ -115,7 +125,7 @@
         head = it.body
       }
       #head
-      #place(dx: 0%, dy: 50%)[#line(length: 100%, stroke: 0.75pt)]
+      #place(dx: 0%, dy: 50%)[#line(length: length, stroke: 0.75pt)]
     ]))
     }
   }
@@ -123,15 +133,9 @@
   let page-footer = context {
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
-    let dx = 0%
-    if states.tufte.get() {
-      dx = 21.65%
-      if states.alt-margins.get() and calc.even(here().page()) {
-        dx = -21.65%
-      }
-    }
+
     set align(center)
-    move(dx: dx, current-page)
+    wideblock(side: "both", current-page)
   }
 
   set page(
@@ -181,20 +185,7 @@
     pagebreak(weak: true, to:"odd")
   }
 
-  let dx = 0%
-  if states.tufte.get() {
-    dx = 21.68%
-    if states.alt-margins.get() {
-      let interval = (page.margin.outside - page.margin.inside)/2
-      if calc.odd(here().page()) {
-        dx = interval
-      } else {
-        dx = -interval
-      }
-    }
-  }
-
-  move(dx: dx)[
+  wideblock(side: "both")[
     #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
     #v(1em)
     #text(size: 3em)[*#title*]

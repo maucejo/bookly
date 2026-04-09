@@ -1,3 +1,4 @@
+
 #import "@preview/subpar:0.2.2"
 #import "@preview/suboutline:0.3.0": *
 #import "bookly-defaults.typ": *
@@ -8,7 +9,7 @@
   counter(figure.where(kind: image)).update(0)
   counter(figure.where(kind: table)).update(0)
   if states.tufte.get(){
-    states.sidenotecounter.update(1)
+    states.sidenotecounter.update(0)
   }
   counter(footnote).update(0)
 }
@@ -18,14 +19,14 @@
 
 // Fullwidth block
 #let fullwidth(dx: 0%, body) = context if states.tufte.get() {
-  if states.alt-margins.get() {
-    let dxm = page.margin.outside - page.margin.inside
-    show: move.with(dx: -dxm)
-    block(width: 100% + page.margin.outside - page.margin.inside + dx, body)
-  } else {
-    block(width: 100% + page.margin.right - page.margin.left + dx, body)
-  }
-} else {
+//   if states.alt-margins.get() {
+//     let dxm = page.margin.outside - page.margin.inside
+//     show: move.with(dx: -dxm)
+//     block(width: 100% + page.margin.outside - page.margin.inside + dx, body)
+//   } else {
+//     block(width: 100% + page.margin.right - page.margin.left + dx, body)
+//   }
+// } else {
   block(width: 100% + dx, body)
 }
 

@@ -1,6 +1,5 @@
-// #import "@preview/bookly:2.1.1": *
+// #import "@preview/bookly:3.0.0": *
 #import "../../src/bookly.typ": *
-
 // #show: chapter.with(title: "First chapter")
 
 = First chapter
@@ -9,7 +8,12 @@
 #pagebreak()
 
 == Goals
-#lorem(100)
+
+#lorem(100)#context if states.tufte.get() [
+  #note(lorem(10))
+] else [
+  #footnote(lorem(10))
+]
 
 Equations @eq:1 et @eq:2 are very important.
 $
@@ -23,14 +27,15 @@ $ <eq:2>
 #lorem(20)
 == Code
 
-Figure @fig:1 is a beautiful typst logo.
+#context if states.tufte.get() [
+  Figure @fig:1 is a beautiful typst logo.
 
-#sidefigure(
-  image("../images/typst-logo.svg", width: 75%),
-  caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
-  label: <fig:1>,
-  dy: -4em
-)
+  #notefigure(
+    image("../images/typst-logo.svg"),
+    caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
+    alignment: "baseline"
+  )<fig:1>
+]
 
 #lorem(50)
 
@@ -63,7 +68,11 @@ label: <fig:subfig>,
 
 == Boxes
 
-#lorem(50) #sidecite(<Smi21>)
+#context if states.tufte.get() [
+  #lorem(50) #notecite(<Smi21>)
+] else [
+  #lorem(50) @Smi21
+]
 
 === Informations
 

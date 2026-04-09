@@ -1,5 +1,6 @@
 #import "@preview/showybox:2.0.4": *
 #import "@preview/hydra:0.6.2": hydra, anchor
+#import "@preview/marginalia:0.3.1" as marginalia: wideblock
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -19,15 +20,14 @@
 
     set align(right)
 
-    let dx = 0%
-    if states.tufte.get() and states.alt-margins.get() {
-      dx = 2*(page.margin.outside - page.margin.inside)
-    }
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
 
-    show: move.with(dx: dx)
     if it.numbering != none {
       v(1em)
-      fullwidth[
+      [
         #text(size: 1em)[#upper[#type-chapter] #counter(heading).display(states.num-heading.get())]
         #v(-0.75em)
         #line(length: 100%, stroke: 0.5pt)
@@ -35,7 +35,7 @@
         #text(2em)[#it.body]
       ]
     } else {
-      fullwidth[
+      [
         #line(length: 100%, stroke: 0.5pt)
         #v(-0.1em)
         #text(2em)[#it.body]
@@ -86,20 +86,22 @@
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
 
-    let dxm = 0%
-    if states.tufte.get() and states.alt-margins.get() and calc.odd(here().page()) {
-      dxm = page.margin.outside - page.margin.inside
-    }
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
 
-    show: fullwidth
-    show: move.with(dx: dxm)
     set text(0.85em, weight: "bold")
     line(length: 100%, stroke: 0.5pt)
     v(-0.5em)
+
+    let inset = 0.5em
     if calc.odd(cp) {
-      align(right)[#hydra(2) #h(0.5em) | #h(0.5em) #current-page]
+      let curr-box = box(stroke: (left: 0.5pt), inset: inset)[#current-page]
+      align(right)[#move(dy: -0.7em)[#box(inset: inset, hydra(2)) #curr-box]]
     } else {
-      align(left)[#current-page #h(0.5em) | #h(0.5em) #hydra(1)]
+      let curr-box = box(stroke: (right: 0.5pt), inset: inset)[#current-page]
+      align(left)[#move(dy: -0.7em)[#curr-box #box(inset: inset, hydra(1))]]
     }
   }
 
@@ -145,27 +147,15 @@
     pagebreak(weak: true, to:"odd")
   }
 
-  let dx = 0%
-  if states.tufte.get() {
-    dx = 43.5%
-    if states.alt-margins.get() {
-      let interval = page.margin.outside - page.margin.inside
-      if calc.odd(here().page()) {
-        dx = 2*interval
-      } else {
-        dx = interval
-      }
-    }
-  }
-
-  move(dx: dx)[
-  #fullwidth[
+  let part = [
     #text(size: 1.75em)[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get())*]
     #v(-0.75em)
     #line(length: 100%, stroke: 0.5pt)
     #v(-2.5em)
     #text(size: 3em)[*#title*]
-  ]]
+  ]
+
+  if states.tufte.get() {wideblock(side: "both")[#part]} else {part}
 
   show heading: none
   heading(numbering: none)[

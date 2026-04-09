@@ -1,4 +1,4 @@
-// #import "@preview/bookly:2.1.1": *
+// #import "@preview/bookly:3.0.0": *
 #import "../../src/bookly.typ": *
 
 // #show: chapter.with(
@@ -19,7 +19,7 @@ caption: [#lorem(10)],
 
 #lorem(20)
 
-#sidefigure(dy: -4em)[
+#notefigure[
   #figure(
     table(
       columns: 2,

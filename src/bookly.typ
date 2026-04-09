@@ -5,8 +5,8 @@
 #import "bookly-outlines.typ": *
 #import "bookly-components.typ": *
 #import "bookly-helper.typ": *
-#import "bookly-tufte.typ": *
 #import "bookly-themes.typ": *
+#import "bookly-tufte.typ": *
 
 // Template
 #let bookly(
@@ -64,21 +64,6 @@
   // References
   set ref(supplement: none)
 
-  show ref: it => {
-    if tufte {
-      let target = query(it.target).first()
-      if (
-        type(target) != content
-          or target.func() != metadata
-          or target.value != "sidenote"
-      ) { return it }
-      let count = numbering("1", ..states.sidenotecounter.at(locate(it.target)))
-      link(it.target)[#super(count)]
-    } else {
-      it
-    }
-  }
-
   // Citations
   show cite: it => {
     show regex("\[|\]"): it => text(fill: black)[#it]
@@ -105,19 +90,15 @@
       gap: 1.5em
     )
 
+  // set figure(gap: 0em) if tufte
   set figure.caption(position: top) if tufte
   show: show-if(tufte, it => {
-    show figure.caption: content => {
-      let dxm = 0%
-      let side = right
-      if book-options.alt-margins {
-        if calc.even(here().page()) {
-          dxm = page.margin.inside/margin-factor
-          side = left
-        }
-      }
-      margin-note({text(size: 0.9em, move(dx: dxm, tufte-content(content)))}, side: side)
-    }
+    show figure.caption.where(position: top): note.with(
+      alignment: "top",
+      counter: none,
+      shift: "avoid",
+      keep-order: true,
+    )
     it
   })
   show figure: set figure.caption(separator: [ -- ])
@@ -147,16 +128,22 @@
     default-title-page
   }
 
-  set page(paper: "a4")
   set-margin-note-defaults(stroke: none)
-  let margin-tufte = if book-options.alt-margins {
-    (inside: 1.47cm, outside: 6.93cm)
-  } else {
-    (left: 1.47cm, right: 6.93cm)
-  }
-  set page(
-    margin: margin-tufte
-  ) if tufte
+  show: show-if(tufte, it => {
+    let marginalia-book = if book-options.alt-margins {true} else {false}
+
+    let m-config = (
+    inner: (far: 1.25cm, width: 0cm, sep: 0cm),
+    outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
+    book: marginalia-book
+    )
+
+    show: marginalia.setup.with(..m-config)
+    it
+  })
+
+
+  // show: marginalia.show-frame.with(footer: false)
 
   // Headings
   show: theme.with(colors: book-colors)

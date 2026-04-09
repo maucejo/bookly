@@ -1,4 +1,4 @@
-// #import "@preview/bookly:2.1.1": *
+// #import "@preview/bookly:3.0.0": *
 #import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "Second chapter")
@@ -9,22 +9,20 @@
 
 == Goals
 
-#fullwidth(lorem(50))
+#wideblock(lorem(50))
 
-#lorem(100)#sidenote(dy: -4em, label: <sn:sidenote>)[#lorem(10)]
+#lorem(100)#note(lorem(10))<sn:sidenote>
 $
 arrow(V)(M slash R_0) = lr((d arrow(O M))/(d t)|)_(R_0) + theta
 $
 
-#lorem(10)@sn:sidenote
+// #lorem(10)@sn:sidenote
 
-#fullfigure[
-  #figure(
-    rect(width: 100%),
-    caption: [#lorem(10)]
-  )
-]
+#wideblock(figure(
+  rect(width: 100%),
+  caption: [#lorem(10)]
+))
 
-#lorem(500)#sidenote(dy: -4em)[#lorem(10)]
+#lorem(500)#note(lorem(10))
 
 #fullwidth(lorem(500))

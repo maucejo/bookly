@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "2.1.2",
+  version: "3.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:2.1.2": *
+#import "@preview/bookly:3.0.0": *
 ```
 ]
 
@@ -635,71 +635,88 @@ A back cover of the document is automatically generated using the #cmd("back-cov
 
 When the `tufte` layout is selected, several customizations are applied to adapt the appearance of various elements (figures, tables, equations, etc.) to the Tufte style.
 
-#command("sidenote", ..args(
-	dy: -1.5em,
-	numbered: true,
-	label: none,
+#command("note", ..args(
+	"..note-args",
 	[body]
 	)
 )[
-	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the sidenote position.]
+	#argument("..note-args",  types: "arguments")[Arguments of the #cmd("note") function provided by the `marginalia` package.
 
-	#argument("numbered", default: true, types: "boolean")[Indicates whether the sidenote should be numbered.]
+	#info-alert[`bookly` introduces some customization of the `marginalia` #cmd("note") as follows:
 
-	#argument("label", default: none, types: "label")[Label of the sidenote.]
+	#codesnippet[
+			```typ
+			#let note = note.with(
+				counter: ...,
+				numbering: ...,
+				keep-order: true
+			)
+ 			```
+ 		]
+	]
+	]
 ]
 
-#info-alert[When the `tufte` argument is set to `false`, the #cmd("sidenote") function behaves like a standard #cmd("footnote").]
+#command("notefigure", ..args(
+	"..notefigure-args",
+	[body]
+))[
+	#argument("..notefigure-args", types: "arguments")[Arguments of the #cmd("notefigure") function provided by the `marginalia` package.
 
-#command("sidecite", ..args(
+	#info-alert[`bookly` introduces a slight customization of the `marginalia` #cmd("notefigure") as follows:
+		#codesnippet[
+				```typ
+				#let notefigure = notefigure.with(keep-order: true)
+				```
+		]
+	]
+	]
+]
+
+#command("notecite", ..args(
 	"key",
 	dy: -1.5em,
+	alignment: "baseline",
 	supplement: none,
 ))[
 	#argument("key", types: "label")[Key of the reference to cite.]
 
-	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the sidecite position.]
+	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the notecite position.]
+
+	#argument("alignment", default: "baseline", types: "string")[Alignment of the notecite. Possible values are:
+	- `"top"`: Align the top of the notecite with the reference.
+	- `"caption-top"`: Align the top of the notecite with the main text baseline.
+	- `"bottom"`: Align the bottom of the notecite with the reference.
+	- `"baseline"` (default): Align the baseline of the notecite with the main text baseline.
+	]
 
 	#argument("supplement", default: none, types: "string")[Supplementary text to add before the citation (e.g., "see", "e.g.", etc.).]
 ]
 
-#info-alert[When `tufte` argument is set to `false`, the #cmd("sidecite") function behaves like a standard #cmd("cite").]
-
-#warning-alert[The implementation of the `tufte` layout is still a work in progress. It is based on the `drafting` package. All the ingredients are implemented and available. However, some of them doesn't work perfectly such as the positioning and numbering of figures when `alt-margins: true`.
-
-To solve these issues a major refactoring of the code will be necessary using `marginalia`.
-]
-
-
-#pagebreak()
-#command("sidefigure", ..args(
-	"content",
-	dy: - 1.5em,
-	label: none,
-	caption: none,
+#command("wideblock", ..args(
+	"side",
+	[body]
 ))[
-	#argument("content", types: "content")[Content of the figure.]
-
-	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the sidefigure position.]
-
-	#argument("caption", default: none, types: "content")[Caption of the figure.]
-
-	#argument("label", default: none, types: "label")[Label of the figure.]
+	#argument("side", types: (auto, str))[
+		Side of the wide block. Possible values are:
+		- `auto`: Same as `"outer"`
+		- `"outer"`: The wide block is displayed on the outer side of the page.
+		- `"inner"`: The wide block is displayed on the inner side of the page.
+		- "`left"`: The wide block is displayed on the left side of the page.
+		- `"right"`: The wide block is displayed on the right side of the page
+	]
 ]
 
-#command("fullfigure", ..args(
-	"content",
-	label: none,
-	caption: none,
-))[
-	#argument("content", types: "content")[Content of the figure.]
+#info-alert[To define a full-width figure in the `tufte` layout, you can use the `wideblock` function with the `side` argument set to `auto` or `outer`. For example:
 
-	#argument("caption", default: none, types: "content")[Caption of the figure.]
-
-	#argument("label", default: none, types: "label")[Label of the figure.]
+	#codesnippet[
+		```typ
+		#wideblock[
+			#figure(image("path_to_image/figure.png"), caption: [Full width figure])
+		]
+		```
+	]
 ]
-
-#info-alert[When `tufte` argument is set to `false`, #cmd("sidefigure") and #cmd("fullfigure") behave like a standard #cmd("figure").]
 
 = Theming
 
@@ -711,7 +728,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:2.1.1": *
+#import "@preview/bookly:3.0.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -771,19 +788,21 @@ Then, you can initialize the template with your custom theme as follows:
 `bookly` provides some states that can be useful when designing a custom theme. The states are used to store information about the current state of the document. They are collected in a #dtype(dictionary). The following states are available:
 
 #v(1em)
+- `states.alt-margins` -- #dtype(bool): Indicates whether the margins are alternated for odd and even pages when `tufte` layout is enabled.
+
 - `states.author` -- #dtype(str): Author of the document.
 
 - `states.colors` -- #dtype(dictionary): Color scheme for the document.
 
 - `states.counter-part` -- #dtype(str): Counter for parts.
 
-- `states.localization` -- #dtype(dictionary): Dictionary of terms used in the document (e.g., "chapter", etc.) in the selected language.
-
 - `states.in-outline` -- #dtype(bool): Indicates whether the current section is in the outline.
 
 - `states.isappendix` -- #dtype(bool): Indicates whether the current section is an appendix.
 
 - `states.isfrontmatter` -- #dtype(bool): Indicates whether the current section is front matter.
+
+- `states.localization` -- #dtype(dictionary): Dictionary of terms used in the document (e.g., "chapter", etc.) in the selected language.
 
 #info-alert[If you need to use a language that is not supported by default, you can modify the `states.localization` dictionary when initializing the template.
 
@@ -838,9 +857,9 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 
 - `states.sidenotecounter` -- #dtype(int): Counter for sidenotes.
 
-- `states.title` -- #dtype(str): Title of the document.
-
 - `states.theme` -- #dtype(str): Current theme of the document.
+
+- `states.title` -- #dtype(str): Title of the document.
 
 - `states.tufte` -- #dtype(bool): Indicates whether the current layout is Tufte style.
 
@@ -851,8 +870,8 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 = Dependencies
 
 The `bookly` template relies on several #Typst packages to provide additional functionalities:
-
-- `drafting:0.2.2`: for tufte layout.
+#v(0.5em)
+- `marginalia:0.3.1`: for tufte layout.
 - `hydra:0.6.2` : for bibliography management.
 - `equate:0.3.2` : for advanced equation numbering.
 - `itemize:0.2.0"`: for lists and enumerations customization.
@@ -860,69 +879,77 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.
 
-// = Roadmap
+= Change logs
 
-// The template is under development. Here is the list of features that are implemented or will be in a future version.
+This section provides a summary of the changes made in each version of the template.
 
-// *Themes*
 
-// - [x] `fancy`
-// - [x] `modern`
-// - [x] `classic`
-// - [x] `orly` (O'Reilly inspired)
-// - [x] `pretty`
-// - [x] User-defined themes (requires a refactoring of the theming)
+#text(size: 1.5em)[*v3.0.0 -- April 2026*]
 
-// *Layout*
+This release introduces a major refactoring of the code to improve the implementation of the `tufte` layout and make its maintenance easier. This refactoring was necessary to solve some issues related to the `tufte` layout, particularly when the `alt-margins` option was enabled.
 
-// - [x] Standard layout
-// - [x] Tufte layout
-// // - [ ] User-defined paper and margins for `standard` and `tufte` layouts
+With this release, the API of the functions related to the `tufte` layout has been updated to take advantage of the features provided by the `marginalia` package. In particular :
+#v(0.5em)
+- #cmd("sidenote") function has been removed in favor of the #cmd("note") function provided by the `marginalia` package.
 
-// *Cover pages*
+- #cmd("sidefigure") function has been removed in favor of the #cmd("notefigure") function provided by the `marginalia` package.
 
-// - [x] Title page
-// - [x] Back cover
+- #cmd("sidecite") function has been renamed to #cmd("notecite") to be consistent with the function naming used in the `marginalia` package.
 
-// *Environments*
+- #cmd("fullwidth") function has been removed in favor of the #cmd("wideblock") function provided by the `marginalia` package.
 
-// - [x] Creation of the `front-matter` environment
-// - [x] Creation of the `main-matter` environment
-// - [x] Creation of the `appendix` environment
+- #cmd("fullfigure") function has been removed.
 
-// *Parts and chapters*
-// - [x] Creation of a document `part` -- #cmd("part")
-// - [x] Creation of a document `chapter` -- #cmd("chapter")
-// - [x] Creation of an unnumbered `chapter` -- #cmd("chapter-nonum")
+#v(1em)
+#text(size: 1.5em)[*v2.1.1 & v2.1.2 -- April 2026*]
 
-// *Tables of contents*
+These two patch releases fix theming issues due to `tufte` layout and `alt-margins` options and some typographical issues in the themes.
 
-// - [x] Creation of the table of contents -- #cmd("tableofcontents")
-// - [x] Creation of the list of figures -- #cmd("listoffigures")
-// - [x] Creation of the list of tables -- #cmd("listoftables")
-// - [x] Creation of a mini table of contents at the beginning of chapters using the `suboutline` package (see #link("https://typst.app/universe/package/minitoc", text("link", fill: typst-color)))
-// - [x] Customization of entries (appearance, hyperlink) by modifying the `outline.entry` element
-// - [x] Localization of the different tables
+#v(1em)
+#text(size: 1.5em)[*v2.1.0 -- March 2026*]
 
-// *Figures and tables*
+This release introduces a new boolean argument `alt-margins` to the `config-options` dictionary. This argument allows using alternating margins when `tufte` layout is enabled.
 
-// - [x] Customization of the appearance of figure and table captions depending on the context (chapter or appendix)
-// - [x] Short titles for the lists of figures and tables
-// - [x] Creation of the #cmd("subfigure") function for subfigures via the `subpar` package
+#v(1em)
+#text(size: 1.5em)[*v2.0.0 -- March 2026*]
 
-// *Equations*
+This new release introduces a breaking change in the API of the sidenote function.
+This change aims at making the sidenote referenceable.
 
-// - [x] Adaptation of equation numbering depending on the context (chapter or appendix)
-// - [x] Creation of a function to highlight important equations -- #cmd("boxeq")
-// - [x] Creation of a function to define equations without numbering -- #cmd("nonumeq")
-// - [x] Use of the `equate` package to number equations in a system like (1.1a)
+#v(1em)
+#text(size: 1.5em)[*v1.2.0 -- February 2026*]
 
-// *Boxes*
+This release introduces several new features and improvements:
+#v(0.5em)
+- Chinese is now officially supported as "zh".
 
-// - [x] Creation of information boxes to highlight important content
+- Introduction of open-right option in config-options to allow user choosing between continuous layout and insertion of blank pages between chapters and parts.
 
-// *Bibliography*
+- Refactor back-cover function to take any abstract in any language.
 
-// - [x] Verification of the reference list via `bibtex`
-// - [x] Same for `hayagriva` (see #link("https://github.com/typst/hayagriva/blob/main/docs/file-format.md", text("documentation", fill: typst-color)))
+#v(1em)
+#text(size: 1.5em)[*v1.1.2 -- December 2025*]
 
+This update fixes some minor bugs in the `tufte` layout implementation.
+
+#v(1em)
+#text(size: 1.5em)[*v1.1.0 -- October 2025*]
+
+This release adds the new theme `pretty` as well as new supported languages (`"de"`, `"es"`, `"pt"`).
+
+#v(1em)
+#text(size: 1.5em)[*v1.0.0 -- October 2025*]
+
+This new release marks the point at which `bookly` is considered feature-complete, hence the version number.
+
+This release introduces a number of new features, the most important of which are:
+#v(0.5em)
+- Theming refactoring, which enables custom themes to be defined in a user-friendly manner.
+
+- 'tufte' layout: Inspired by the works of Edward Tufte, this layout is characterised by wide margins that can be used for side notes, figures and other elements. It comes with several functions: `sidenote`, `sidefigure`, `sidecite`, `fullfigure` and `fullwidth`.
+
+- A new theme, 'orly', which mimics the style of O'Reilly books.
+#v(1em)
+#text(size: 1.5em)[*v0.1.0 -- September 2025*]
+
+Initial release of the `bookly` template.

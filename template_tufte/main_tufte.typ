@@ -1,4 +1,4 @@
-// #import "@preview/bookly:2.1.1": *
+// #import "@preview/bookly:3.0.0": *
 #import "../src/bookly.typ": *
 
 #let config-colors = (
@@ -16,7 +16,7 @@
   // theme: fancy,
   // theme: modern,
   // theme: orly,
-  // theme: pretty,
+  theme: pretty,
   tufte: true,
   // lang: "fr",
   // colors: config-colors,
@@ -28,7 +28,7 @@
   ),
   config-options: (
     open-right: false,
-    // alt-margins: true
+    alt-margins: true
   )
 )
 
@@ -45,14 +45,15 @@
 #listoftables
 
 #part("First part")
+#part("Second part")
 
 #include "chapters_tufte/ch_main_tufte.typ"
 
-#part("Second part")
+// #part("Second part")
 
-#show: appendix
+// #show: appendix
 
-#include "appendix_tufte/app_main_tufte.typ"
+// #include "appendix_tufte/app_main_tufte.typ"
 
 // #bibliography("bibliography/sample.yml")
 #bibliography("bibliography/sample.bib")
