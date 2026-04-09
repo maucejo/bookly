@@ -16,37 +16,37 @@ To use the `bookly` template, you need to include the following line at the begi
 #import "@preview/bookly:3.0.0": *
 ```
 
-### Initializing the template
-
-After importing `bookly`, you have to initialize the template by a show rule with the `#bookly()` command. This function takes a set of argument to customize the document.
-
-* `title`: Title of the book
-* `author`: Author of the book
-* `book-config`: The dictionary allows you to customize various aspects of the book
+After importing `bookly`, you have to initialize the template by a show rule with the `#bookly()` command.
 
 **Example**
 ```typ
 #show: bookly.with(
+  title: "My document",
   author: "Author Name",
+  theme: modern,
+  lang: "en",
+  tufte: false,
   fonts: (
     body: "Lato",
     math: "Lete Sans Math"
   ),
-  theme: modern,
-  lang: "en",
   title-page: book-title-page(
     series: "Typst book series",
     institution: "Typst community",
     logo: image("images/typst-logo.svg"),
     cover: image("images/book-cover.jpg", width: 45%)
+  ),
+  config-options: (
+    open-right: true,
+    alt-margins: false
   )
 )
 ```
 
-### Main features
+## Main features
 
 * Themes: `classic`, `modern`, `fancy`, `orly`, `pretty`
-* Layout: "standard" and "tufte"
+* Tufte layout powered by `marginalia` package
 * Language support: English, Chinese, French, German, Italian, Portuguese, Spanish
 * Font customization: Body, math and raw fonts can be customized
 * Environments: `front-matter`, `main-matter`, `appendix`, `back-matter`
@@ -55,7 +55,7 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 > **_Note:_**  The chapters can be also written using the Typst standard markup syntax.
 
-### Helper functions
+## Helper functions
 
 * Subfigures - based on the `subpar` package
     ```typ
@@ -96,6 +96,24 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 * `thesis-title-page` for defining the title page of a thesis
 
 * `back-cover` for defining the back cover of a book
+
+## Dependencies
+
+`bookly` relies on the following packages:
+
+* `marginalia:0.3.1`: for tufte layout.
+
+* `hydra:0.6.2` : for bibliography management.
+
+* `equate:0.3.2` : for advanced equation numbering.
+
+* `itemize:0.2.0"`: for lists and enumerations customization.
+
+* `showybox:2.0.4` : for custom boxes.
+
+* `suboutline:0.3.0` : for mini tables of contents in chapters.
+
+* `subpar:0.2.2` : for subfigures.
 
 ## Licence
 
