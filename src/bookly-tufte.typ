@@ -24,5 +24,7 @@
       alignment: alignment,
       keep-order: true,
       cite(key, form: "full", style: "resources/short_ref.csl"))
+  } else {
+    panic("No bibliography found. Please add a bibliography to use notecite.")
   }
 }

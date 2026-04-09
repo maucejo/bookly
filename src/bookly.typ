@@ -90,7 +90,6 @@
       gap: 1.5em
     )
 
-  // set figure(gap: 0em) if tufte
   set figure.caption(position: top) if tufte
   show: show-if(tufte, it => {
     show figure.caption.where(position: top): note.with(

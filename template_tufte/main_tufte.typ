@@ -45,11 +45,10 @@
 #listoftables
 
 #part("First part")
-#part("Second part")
 
 #include "chapters_tufte/ch_main_tufte.typ"
 
-// #part("Second part")
+#part("Second part")// #part("Second part")
 
 // #show: appendix
 

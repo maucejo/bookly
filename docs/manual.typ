@@ -702,7 +702,7 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 		- `auto`: Same as `"outer"`
 		- `"outer"`: The wide block is displayed on the outer side of the page.
 		- `"inner"`: The wide block is displayed on the inner side of the page.
-		- "`left"`: The wide block is displayed on the left side of the page.
+		- `"left"`: The wide block is displayed on the left side of the page.
 		- `"right"`: The wide block is displayed on the right side of the page
 	]
 ]

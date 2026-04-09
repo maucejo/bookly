@@ -155,7 +155,6 @@
           } else {
             head = it.body
           }
-          #let size = measure(head)
           #box(fill: states.colors.get().primary, inset: 0.5em, radius: (top-left: 2em, bottom-right: 2em))[#head]
         ])
       ]
@@ -168,7 +167,6 @@
           } else {
             head = it.body
           }
-          #let size = measure(head)
           #box(fill: states.colors.get().primary, inset: 0.5em, radius: (bottom-left: 2em, top-right: 2em))[#head]
         ])
       ]

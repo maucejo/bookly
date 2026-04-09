@@ -17,19 +17,6 @@
 // Conditional set-show
 #let show-if(cond, func) = body => if cond { func(body) } else { body }
 
-// Fullwidth block
-#let fullwidth(dx: 0%, body) = context if states.tufte.get() {
-//   if states.alt-margins.get() {
-//     let dxm = page.margin.outside - page.margin.inside
-//     show: move.with(dx: -dxm)
-//     block(width: 100% + page.margin.outside - page.margin.inside + dx, body)
-//   } else {
-//     block(width: 100% + page.margin.right - page.margin.left + dx, body)
-//   }
-// } else {
-  block(width: 100% + dx, body)
-}
-
 // Headings
 #let headings-on-odd-page(it) = {
   show heading.where(level: 1): it => {
