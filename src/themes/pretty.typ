@@ -23,35 +23,71 @@
       it
     })
 
+    let text-size = 1.6em
     set align(left)
     let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
+
+    let chapter-title = text(size: text-size)[#it.body]
     if it.numbering != none {
       v(2em)
+
       block[
         #text(size: 1.25em)[#type-chapter]
         #v(-1em)
         #box(stroke: (top: 1.5pt + colors.primary))[
-          #set text(1.6em)
-          #grid(
-            columns: (auto, 1fr),
-            align: (center, left),
-            inset: (0em, 0.5em),
-            [#box(fill: colors.primary, width: 1em, radius: (bottom: 0.4em), inset: 0.5em)[#text(fill: white)[#counter(heading).display(states.num-heading.get())]]],
-            [#it.body]
-          )
+          #context layout(area => {
+            let num-str = text(size: text-size, fill: white)[#counter(heading).display(states.num-heading.get())]
+
+            // Actual width of the left column (number + inset)
+            let num-w = measure(box(inset: 0.5em)[#num-str]).width
+
+            // Height of the title rendered at the effective width of the right column (total width - number column width)
+            let title-inset = 0.5em
+            let title-h = measure(block(width: area.width - num-w)[#chapter-title]).height
+
+            // Total height of the row = title height + top inset + bottom inset
+            let row-h = title-h + 2 * title-inset
+
+            // set text(1.6em)
+            grid(
+              columns: (auto, 1fr),
+              align: top + left,
+              inset: (0pt, title-inset),
+              box(fill: colors.primary, width: num-w, height: row-h, radius: (bottom: 0.4em))[
+                #set align(center + horizon)
+                #text(fill: white)[#num-str]
+              ],
+              chapter-title
+            )
+          })
         ]
       ]
       v(3em)
     } else {
-      set text(1.6em)
       box(stroke: (top: 1.5pt + states.colors.get().primary))[
-        #grid(
-          columns: (1em, 1fr),
-          align: (center, left),
-          inset: (0em, 0.5em),
-          [#box(fill: colors.primary, width: 1em, radius: (bottom: 0.4em), inset: 0.5em)[#text(fill: colors.primary)[#counter(heading).display(states.num-heading.get())]]],
-          [#it.body]
-        )
+        #context layout(area => {
+          let bar-w = 1em  // width of the decorative bar (1em content + 2x0.5em inset)
+          let title-inset = 0.5em
+
+          // Height of the title rendered at the effective width of the title column (total width - bar width)
+          let title-h = measure(block(width: area.width - bar-w)[#chapter-title]).height
+
+          // Total height of the row = title height + top inset + bottom inset
+          let row-h = title-h + 2 * title-inset
+
+          grid(
+            columns: (auto, 1fr),
+            align: (center, left),
+            inset: (0pt, title-inset),
+            box(
+              fill: colors.primary,
+              width: bar-w,
+              height: row-h,
+              radius: (bottom: 0.4em)
+            ),
+            chapter-title
+          )
+        })
       ]
       v(1em)
     }

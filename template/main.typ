@@ -1,5 +1,5 @@
-#import "@preview/bookly:3.0.0": *
-// #import "../src/bookly.typ": *
+// #import "@preview/bookly:3.0.0": *
+#import "../src/bookly.typ": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -17,7 +17,7 @@
   // theme: fancy,
   // theme: modern,
   // theme: orly,
-  // theme: pretty,
+  theme: pretty,
   // tufte: true,
   lang: "en",
   // colors: config-colors,
@@ -47,7 +47,7 @@
 
 #listoftables
 
-#part("First part")
+#part([First part])
 
 #include "chapters/ch_main.typ"
 

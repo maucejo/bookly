@@ -19,28 +19,6 @@
       // Heading style
       let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
 
-      // let dxr = 1%
-      // let dxb = 0%
-      // let dxc = 0%
-      // let dxm = 0%
-      // if states.tufte.get() {
-      //   dxc = 8.2%
-      //   if states.alt-margins.get() {
-      //     if calc.odd(here().page()) {
-      //       dxr = page.margin.outside
-      //       dxb = (page.margin.outside - page.margin.inside)/1.23
-      //     } else {
-      //       dxr = page.margin.outside + page.margin.inside
-      //       dxm = page.margin.outside
-      //       dxb = -(page.margin.outside - page.margin.inside)/5.3
-      //     }
-      //   } else {
-      //     dxr = page.margin.right
-      //     dxb = 35.2%
-      //   }
-
-      // }
-
       let right-margin = marginalia.get-right()
       let dxc = -right-margin.far
       if it.numbering != none {
@@ -57,13 +35,19 @@
           #text(size: 2.5em, fill: white)[#type-chapter #counter(heading).display(states.num-heading.get())]
         ]
 
-        place(right, dy: 22.75%)[
+        let chapter-pill = box(outset: 0.9em, radius: 50%, stroke: none, fill: states.colors.get().primary)[#text(size: 1.5em, fill: white)[#it.body]]
+
+        let chapter-pill-height = measure(chapter-pill).height
+        let banner-bottom = 24%
+
+        place(top + right, dy: banner-bottom - chapter-pill-height / 2)[
           #show: show-if(states.tufte.get(), it => {
             show: wideblock.with(side: "both")
-            it
+              it
           })
-          #box(outset: 0.9em, radius: 5em, stroke: none, fill: states.colors.get().primary)[#text(size: 1.5em, fill: white)[#it.body]]
+          #chapter-pill
         ]
+
         v(15em)
       } else {
         place(top, dx: dxc, dy: -11%)[
@@ -71,12 +55,17 @@
           #rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: 114%, height: 10%)
         ]
 
-        place(top + right, dy: -2.25%)[
+        let chapter-pill-unnumbered = box(outset: 0.9em, radius: 50%, stroke: none,fill: colors.primary)[#text(size: 1.5em, fill: white)[#it.body]]
+
+        let chapter-pill-unnumbered-height = measure(chapter-pill-unnumbered).height
+        let banner-bottom-unnumbered = -1%
+
+        place(top + right, dy: banner-bottom-unnumbered - chapter-pill-unnumbered-height / 2)[
           #show: show-if(states.tufte.get(), it => {
             show: wideblock.with(side: "both")
             it
           })
-          #box(outset: 0.9em, radius: 5em, stroke: none, fill: colors.primary)[#text(size: 1.5em, fill: white)[#it.body]]
+          #chapter-pill-unnumbered
         ]
 
         v(3em)
@@ -164,42 +153,56 @@
     })
 
     set text(style: "italic", fill: colors.header)
-      if calc.odd(here().page()) {
-        align(right)[
-          #hydra(2, display: (_, it) => [
-            #let head = none
-            #if it.numbering != none {
-              head = numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
-            } else {
-              head = it.body
-            }
-            #let size = measure(head)
-            #head
+    if calc.odd(here().page()) {
+      align(right)[
+        #hydra(2, display: (_, it) => [
+          #let head = if it.numbering != none {
+            numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
+          } else {
+            it.body
+          }
 
-            #place(dy: -0.8em)[
-              #stack(dir: ltr,
-                line(length: 100% - size.width - 0.5em, stroke: 0.5pt + colors.primary),
-                move(dy: 5%)[#circle(fill: colors.primary, stroke: none, radius: 0.25em)]
+          #grid(
+            columns: (1fr, auto),
+            column-gutter: 0.5em,
+            align: horizon,
+            [
+              #stack(
+                dir: ltr,
+                line(length: 100% - 0.5em, stroke: 0.5pt + colors.primary),
+                circle(fill: colors.primary, stroke: none, radius: 0.25em)
               )
+            ],
+            [
+              #align(right)[#head]
             ]
-          ])
-        ]
-      } else {
+          )
+        ])
+      ]
+    } else {
       align(left)[
         #hydra(1, display: (_, it) => [
-          #let head = counter(heading.where(level:1)).display() + " " + it.body
-          #if it.numbering == none {
-            head = it.body
+          #let head = if it.numbering != none {
+            counter(heading.where(level:1)).display() + " " + it.body
+          } else {
+            it.body
           }
-          #let size = measure(head)
-          #head
 
-          #place(dx: size.width, dy: -0.8em)[
-              #stack(dir: rtl,
-                line(length: 100% - size.width - 0.5em, stroke: 0.5pt + colors.primary),
-                move(dy: 5%)[#circle(fill: colors.primary, stroke: none, radius: 0.25em)]
+          #grid(
+            columns: (auto, 1fr),
+            column-gutter: 0.5em,
+            align: horizon,
+            [
+              #align(left)[#head]
+            ],
+            [
+              #stack(
+                dir: rtl,
+                line(length: 100% - 0.5em, stroke: 0.5pt + colors.primary),
+                circle(fill: colors.primary, stroke: none, radius: 0.25em)
               )
             ]
+          )
         ])
       ]
     }
@@ -287,7 +290,7 @@
 
   place(center + horizon)[
     #show: wideblock.with(side: "both")
-    #box(outset: 1.25em, stroke: none, radius: 5em, fill: states.colors.get().primary)[
+    #box(outset: 1.25em, stroke: none, radius: 50%, fill: states.colors.get().primary)[
       #set text(fill: white, weight: "bold", size: 3em)
       #title
     ]

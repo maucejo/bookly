@@ -1,8 +1,9 @@
-#import "@preview/bookly:3.0.0": *
+// #import "@preview/bookly:3.0.0": *
+#import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "First chapter", abstract: lorem(100), label: <ch:1>)
 
-= First chapter
+= First chapter \
 
 #lorem(100)
 #minitoc
