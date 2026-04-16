@@ -1,4 +1,4 @@
-#import "@preview/bookly:3.0.0": *
+#import "@preview/bookly:3.1.0": *
 
 // #show: chapter.with(
 //   title: "Foundations",
@@ -17,14 +17,14 @@ $
 y(x) = f(x)
 $)
 
-La Figure @fig:B
+Figure @fig:B is an example of a figure with a caption.
 
 #figure(
 image("../images/typst-logo.svg", width: 75%),
 caption: [#lorem(10)],
 ) <fig:B>
 
-La Figure @b3 présente la carte du Cnam.
+Figure @b3 is an example of a subfigure.
 
 #subfigure(
 figure(image("../images/typst-logo.svg"), caption: []),

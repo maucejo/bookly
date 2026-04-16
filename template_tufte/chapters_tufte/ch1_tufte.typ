@@ -1,4 +1,4 @@
-// #import "@preview/bookly:3.0.0": *
+// #import "@preview/bookly:3.1.0": *
 #import "../../src/bookly.typ": *
 // #show: chapter.with(title: "First chapter")
 

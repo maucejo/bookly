@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "3.0.0",
+  version: "3.1.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:3.0.0": *
+#import "@preview/bookly:3.1.0": *
 ```
 ]
 
@@ -164,6 +164,16 @@ After importing #package[bookly], you have to initialize the template by a show 
 	figure(image("manual-images/sections-classic.png", width: 80%), caption: "Section"),
 )
 
+==== Obook
+
+#subfigure(
+	columns: 2,
+	figure(image("manual-images/part-obook.png", width: 80%), caption: "Part"),
+	figure(image("manual-images/chapter-obook.png", width: 80%), caption: "Chapter"),
+	figure(image("manual-images/chapter-nonum-obook.png", width: 80%), caption: "Unnumbered chapter"),
+	figure(image("manual-images/sections-obook.png", width: 80%), caption: "Section"),
+)
+
 ==== Orly
 
 #subfigure(
@@ -190,7 +200,7 @@ The template currently supports two layouts: `standard` and `tufte`.
 
 The `standard` layout is the default layout, with symmetric margins. It is the most common layout for books and theses. Some examples of the standard layout are presented in @sss:themes "Themes gallery".
 
-The `tufte` layout is inspired by the works of Edward Tufte, which emphasizes simplicity and clarity, often using wide margins for notes and figures. It is particularly suitable for books or theses that require extensive annotations or side comments. To implement the `tufte` layout, the template comes with several helper functions, implementing side notes, side figures, full width blocks, etc. (see @ss:tufte for details). Some examples of the `tufte` layout are presented below.
+The `tufte` layout is inspired by the works of Edward Tufte, which emphasizes simplicity and clarity, often using wide margins for notes and figures. It is particularly suitable for books or theses that require extensive annotations or side comments. To implement the `tufte` layout, the template comes with several helper functions, based on the `marginalia` package, implementing side notes, side figures, full width blocks, etc. (see @ss:tufte for details). Some examples of the `tufte` layout are presented below.
 
 #subfigure(
 	columns: 3,
@@ -728,7 +738,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:3.0.0": *
+#import "@preview/bookly:3.1.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -883,6 +893,11 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 
 This section provides a summary of the changes made in each version of the template.
 
+#text(size: 1.5em)[*v3.1.0 -- April 2026*]
+
+This release fixes several theming issues in `modern` and `pretty` themes.
+
+This release also adds a new theme, `obook`, which is an adaptation of the Legrand orange book template.
 
 #text(size: 1.5em)[*v3.0.0 -- April 2026*]
 

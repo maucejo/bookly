@@ -98,16 +98,18 @@
   let page-header = context {
     show linebreak: none
 
-    let length = 89%
-    let side = auto
+    let length = 100%
+    let dy = 12%
     if states.tufte.get() {
-      side = "both"
-      length = 100%
+      dy = 40%
     }
 
-    show: wideblock.with(side: side)
+    show: show-if(states.tufte.get(), it => {
+      show: wideblock.with(side: "both")
+      it
+    })
+
     if calc.odd(here().page()) {
-      // show: move.with(dx: dxm)
       align(left, hydra(2, display: (_, it) => [
       #let head = none
       #if it.numbering != none {
@@ -116,7 +118,7 @@
         head = it.body
       }
       #head
-      #place(dx: 0%, dy: 52%)[#line(length: length, stroke: 0.75pt)]
+      #place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
     ]))
     } else {
       align(left, hydra(1, display: (_, it) => [
@@ -125,9 +127,11 @@
         head = it.body
       }
       #head
-      #place(dx: 0%, dy: 50%)[#line(length: length, stroke: 0.75pt)]
+      #place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
     ]))
     }
+
+    v(0.5em)
   }
 
   let page-footer = context {

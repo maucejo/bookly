@@ -1,4 +1,4 @@
-#import "@preview/bookly:3.0.0": *
+#import "@preview/bookly:3.1.0": *
 
 // #show: chapter.with(title: "Second chapter")
 
@@ -13,7 +13,7 @@ $
 arrow(V)(M slash R_0) = lr((d arrow(O M))/(d t)|)_(R_0) + theta
 $
 
-La Figure @b2 présente la carte du Cnam @Jon22.
+Figure @b2 is an example of a figure with a caption @Jon22.
 
 #subfigure(
 figure(image("../images/typst-logo.svg"), caption: []),

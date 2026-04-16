@@ -85,6 +85,8 @@
   let page-footer = context {
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
+    let chapter-heading = query(heading.where(level: 1).before(here())).last()
+    let hcontent = none
 
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
@@ -98,10 +100,12 @@
     let inset = 0.5em
     if calc.odd(cp) {
       let curr-box = box(stroke: (left: 0.5pt), inset: inset)[#current-page]
-      align(right)[#move(dy: -0.7em)[#box(inset: inset, hydra(2)) #curr-box]]
+      let hcontent = if chapter-heading.location().page() != here().page() {box(inset: inset, hydra(2))}
+      align(right)[#move(dy: -0.7em)[#hcontent #curr-box]]
     } else {
       let curr-box = box(stroke: (right: 0.5pt), inset: inset)[#current-page]
-      align(left)[#move(dy: -0.7em)[#curr-box #box(inset: inset, hydra(1))]]
+      let hcontent = if chapter-heading.location().page() != here().page() {box(inset: inset, hydra(1))}
+      align(left)[#move(dy: -0.7em)[#curr-box #hcontent]]
     }
   }
 

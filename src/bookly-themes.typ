@@ -1,6 +1,7 @@
+#import "themes/classic.typ": *
 #import "themes/fancy.typ": *
 #import "themes/modern.typ": *
-#import "themes/classic.typ": *
+#import "themes/obook.typ": *
 #import "themes/orly.typ": *
 #import "themes/pretty.typ": *
 
@@ -11,6 +12,8 @@
   part-modern(it)
 } else if states.theme.get().contains("classic") {
   part-classic(it)
+} else if states.theme.get().contains("obook") {
+  part-obook(it)
 } else if states.theme.get().contains("orly") {
   part-orly(it)
 } else if states.theme.get().contains("pretty") {
@@ -26,6 +29,8 @@
   minitoc-modern
 } else if states.theme.get().contains("classic") {
   minitoc-classic
+} else if states.theme.get().contains("obook") {
+  minitoc-obook
 } else if states.theme.get().contains("orly") {
   minitoc-orly
 } else if states.theme.get().contains("pretty") {
@@ -41,6 +46,8 @@
   custom-box-modern(title: title, icon: icon, color: color, body)
 } else if states.theme.get().contains("classic") {
   custom-box-classic(title: title, icon: icon, color: color, body)
+} else if states.theme.get().contains("obook") {
+  custom-box-obook(title: title, icon: icon, color: color, body)
 } else if states.theme.get().contains("orly") {
   custom-box-orly(title: title, icon: icon, color: color, body)
 } else if states.theme.get().contains("pretty") {

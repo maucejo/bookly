@@ -1,6 +1,6 @@
 # Book template
 
-[![Generic badge](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/3.0.0)
+[![Generic badge](https://img.shields.io/badge/Version-3.1.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/3.1.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/book_template/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
 
@@ -14,7 +14,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `bookly` template, you need to include the following line at the beginning of your typ file:
 
 ```typ
-#import "@preview/bookly:3.0.0": *
+#import "@preview/bookly:3.1.0": *
 ```
 
 After importing `bookly`, you have to initialize the template by a show rule with the `#bookly()` command.
@@ -46,7 +46,7 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 ## Main features
 
-* Themes: `classic`, `modern`, `fancy`, `orly`, `pretty`
+* Themes: `classic`, `modern`, `fancy`, `obook`, `orly`, `pretty`
 * Tufte layout powered by `marginalia` package
 * Language support: English, Chinese, French, German, Italian, Portuguese, Spanish
 * Font customization: Body, math and raw fonts can be customized

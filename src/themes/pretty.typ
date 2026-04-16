@@ -96,8 +96,7 @@
   show heading.where(level: 2): it => {
     block(above: 1.5em)[
       #if it.numbering != none {
-        text(counter(heading).display(), fill: colors.primary)
-        h(0.25em)
+        text(counter(heading).display(), fill: colors.primary) + sym.space
       }
       #text(it.body)
       #v(-0.75em)
@@ -109,8 +108,7 @@
   show heading.where(level: 3): it => {
     block[
       #if it.numbering != none {
-        text(counter(heading).display(), fill: colors.primary)
-        h(0.25em)
+        text(counter(heading).display(), fill: colors.primary) + sym.space
       }
       #text(it.body)
       #v(1em)
@@ -209,7 +207,6 @@
     }
   }
 
-
   let page-footer = context {
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
@@ -221,9 +218,6 @@
       }
     }
     set align(center)
-    // show: fullwidth
-    // move(dx: dx)[
-
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
       it

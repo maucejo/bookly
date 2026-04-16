@@ -1,4 +1,4 @@
-// #import "@preview/bookly:3.0.0": *
+// #import "@preview/bookly:3.1.0": *
 #import "../src/bookly.typ": *
 
 #let config-colors = (
@@ -16,8 +16,9 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
+  theme: obook,
   // theme: orly,
-  theme: pretty,
+  // theme: pretty,
   // tufte: true,
   lang: "en",
   // colors: config-colors,
