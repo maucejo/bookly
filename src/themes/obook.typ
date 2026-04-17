@@ -131,7 +131,6 @@
         } else {
           item = [#text([*#number #it.inner()*], fill: colors.primary)]
         }
-        // item = [#text([*#number #it.inner()*], fill: colors.primary)]
       } else if it.level == 2{
         block(above: 1em, below: 0em)
         item = [#text([*#number #it.inner()*])]
@@ -278,7 +277,6 @@
     })
     #partial-outline
   ]
-
 
   if states.open-right.get() {
     pagebreak(weak: true, to:"odd")
