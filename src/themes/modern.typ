@@ -120,7 +120,6 @@
     show linebreak: none
     if it.element.func() == heading {
       let number = it.prefix()
-      let section = it.element.body
       let item = none
       if it.level == 1 {
         block(above: 1.25em, below: 0em)

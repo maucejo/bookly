@@ -1,4 +1,6 @@
 #import "@preview/bookly:3.1.0": *
+#import "@preview/marginalia:0.3.1": *
+#import "@preview/suboutline:0.3.0": *
 
 #let custom(colors: default-colors, it) = {
   states.theme.update("custom")
@@ -86,7 +88,7 @@
   // Page style
   let page-header = context {
     show linebreak: none
-    show: fullwidth
+    show: wideblock.with(side: "both")
     if calc.odd(here().page()) {
       align(left, hydra(2, display: (_, it) => [
       #let head = none
