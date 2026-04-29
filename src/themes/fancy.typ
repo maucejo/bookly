@@ -136,7 +136,6 @@
   }
 
   let page-footer = context {
-    let cp = counter(page).get().first()
     let current-page = counter(page).display()
     let page-final = counter(page).final().first()
 

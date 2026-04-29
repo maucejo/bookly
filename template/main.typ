@@ -1,4 +1,4 @@
-#import "@preview/bookly:3.1.0": *
+#import "@preview/bookly:3.1.1": *
 // #import "../src/bookly.typ": *
 // #import "custom-theme.typ": *
 
@@ -17,10 +17,10 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
-  theme: obook,
+  // theme: obook,
   // theme: orly,
   // theme: pretty,
-  // tufte: true,
+  tufte: true,
   lang: "en",
   // colors: config-colors,
   title-page: book-title-page(
@@ -41,7 +41,7 @@
 #include "front_matter/front_main.typ"
 
 #show: main-matter
-#states.isfrontmatter.update(true)
+// #states.isfrontmatter.update(true)
 
 #tableofcontents
 

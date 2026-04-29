@@ -255,7 +255,7 @@
       border-color: color,
       body-color: none,
       thickness: 0.75pt,
-      radius: (top-left: 5em, bottom-right: 5em, rest: 0em),
+      radius: (top-left: 2em, bottom-right: 2em, rest: 0em),
     ),
     breakable: true
   )[#body]
