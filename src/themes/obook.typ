@@ -48,7 +48,7 @@
       })
 
       // Ugly hack
-      let dy = if states.tufte.get() {dy = -75%} else {-6%}
+      let dy = if states.tufte.get() {-75%} else {-6%}
       place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
 
       // Heading content
