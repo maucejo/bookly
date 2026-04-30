@@ -30,7 +30,7 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: true,
+    open-right: false,
     // alt-margins: true,
     // part-numbering: "A"
   )
@@ -41,7 +41,6 @@
 #include "front_matter/front_main.typ"
 
 #show: main-matter
-// #states.isfrontmatter.update(true)
 
 #tableofcontents
 
