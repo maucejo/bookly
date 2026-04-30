@@ -893,6 +893,10 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 
 This section provides a summary of the changes made in each version of the template.
 
+#text(size: 1.5em)[*v3.1.1 -- April 2026*]
+
+This minor release fixes minor bugs in `obook` theme and numbering problems.
+
 #text(size: 1.5em)[*v3.1.0 -- April 2026*]
 
 This release fixes several theming issues in `modern` and `pretty` themes.
