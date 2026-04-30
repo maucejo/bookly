@@ -11,4 +11,5 @@
 .gitignore
 scripts
 justfile
-docs/*.pdf
+docs
+template_tufte

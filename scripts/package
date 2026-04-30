@@ -2,6 +2,9 @@ set -eu
 . "$(dirname "${BASH_SOURCE[0]}")/setup"
 shopt -s extglob
 
+# Always run from project root so .typstignore and file enumeration are stable.
+cd "$SOURCE"
+
 
 if (( $# < 1 )) || [[ "${1:-}" == "help" ]]; then
   echo "package TARGET"
@@ -11,7 +14,7 @@ if (( $# < 1 )) || [[ "${1:-}" == "help" ]]; then
   echo "will be used so that the package gets installed for local use."
   echo "The version is read from 'typst.toml' in the project root."
   echo ""
-  echo "Local package prefix: $DATA_DIR/typst/package/local"
+	echo "Local package prefix: $DATA_DIR/typst/packages/local"
   exit 1
 fi
 
@@ -20,14 +23,12 @@ echo "Install dir: $TARGET"
 
 # ignore rules
 ignores=()
-tmpfile_ignores="$(mktemp)"
-grep '[^[:blank:]]' .typstignore > "$tmpfile_ignores"
-while IFS= read -r line; do
-	[[ "$line" =~ ^# ]] && continue
-	[[ -z "$line" ]] && continue
+while IFS= read -r line || [[ -n "$line" ]]; do
+	line="${line%$'\r'}"
+	[[ "$line" =~ ^[[:blank:]]*# ]] && continue
+	[[ -z "${line//[[:blank:]]/}" ]] && continue
 	ignores+=("$line")
-done < "$tmpfile_ignores"
-rm -f "$tmpfile_ignores"
+done < .typstignore
 
 # recursively print all files that are not excluded via .typstignore
 function enumerate {
