@@ -158,7 +158,10 @@
     show linebreak: none
 
     let length = 100%
-    let dy = if states.tufte.get() {40%} else {12%}
+    let dy = 12%
+    if states.tufte.get() {
+      dy = 40%
+    }
 
     let current-page = counter(page).display()
 

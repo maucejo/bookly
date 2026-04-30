@@ -17,10 +17,10 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
-  // theme: obook,
+  theme: obook,
   // theme: orly,
   // theme: pretty,
-  tufte: true,
+  // tufte: true,
   lang: "en",
   // colors: config-colors,
   title-page: book-title-page(
