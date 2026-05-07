@@ -65,7 +65,8 @@ set align(center)
   series: "Discipline",
   year: datetime.today().year(),
   cover: none,
-  logo: none
+  logo: none,
+  version-usage: none
 ) = context {
   let header = {
     box(fill: states.colors.get().primary, width: 100%, inset: 1em)[
@@ -158,13 +159,17 @@ set align(center)
         }
     ]
 
+    let version-info = if version-usage != none {text(size: 0.85em)[#version-usage \ #sym.copyright #states.author.get(), #year.]} else {text(size: 0.85em)[#states.localization.get().version-usage \ #sym.copyright #states.author.get(), #year.]}
+
+    let height-ver = measure(version-info).height
+
     if logo != none {
       set image(width: 35%)
-      place(bottom + center, dy: -4em, logo)
+      place(bottom + center, dy: -(height-ver + 4em), logo)
     }
 
     place(bottom)[
-      #text(size: 0.85em)[#states.localization.get().version-usage \ #sym.copyright #states.author.get(), #year.]
+      #version-info
     ]
   }
 

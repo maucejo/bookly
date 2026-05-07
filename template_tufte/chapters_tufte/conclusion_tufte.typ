@@ -1,4 +1,4 @@
-// #import "@preview/bookly:3.1.1": *
+// #import "@preview/bookly:3.2.0": *
 #import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "Conclusions et perspectives", toc: false)

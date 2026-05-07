@@ -23,6 +23,10 @@
       it
     })
 
+    // Ugly hack
+    let dy = if states.tufte.get() {-75%} else {-6%}
+    place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
+
     let text-size = 1.6em
     set align(left)
     let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}

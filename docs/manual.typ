@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "3.1.1",
+  version: "3.2.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:3.1.1": *
+#import "@preview/bookly:3.2.0": *
 ```
 ]
 
@@ -479,6 +479,7 @@ The template provides two functions to create title pages: one for a book and on
   year: "2024",
   cover: none,
   logo: none,
+	version-usage: none,
 	[body]
 )
 )[
@@ -494,18 +495,20 @@ The template provides two functions to create title pages: one for a book and on
 
 	#argument("cover", default: none, types: "image")[Cover image of the book.]
 
-	#argument("logo", default: none, types: "image")[Logo of the book.]
-]
+	#argument("logo", default: none, types: "image")[Logo of the book.
+		#codesnippet[
+		```typ
+		#show: book.with(
+			title-page: book-title-page(
+				logo: image("path_to_logo/logo.png"),
+				cover: image("path_to_image/book-cover.jpg")
+			)
+		)
+		```
+	]]
 
-#codesnippet[
-```typ
-#show: book.with(
-	title-page: book-title-page(
-		logo: image("path_to_logo/logo.png"),
-		cover: image("path_to_image/book-cover.jpg")
-	)
-)
-```
+	#argument("version-usage", default: none, types: ("string", content))[Description of the version usage of the book. It can include the version number, the date or any licensing information. It is displayed in the footer of the title page.
+	]
 ]
 
 #command("thesis-title-page",
@@ -738,7 +741,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:3.1.1": *
+#import "@preview/bookly:3.2.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state

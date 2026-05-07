@@ -1,4 +1,4 @@
-#import "@preview/bookly:3.1.1": *
+#import "@preview/bookly:3.2.0": *
 
 // #show: chapter.with(
 //   title: "Foundations",

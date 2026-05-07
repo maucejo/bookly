@@ -1,4 +1,4 @@
-#import "@preview/bookly:3.1.1": *
+#import "@preview/bookly:3.2.0": *
 // #import "../src/bookly.typ": *
 // #import "custom-theme.typ": *
 
@@ -17,9 +17,9 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
-  theme: obook,
+  // theme: obook,
   // theme: orly,
-  // theme: pretty,
+  theme: pretty,
   // tufte: true,
   lang: "en",
   // colors: config-colors,
@@ -27,7 +27,8 @@
     series: "Typst book series",
     institution: "Typst community",
     logo: image("images/typst-logo.svg"),
-    cover: image("images/book-cover.jpg", width: 45%)
+    cover: image("images/book-cover.jpg", width: 45%),
+    version-usage: "This is a template for writing books with Typst. It is part of the Bookly project, which provides tools and themes for book production. The template includes features such as a title page, table of contents, list of figures and tables, and support for chapters and appendices. It also includes a bibliography section for citing sources."
   ),
   config-options: (
     open-right: false,
