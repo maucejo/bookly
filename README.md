@@ -1,6 +1,6 @@
 # Book template
 
-[![Generic badge](https://img.shields.io/badge/Version-3.1.2-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/3.1.2)
+[![Generic badge](https://img.shields.io/badge/Version-3.2.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/3.2.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/book_template/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
 
