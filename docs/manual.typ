@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "3.2.0",
+  version: "4.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:3.2.0": *
+#import "@preview/bookly:4.0.0": *
 ```
 ]
 
@@ -741,7 +741,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:3.2.0": *
+#import "@preview/bookly:4.0.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -771,17 +771,31 @@ To implement a custom theme, you have to define a function that includes the `sh
 ```
 ]
 
-You can also define your own functions such as #cmd("part"), #cmd("minitoc") and other elements of the document.
+#codesnippet[
+```typ
+// Custom part function
+#let my-part(title) = {...}
+
+// Custom minitoc function
+#let my-minitoc = {...}
+
+// Custom box style
+#let my-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {...}
+
+// Template dictionary
+#let custom-theme = (theme: my-theme, part: my-part, minitoc: my-minitoc, box: my-box)
+```
+]
 
 #info-alert[Examples of theming are available in the #link("https://github.com/maucejo/bookly")[Github repository] of the template.]
 
 Then, you can initialize the template with your custom theme as follows:
 #codesnippet[
 	```typ
-	#import "path_to_file/my-theme.typ": *
+	#import "path_to_file/my-theme.typ": custom-theme
 
 	#show: bookly.with(
-		theme: my-theme,
+		theme: custom-theme,
 		...
 	)
 	```
@@ -870,7 +884,7 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 
 - `states.sidenotecounter` -- #dtype(int): Counter for sidenotes.
 
-- `states.theme` -- #dtype(str): Current theme of the document.
+- `states.theme` -- #dtype(dictionary): Current theme of the document.
 
 - `states.title` -- #dtype(str): Title of the document.
 
@@ -895,6 +909,14 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 = Change logs
 
 This section provides a summary of the changes made in each version of the template.
+
+#text(size: 1.5em)[*v4.0.0 -- June 2026*]
+
+This release introduces a refactoring of the theming system to make it more flexible and customizable. The API of the theming system has been updated to allow users to define their own themes in a user-friendly manner.
+
+#text(size: 1.5em)[*v3.2.0 -- May 2026*]
+
+This release adds the argument `version-usage` to `book-title-page`. This allows the user to customize the long sentence describing the usage and the licence of the book. This solve the question raised on Typst forum.
 
 #text(size: 1.5em)[*v3.1.1 -- April 2026*]
 

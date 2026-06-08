@@ -5,9 +5,7 @@
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
-#let fancy(colors: default-colors, it) = {
-  states.theme.update("fancy")
-
+#let fancy-theme(colors: default-colors, it) = {
   // Headings
   show heading.where(level: 1): it => {
     if not states.open-right.get() {
@@ -239,3 +237,5 @@
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
 }
+
+#let fancy = (theme: fancy-theme, part: part-fancy, minitoc: minitoc-fancy, box: custom-box-fancy)

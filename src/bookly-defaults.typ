@@ -20,7 +20,7 @@
   page-numbering: state("page-numbering", "1/1"),
   part-numbering: state("part-numbering", "1"),
   sidenotecounter: counter("sidenotecounter"),
-  theme: state("theme", "fancy"),
+  theme: state("theme"),
   title: state("title", none),
   tufte: state("tufte", false),
 )

@@ -5,9 +5,7 @@
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
-#let pretty(colors: default-colors, it) = {
-  states.theme.update("pretty")
-
+#let pretty-theme(colors: default-colors, it) = {
   // Headings
   show heading.where(level: 1): it => {
     if not states.open-right.get() {
@@ -335,3 +333,5 @@
     body
   )
 }
+
+#let pretty = (theme: pretty-theme, part: part-pretty, minitoc: minitoc-pretty, box: custom-box-pretty)

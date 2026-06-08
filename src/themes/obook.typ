@@ -23,9 +23,7 @@
   box(width: 52%, stroke: (left: 1.5pt + states.colors.get().primary), outset: 0.5em)[#outline(title: none, target: target, depth: 2)]
 }
 
-#let obook(colors: default-colors, it) = {
-  states.theme.update("obook")
-
+#let obook-theme(colors: default-colors, it) = {
   show heading.where(level: 1): it => context {
       if not states.open-right.get() {
         pagebreak(weak: true)
@@ -331,3 +329,5 @@
     box-title,
   )
 }
+
+#let obook = (theme: obook-theme, part: part-obook, minitoc: minitoc-obook, box: custom-box-obook)

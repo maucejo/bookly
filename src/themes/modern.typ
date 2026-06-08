@@ -4,9 +4,7 @@
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
-#let modern(colors: default-colors, it) = {
-    states.theme.update("modern")
-
+#let modern-theme(colors: default-colors, it) = {
     // Headings
     show heading.where(level: 1): it => context {
       if not states.open-right.get() {
@@ -320,4 +318,6 @@
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
 }
+
+#let modern = (theme: modern-theme, part: part-modern, minitoc: minitoc-modern, box: custom-box-modern)
 

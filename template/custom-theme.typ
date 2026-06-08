@@ -1,10 +1,9 @@
-#import "@preview/bookly:3.2.0": *
+// #import "@preview/bookly:3.2.0": *
+#import "../src/bookly.typ": *
 #import "@preview/marginalia:0.3.1": *
 #import "@preview/suboutline:0.3.0": *
 
-#let custom(colors: default-colors, it) = {
-  states.theme.update("custom")
-
+#let custom-theme(colors: default-colors, it) = {
   // Headings
   show heading.where(level: 1): it => {
     if not states.open-right.get() {
@@ -134,7 +133,7 @@
 
 
 // Part
-#let part(title) = context {
+#let custom-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -170,7 +169,7 @@
   }
 }
 
-#let minitoc = context {
+#let custom-minitoc = context {
   let toc-header = states.localization.get().toc
   block(above: 3.5em)[
     #text([*#toc-header*])
@@ -184,3 +183,5 @@
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
 }
+
+#let custom = (theme: custom-theme, part: custom-part, minitoc: custom-minitoc)

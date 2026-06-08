@@ -1,60 +1,19 @@
-#import "themes/classic.typ": *
-#import "themes/fancy.typ": *
-#import "themes/modern.typ": *
-#import "themes/obook.typ": *
-#import "themes/orly.typ": *
-#import "themes/pretty.typ": *
+#import "bookly-defaults.typ": *
+#import "themes/classic.typ": classic
+#import "themes/fancy.typ": fancy
+#import "themes/modern.typ": modern
+#import "themes/obook.typ": obook
+#import "themes/orly.typ": orly
+#import "themes/pretty.typ": pretty
 
 // Part
-#let part = it => context if states.theme.get().contains("fancy") {
-  part-fancy(it)
-} else if states.theme.get().contains("modern") {
-  part-modern(it)
-} else if states.theme.get().contains("classic") {
-  part-classic(it)
-} else if states.theme.get().contains("obook") {
-  part-obook(it)
-} else if states.theme.get().contains("orly") {
-  part-orly(it)
-} else if states.theme.get().contains("pretty") {
-  part-pretty(it)
-} else {
-  part-classic(it)
-}
+#let part(title) = context (states.theme.get().part)(title)
 
 // Mini table of contents
-#let minitoc = context if states.theme.get().contains("fancy") {
-  minitoc-fancy
-} else if states.theme.get().contains("modern") {
-  minitoc-modern
-} else if states.theme.get().contains("classic") {
-  minitoc-classic
-} else if states.theme.get().contains("obook") {
-  minitoc-obook
-} else if states.theme.get().contains("orly") {
-  minitoc-orly
-} else if states.theme.get().contains("pretty") {
-  minitoc-pretty
-} else {
-  minitoc-classic
-}
+#let minitoc = context states.theme.get().minitoc
 
 // Custom box
-#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context if states.theme.get().contains("fancy") {
-  custom-box-fancy(title: title, icon: icon, color: color, body)
-} else if states.theme.get().contains("modern") {
-  custom-box-modern(title: title, icon: icon, color: color, body)
-} else if states.theme.get().contains("classic") {
-  custom-box-classic(title: title, icon: icon, color: color, body)
-} else if states.theme.get().contains("obook") {
-  custom-box-obook(title: title, icon: icon, color: color, body)
-} else if states.theme.get().contains("orly") {
-  custom-box-orly(title: title, icon: icon, color: color, body)
-} else if states.theme.get().contains("pretty") {
-  custom-box-pretty(title: title, icon: icon, color: color, body)
-} else {
-  custom-box-classic(title: title, icon: icon, color: color, body)
-}
+#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (states.theme.get().box)(title: title, icon: icon, color: color, body)
 
 // Information box
 #let info-box = custom-box.with(title: context states.localization.get().note)

@@ -32,6 +32,10 @@
   let book-colors = default-colors + colors
   states.colors.update(book-colors)
 
+  // Book theme
+  let bookly-theme = classic + theme
+  states.theme.update(bookly-theme)
+
   // Configuration options
   let book-options = default-config-options + config-options
   states.alt-margins.update(book-options.alt-margins)
@@ -144,7 +148,7 @@
   // show: marginalia.show-frame.with(footer: false)
 
   // Headings
-  show: theme.with(colors: book-colors)
+  show: theme.theme.with(colors: book-colors)
   show: show-if(book-options.open-right, it => {
     show: headings-on-odd-page
     it

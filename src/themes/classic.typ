@@ -5,9 +5,7 @@
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
-#let classic(colors: default-colors, it) = {
-  states.theme.update("classic")
-
+#let classic-theme(colors: default-colors, it) = {
   // Headings
   show heading.where(level: 1): it => {
     if not states.open-right.get() {
@@ -220,4 +218,6 @@
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
 }
+
+#let classic = (theme: classic-theme, part: part-classic, minitoc: minitoc-classic, box: custom-box-classic)
 

@@ -4,10 +4,8 @@
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
-#let orly(colors: default-colors, it) = {
-  states.theme.update("orly")
-
-  show heading.where(level:1): it => {
+#let orly-theme(colors: default-colors, it) = {
+    show heading.where(level:1): it => {
     if not states.open-right.get() {
       pagebreak(weak: true)
     }
@@ -192,3 +190,5 @@
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
 }
+
+#let orly = (theme: orly-theme, part: part-orly, minitoc: minitoc-orly, box: custom-box-orly)
