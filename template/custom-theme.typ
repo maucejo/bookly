@@ -1,5 +1,5 @@
-// #import "@preview/bookly:3.2.0": *
-#import "../src/bookly.typ": *
+#import "@preview/bookly:4.0.0": *
+// #import "../src/bookly.typ": *
 #import "@preview/marginalia:0.3.1": *
 #import "@preview/suboutline:0.3.0": *
 
