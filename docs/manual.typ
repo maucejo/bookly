@@ -900,7 +900,7 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 #v(0.5em)
 - `marginalia:0.3.1`: for tufte layout.
 - `hydra:0.6.2` : for bibliography management.
-- `equate:0.3.2` : for advanced equation numbering.
+- `equate:0.3.3` : for advanced equation numbering.
 - `itemize:0.2.0"`: for lists and enumerations customization.
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
