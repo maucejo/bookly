@@ -79,7 +79,9 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
     * Unnumbered equations
         ```typ
-        #nonumeq[$integral_0^1 f(x) dif x = F(1) - F(0)$]
+        $
+            integral_0^1 f(x) dif x = F(1) - F(0)
+        $ <nonum-eq>
         ```
 
     * Subequation numbering based on the `equate` package

@@ -71,12 +71,19 @@ After importing #package[bookly], you have to initialize the template by a show 
 
 		#argument("author", default: "Author Name", types: "string")[Author of the book.]
 
-		#argument("theme", default: "fancy", types: "function")[Theme of the document. Possible values are:
+		#argument("theme", default: "fancy", types: "dict")[Theme of the document. Possible values are:
 			- `fancy` (default)
 			- `modern`
 			- `classic`
 			- `orly` (O'Reilly inspired)
 			- `pretty`
+
+			Each dictionary contains the following keys:
+				- `theme` #dtype(function) -- Show rule defining the theme style.
+				- `part` #dtype(function) -- Function defining the style of the part titles.
+				- `minitoc` #dtype(content) -- Function defining the style of the mini table of contents.
+				- `box` #dtype(function) -- Function defining the style of the information boxes (e.g., info-box, tip-box, etc.).
+				- `boxeq` #dtype(function) -- Function defining the style of the equation boxes.
 		]
 
 		#argument("tufte", default: false, types: "bool")[If `true`, the layout of the document is inspired by the works of Edward Tufte (wide margins, sidenotes, etc.).
@@ -397,15 +404,14 @@ To highlight an important equation, use the #cmd("boxeq") function.
 	```
 ]
 
-To create an equation without numbering, use the #cmd("nonumeq") function.
+// To create an equation without numbering, use the #cmd("nonumeq") function.
+// #codesnippet[
+// 	```typ
+// 	#nonumeq[$integral_0^1 f(x) dif x = F(1) - F(0)$]
+// 	```
+// ]
 
-#codesnippet[
-	```typ
-	#nonumeq[$integral_0^1 f(x) dif x = F(1) - F(0)$]
-	```
-]
-
-`bookly` also provides the #dtype("label") `<nonum-eq>` to create unnumbered equations. To use it, simply add the label `<nonum-eq>` after the equation.
+To create an equation without numbering,`bookly` also provides the #dtype("label") `<nonum-eq>` to create unnumbered equations. To use it, simply add the label `<nonum-eq>` after the equation.
 #codesnippet[
 ```typ
 $
@@ -413,8 +419,6 @@ $
 $ <nonum-eq>
 ```
 ]
-
-#info-alert[The command #cmd("nonumeq") will be deprecated in a future version in favor of the label `<nonum-eq>`.]
 
 == Information boxes
 
@@ -912,7 +916,16 @@ This section provides a summary of the changes made in each version of the templ
 
 #text(size: 1.5em)[*v4.0.0 -- June 2026*]
 
-This release introduces a refactoring of the theming system to make it more flexible and customizable. The API of the theming system has been updated to allow users to define their own themes in a user-friendly manner.
+*Theming*
+
+#v(1em)
+- This release introduces a refactoring of the theming system to make it more flexible and customizable. A theme is now defined as a #dtype(dictionary) that includes a function defining the style of the document and other functions for specific elements (e.g., part, minitoc, box, etc.). This new structure allows users to define their own themes in a more user-friendly way.
+
+- The design of the information boxes in the `obook` theme has been updated.
+
+*Deprecation*
+#v(1em)
+- The `nonumeq` function has been deprecated in favor of the `<nonum-eq>` #dtype(label). This change was made to simplify the API and avoid the proliferation of functions for specific use cases.
 
 #text(size: 1.5em)[*v3.2.0 -- May 2026*]
 
