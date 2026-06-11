@@ -1,4 +1,4 @@
-#import "@preview/hydra:0.6.2": hydra
+#import "@preview/hydra:0.6.2": hydra, anchor
 #import "bookly-defaults.typ": *
 #import "bookly-helper.typ": *
 #import "bookly-themes.typ": *
@@ -33,7 +33,7 @@
 
     let toc-header = states.localization.get().toc
     if toc {
-      set page(header: none)
+      set page(header: anchor())
       set align(horizon)
       [#heading(title)#label]
 

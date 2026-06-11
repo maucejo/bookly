@@ -18,7 +18,7 @@
   // theme: fancy,
   // theme: modern,
   // theme: obook,
-  // theme: orly,
+  theme: orly,
   // theme: pretty,
   // tufte: true,
   lang: "en",
@@ -31,7 +31,7 @@
     version-usage: "This is a template for writing books with Typst. It is part of the Bookly project, which provides tools and themes for book production. The template includes features such as a title page, table of contents, list of figures and tables, and support for chapters and appendices. It also includes a bibliography section for citing sources."
   ),
   config-options: (
-    open-right: false,
+    open-right: true,
     // alt-margins: true,
     // part-numbering: "A"
   )

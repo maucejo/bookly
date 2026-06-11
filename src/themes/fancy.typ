@@ -16,9 +16,10 @@
     reset-counters
 
     // Heading style
-    place(top)[
-      #rect(fill: white, width: 1%, height: 1%)
-    ]
+    // place(top)[
+    //   #rect(fill: white, width: 1%, height: 1%)
+    // ]
+
     set align(right)
     set underline(stroke: 2pt + colors.secondary, offset: 8pt)
 
@@ -120,6 +121,10 @@
 
   // Page style
   let page-header = context {
+    // Pas de header sur les pages d'ouverture de chapitre
+    let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == here().page())
+    if h1-on-page.len() > 0 { return }
+
     show linebreak: none
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")

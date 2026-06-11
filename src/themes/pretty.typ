@@ -22,8 +22,8 @@
     })
 
     // Ugly hack
-    let dy = if states.tufte.get() {-75%} else {-6%}
-    place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
+    // let dy = if states.tufte.get() {-75%} else {-6%}
+    // place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
 
     let text-size = 1.6em
     set align(left)
@@ -174,6 +174,9 @@
 
   // Page style
   let page-header = context {
+    let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == here().page())
+    if h1-on-page.len() > 0 { return }
+
     show linebreak: none
 
     show: show-if(states.tufte.get(), it => {

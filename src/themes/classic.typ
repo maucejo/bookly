@@ -16,10 +16,6 @@
     reset-counters
 
     // Heading style
-    place(top)[
-      #rect(fill: white, width: 1%, height: 1%)
-    ]
-
     let side = auto
     if states.tufte.get() {
       side = "both"

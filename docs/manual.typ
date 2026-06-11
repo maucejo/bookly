@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "4.0.0",
+  version: "4.0.1",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:4.0.0": *
+#import "@preview/bookly:4.0.1": *
 ```
 ]
 
@@ -745,7 +745,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:4.0.0": *
+#import "@preview/bookly:4.0.1": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -909,104 +909,3 @@ The `bookly` template relies on several #Typst packages to provide additional fu
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.
-
-= Change logs
-
-This section provides a summary of the changes made in each version of the template.
-
-#text(size: 1.5em)[*v4.0.0 -- June 2026*]
-
-*Theming*
-
-#v(1em)
-- This release introduces a refactoring of the theming system to make it more flexible and customizable. A theme is now defined as a #dtype(dictionary) that includes a function defining the style of the document and other functions for specific elements (e.g., part, minitoc, box, etc.). This new structure allows users to define their own themes in a more user-friendly way.
-
-- The design of the information boxes in the `obook` theme has been updated.
-
-*Deprecation*
-#v(1em)
-- The `nonumeq` function has been deprecated in favor of the `<nonum-eq>` #dtype(label). This change was made to simplify the API and avoid the proliferation of functions for specific use cases.
-
-#text(size: 1.5em)[*v3.2.0 -- May 2026*]
-
-This release adds the argument `version-usage` to `book-title-page`. This allows the user to customize the long sentence describing the usage and the licence of the book. This solve the question raised on Typst forum.
-
-#text(size: 1.5em)[*v3.1.1 -- April 2026*]
-
-This minor release fixes minor bugs in `obook` theme and numbering problems.
-
-#text(size: 1.5em)[*v3.1.0 -- April 2026*]
-
-This release fixes several theming issues in `modern` and `pretty` themes.
-
-This release also adds a new theme, `obook`, which is an adaptation of the Legrand orange book template.
-
-#text(size: 1.5em)[*v3.0.0 -- April 2026*]
-
-This release introduces a major refactoring of the code to improve the implementation of the `tufte` layout and make its maintenance easier. This refactoring was necessary to solve some issues related to the `tufte` layout, particularly when the `alt-margins` option was enabled.
-
-With this release, the API of the functions related to the `tufte` layout has been updated to take advantage of the features provided by the `marginalia` package. In particular :
-#v(0.5em)
-- #cmd("sidenote") function has been removed in favor of the #cmd("note") function provided by the `marginalia` package.
-
-- #cmd("sidefigure") function has been removed in favor of the #cmd("notefigure") function provided by the `marginalia` package.
-
-- #cmd("sidecite") function has been renamed to #cmd("notecite") to be consistent with the function naming used in the `marginalia` package.
-
-- #cmd("fullwidth") function has been removed in favor of the #cmd("wideblock") function provided by the `marginalia` package.
-
-- #cmd("fullfigure") function has been removed.
-
-#v(1em)
-#text(size: 1.5em)[*v2.1.1 & v2.1.2 -- April 2026*]
-
-These two patch releases fix theming issues due to `tufte` layout and `alt-margins` options and some typographical issues in the themes.
-
-#v(1em)
-#text(size: 1.5em)[*v2.1.0 -- March 2026*]
-
-This release introduces a new boolean argument `alt-margins` to the `config-options` dictionary. This argument allows using alternating margins when `tufte` layout is enabled.
-
-#v(1em)
-#text(size: 1.5em)[*v2.0.0 -- March 2026*]
-
-This new release introduces a breaking change in the API of the sidenote function.
-This change aims at making the sidenote referenceable.
-
-#v(1em)
-#text(size: 1.5em)[*v1.2.0 -- February 2026*]
-
-This release introduces several new features and improvements:
-#v(0.5em)
-- Chinese is now officially supported as "zh".
-
-- Introduction of open-right option in config-options to allow user choosing between continuous layout and insertion of blank pages between chapters and parts.
-
-- Refactor back-cover function to take any abstract in any language.
-
-#v(1em)
-#text(size: 1.5em)[*v1.1.2 -- December 2025*]
-
-This update fixes some minor bugs in the `tufte` layout implementation.
-
-#v(1em)
-#text(size: 1.5em)[*v1.1.0 -- October 2025*]
-
-This release adds the new theme `pretty` as well as new supported languages (`"de"`, `"es"`, `"pt"`).
-
-#v(1em)
-#text(size: 1.5em)[*v1.0.0 -- October 2025*]
-
-This new release marks the point at which `bookly` is considered feature-complete, hence the version number.
-
-This release introduces a number of new features, the most important of which are:
-#v(0.5em)
-- Theming refactoring, which enables custom themes to be defined in a user-friendly manner.
-
-- 'tufte' layout: Inspired by the works of Edward Tufte, this layout is characterised by wide margins that can be used for side notes, figures and other elements. It comes with several functions: `sidenote`, `sidefigure`, `sidecite`, `fullfigure` and `fullwidth`.
-
-- A new theme, 'orly', which mimics the style of O'Reilly books.
-#v(1em)
-#text(size: 1.5em)[*v0.1.0 -- September 2025*]
-
-Initial release of the `bookly` template.

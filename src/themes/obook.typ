@@ -45,10 +45,6 @@
         it
       })
 
-      // Ugly hack
-      let dy = if states.tufte.get() {-75%} else {-6%}
-      place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
-
       // Heading content
       set text(size: 1.25em)
       box(stroke: (right: none, rest:1.5pt + colors.primary), width: 116%, inset: 0.5em, radius: (top-right: 0pt, bottom-right: 0pt, rest: 0.5em))[#content]
@@ -152,7 +148,11 @@
   }
 
   // Page header
-  let page-header = context {
+let page-header = context {
+  // Pas de header sur les pages d'ouverture de chapitre
+    let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == here().page())
+    if h1-on-page.len() > 0 { return }
+
     show linebreak: none
 
     let length = 100%
@@ -215,6 +215,7 @@
       align(center)[#counter(page).display()]
     }
   }
+
   set page(
     header: page-header,
     footer: page-footer
