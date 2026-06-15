@@ -1,6 +1,4 @@
-#import "@preview/hydra:0.6.2": hydra
-#import "@preview/marginalia:0.3.1" as marginalia: wideblock
-#import "@preview/itemize:0.2.0" as el
+#import "../bookly-deps.typ": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -305,7 +303,7 @@
 }
 
 #let minitoc-modern = context {
-  let toc-header = states.localization.get().toc
+  let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
     #text([*#toc-header*])
     #v(-0.5em)

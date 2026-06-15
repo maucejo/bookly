@@ -1,27 +1,6 @@
-#import "@preview/hydra:0.6.2": hydra
-#import "@preview/marginalia:0.3.1" as marginalia: wideblock
-#import "@preview/itemize:0.2.0" as el
+#import "../bookly-deps.typ": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
-
-#let partial-outline = context {
-  let cur-loc = here()
-
-  // Find the next part phantom heading (level 1 with in-outline == true)
-  let future-h1 = query(selector(heading.where(level: 1)).after(cur-loc, inclusive: false))
-  let next-parts = future-h1.filter(h => states.in-outline.at(h.location()))
-
-  // Build target: all outlined headings in this part, depth 2 max
-  let target = if next-parts.len() > 0 {
-    selector(heading.where(outlined: true))
-      .after(cur-loc, inclusive: false)
-      .before(next-parts.first().location(), inclusive: false)
-  } else {
-    selector(heading.where(outlined: true)).after(cur-loc, inclusive: false)
-  }
-
-  box(width: 52%, stroke: (left: 1.5pt + states.colors.get().primary), outset: 0.5em)[#outline(title: none, target: target, depth: 2)]
-}
 
 #let obook-theme(colors: default-colors, it) = {
   show heading.where(level: 1): it => context {
@@ -149,60 +128,59 @@
 
   // Page header
 let page-header = context {
-  // Pas de header sur les pages d'ouverture de chapitre
-    let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == here().page())
-    if h1-on-page.len() > 0 { return }
+  // No header on chapter opening pages
+  if is-chapter-page() { return }
 
-    show linebreak: none
+  show linebreak: none
 
-    let length = 100%
-    let dy = 12%
-    if states.tufte.get() {
-      dy = 40%
-    }
-
-    let current-page = counter(page).display()
-
-    show: show-if(states.tufte.get(), it => {
-      show: wideblock.with(side: "both")
-      it
-    })
-
-    if calc.odd(here().page()) {
-      let head = hydra(2, display: (_, it) => [
-        #if it.numbering != none {
-          numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
-        } else {
-          it.body
-        }
-      ])
-      grid(
-        columns: (1fr, 1fr),
-        align: (left, right),
-        [#head],
-        [#current-page]
-      )
-      place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
-    } else {
-      let head = hydra(1, display: (_, it) => [
-        #if it.numbering != none {
-          counter(heading.where(level:1)).display() + " " + it.body
-        } else {
-          it.body
-        }
-      ])
-
-      grid(
-        columns: (1fr, 1fr),
-        align: (left, right),
-        [#current-page],
-        [*#head*]
-      )
-      place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
-    }
-
-    v(0.5em)
+  let length = 100%
+  let dy = 12%
+  if states.tufte.get() {
+    dy = 40%
   }
+
+  let current-page = counter(page).display()
+
+  show: show-if(states.tufte.get(), it => {
+    show: wideblock.with(side: "both")
+    it
+  })
+
+  if calc.odd(here().page()) {
+    let head = hydra(2, display: (_, it) => [
+      #if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).at(it.location())) + " " + it.body
+      } else {
+        it.body
+      }
+    ])
+    grid(
+      columns: (1fr, 1fr),
+      align: (left, right),
+      [#head],
+      [#current-page]
+    )
+    place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
+  } else {
+    let head = hydra(1, display: (_, it) => [
+      #if it.numbering != none {
+        counter(heading.where(level:1)).display() + " " + it.body
+      } else {
+        it.body
+      }
+    ])
+
+    grid(
+      columns: (1fr, 1fr),
+      align: (left, right),
+      [#current-page],
+      [*#head*]
+    )
+    place(dx: 0%, dy: dy)[#line(length: length, stroke: 0.75pt)]
+  }
+
+  v(0.5em)
+}
 
   let page-footer = context {
     let chapter-heading = query(heading.where(level: 1).before(here())).last()
@@ -284,7 +262,7 @@ let page-header = context {
 
 // Minitoc
 #let minitoc-obook = context {
-  let toc-header = states.localization.get().toc
+  let toc-header = states.localization.get().minitoc
 
   let miniline = line(stroke: 1pt + states.colors.get().primary, length: 100%)
 

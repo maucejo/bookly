@@ -1,4 +1,4 @@
-#import "@preview/hydra:0.6.2": hydra, anchor
+#import "bookly-deps.typ": *
 #import "bookly-defaults.typ": *
 #import "bookly-helper.typ": *
 #import "bookly-themes.typ": *

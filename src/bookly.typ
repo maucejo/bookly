@@ -1,6 +1,5 @@
-// Exported packages
-#import "@preview/equate:0.3.3": *
 // Internals
+#import "bookly-deps.typ": *
 #import "bookly-environments.typ": *
 #import "bookly-outlines.typ": *
 #import "bookly-components.typ": *

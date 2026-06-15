@@ -29,6 +29,12 @@
   it
 }
 
+// Chapter - Must be used inside a context
+#let is-chapter-page() = {
+  query(heading.where(level: 1))
+    .any(h => h.location().page() == here().page())
+}
+
 // Equations
 #let _boxeq(stroke: none, fill: none, radius: 0pt, inset: 0.6em, body) = context {
   set align(center)
@@ -51,6 +57,26 @@
 
 // Long and short captions for figures or tables
 #let ls-caption(long, short) = context if states.in-outline.get() { short } else { long }
+
+// Partial outline
+#let partial-outline = context {
+  let cur-loc = here()
+
+  // Find the next part phantom heading (level 1 with in-outline == true)
+  let future-h1 = query(selector(heading.where(level: 1)).after(cur-loc, inclusive: false))
+  let next-parts = future-h1.filter(h => states.in-outline.at(h.location()))
+
+  // Build target: all outlined headings in this part, depth 2 max
+  let target = if next-parts.len() > 0 {
+    selector(heading.where(outlined: true))
+      .after(cur-loc, inclusive: false)
+      .before(next-parts.first().location(), inclusive: false)
+  } else {
+    selector(heading.where(outlined: true)).after(cur-loc, inclusive: false)
+  }
+
+  box(width: 52%, stroke: (left: 1.5pt + states.colors.get().primary), outset: 0.5em)[#outline(title: none, target: target, depth: 2)]
+}
 
 // Book title page
 #let book-title-page(

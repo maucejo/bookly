@@ -1,6 +1,4 @@
-#import "@preview/showybox:2.0.4": *
-#import "@preview/hydra:0.6.2": hydra, anchor
-#import "@preview/marginalia:0.3.1" as marginalia: wideblock
+#import "../bookly-deps.typ": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -175,7 +173,7 @@
 
 #let minitoc-orly = context {
   let miniline = line(stroke: 0.5pt, length: 100%)
-  let toc-header = states.localization.get().toc
+  let toc-header = states.localization.get().minitoc
 
   block(above: 3.5em)[
     #set align(right)

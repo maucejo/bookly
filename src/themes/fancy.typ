@@ -1,7 +1,4 @@
-#import "@preview/hydra:0.6.2": hydra
-#import "@preview/marginalia:0.3.1" as marginalia: wideblock
-#import "@preview/showybox:2.0.4": *
-#import "@preview/itemize:0.2.0" as el
+#import "../bookly-deps.typ": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
 
@@ -121,9 +118,8 @@
 
   // Page style
   let page-header = context {
-    // Pas de header sur les pages d'ouverture de chapitre
-    let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == here().page())
-    if h1-on-page.len() > 0 { return }
+    // No header on chapter opening pages
+    if is-chapter-page() { return }
 
     show linebreak: none
     show: show-if(states.tufte.get(), it => {
@@ -229,7 +225,7 @@
 
 // Minitoc
 #let minitoc-fancy = context {
-  let toc-header = states.localization.get().toc
+  let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
     #text([*#toc-header*])
     #v(-0.5em)

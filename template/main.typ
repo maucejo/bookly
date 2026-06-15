@@ -18,7 +18,7 @@
   // theme: fancy,
   // theme: modern,
   // theme: obook,
-  theme: orly,
+  // theme: orly,
   // theme: pretty,
   // tufte: true,
   lang: "en",
