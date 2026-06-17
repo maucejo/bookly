@@ -69,6 +69,7 @@
   }
 
   show heading.where(level: 2): it => {
+    set par(first-line-indent: 0em) if states.par-indent.get()
     block(above: 1.5em)[
       #if it.numbering != none {
         text(counter(heading).display(), fill: colors.primary)
@@ -82,6 +83,7 @@
   }
 
   show heading.where(level: 3): it => {
+    set par(first-line-indent: 0em) if states.par-indent.get()
     block[
       #if it.numbering != none {
         text(counter(heading).display(), fill: colors.primary)
@@ -100,7 +102,6 @@
   )
 
   // Lists
-  show: el.default-enum-list
   set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
   set enum(numbering: n => text(fill:colors.primary)[#n.])
 
@@ -140,6 +141,7 @@
 
   // Page style
   let page-header = context {
+    set par(first-line-indent: 0em) if states.par-indent.get()
     show linebreak: none
 
     show: show-if(states.tufte.get(), it => {
@@ -303,6 +305,7 @@
 }
 
 #let minitoc-modern = context {
+  set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
     #text([*#toc-header*])

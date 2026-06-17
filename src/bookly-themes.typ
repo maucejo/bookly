@@ -35,3 +35,6 @@
 
 // Question box
 #let question-box = custom-box.with(title: "Question", icon: "question", color: purple)
+
+// Code box
+#let code-box = custom-box.with(title: "Code", icon: "code", color: rgb(152, 101, 202))

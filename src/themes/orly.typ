@@ -172,6 +172,7 @@
 }
 
 #let minitoc-orly = context {
+  set par(first-line-indent: 0em) if states.par-indent.get()
   let miniline = line(stroke: 0.5pt, length: 100%)
   let toc-header = states.localization.get().minitoc
 

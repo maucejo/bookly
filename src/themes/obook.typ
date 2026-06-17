@@ -72,7 +72,6 @@
   }
 
   // Lists
-  show: el.default-enum-list
   set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
   set enum(numbering: n => text(fill:colors.primary)[#n.])
 
@@ -262,6 +261,7 @@ let page-header = context {
 
 // Minitoc
 #let minitoc-obook = context {
+  set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
 
   let miniline = line(stroke: 1pt + states.colors.get().primary, length: 100%)

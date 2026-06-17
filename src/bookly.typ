@@ -52,7 +52,9 @@
   // Equations
   show: equate.with(breakable: true, sub-numbering: true)
 
-  // Paragraphs
+  // Paragraphs 
+  states.par-indent.update(book-options.par-indent)
+  set par(first-line-indent: (amount: 1.5em, all: true)) if book-options.par-indent
   set par(justify: true)
 
   // Localization
@@ -62,7 +64,6 @@
     "en"
   }
   states.localization.update(json("resources/i18n/" + bookly-lang + ".json"))
-
 
   // References
   set ref(supplement: none)
@@ -112,6 +113,37 @@
   }
 
   set math.equation(numbering: numbering-eq)
+
+  // Workaround to not indent the first paragraph after an equation
+  show math.equation: it => it + [#[ #[]<eq-end>]]
+  show parbreak: it => it + [#[]<eq-parbreak>]
+  show par: it => {
+    if it.first-line-indent.amount == 0pt {
+      // Prevent recursion.
+      return it
+    }
+
+    context {
+      let eq-end = query(selector(<eq-end>).before(here())).at(-1, default: none)
+      if eq-end == none { return it }
+      if eq-end.location().position() != here().position() { return it }
+
+      // If there is an explicit paragraph break after the equation,
+      // keep the regular indentation.
+      let eq-parbreaks = query(selector(<eq-parbreak>).after(eq-end.location()).before(here()))
+      if eq-parbreaks.len() > 0 { return it }
+
+      // Paragraph start aligns with end of last equation, so recreate
+      // the paragraph, but without indent.
+      let fields = it.fields()
+      let body = fields.remove("body")
+      return par(
+        ..fields,
+        first-line-indent: 0pt,
+        body
+      )
+    }
+  }
 
   // Tables
   show figure.where(kind: table): set figure(

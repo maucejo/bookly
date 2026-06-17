@@ -36,13 +36,14 @@
 }
 
 // Equations
-#let _boxeq(stroke: none, fill: none, radius: 0pt, inset: 0.6em, body) = context {
+#let _boxeq(stroke: none, fill: none, radius: 0pt, inset: 0.6em, baseline: 30%, body) = context {
   set align(center)
   box(
     stroke: stroke,
     fill: fill,
     radius: radius,
-    inset: inset
+    inset: inset,
+    baseline: baseline
    )[#body]
 }
 

@@ -5,7 +5,8 @@
 
 #let classic-theme(colors: default-colors, it) = {
   // Headings
-  show heading.where(level: 1): it => {
+  show heading.where(level: 1): it => context {
+    set par(first-line-indent: 0em) if states.par-indent.get()
     if not states.open-right.get() {
       pagebreak(weak: true)
     }
@@ -88,6 +89,7 @@
 
   // Page style
   let page-header = context {
+    set par(first-line-indent: 0em) if states.par-indent.get()
     show linebreak: none
 
     let length = 100%
@@ -199,6 +201,7 @@
 }
 
 #let minitoc-classic = context {
+  set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
     #text([*#toc-header*])

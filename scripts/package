@@ -50,11 +50,11 @@ function enumerate {
 		# declare -p files >&2
 
 		local f
-		for f in "${files[@]}"; do
+		for f in "${files[@]+"${files[@]}"}"; do
 			local include=1
 			local rel_f
 			rel_f="${f#./}"
-			for ignore in "${ignores[@]}"; do
+			for ignore in "${ignores[@]+"${ignores[@]}"}"; do
 				if [[ "$ignore" =~ ^! ]]; then
 					ignore="${ignore:1}"
 					if [[ "$rel_f" == $ignore ]]; then
@@ -85,7 +85,7 @@ rm -f "$tmpfile_files"
 
 TMP="$(mktemp -d)"
 
-for f in "${files[@]}"; do
+for f in "${files[@]+"${files[@]}"}"; do
   mkdir -p "$TMP/$(dirname "$f")" 2>/dev/null
   cp -r "$SOURCE/$f" "$TMP/$f"
 done

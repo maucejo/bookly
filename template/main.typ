@@ -32,6 +32,7 @@
   ),
   config-options: (
     open-right: true,
+    par-indent: true,
     // alt-margins: true,
     // part-numbering: "A"
   )

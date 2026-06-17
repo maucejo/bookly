@@ -22,6 +22,7 @@ integral_0^1 f(x) dif x = F(1) - F(0) "et voilà"
 $ <eq:2>
 
 #lorem(20)
+
 == Code
 
 Figure @fig:1 is a beautiful typst logo.
@@ -85,6 +86,10 @@ label: <fig:subfig>,
 ]
 
 #question-box[
+  #lorem(10)
+]
+
+#code-box[
   #lorem(10)
 ]
 

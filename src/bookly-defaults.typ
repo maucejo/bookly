@@ -18,6 +18,7 @@
   num-pattern-subfig: state("num-pattern-subfig", "1.1a"),
   open-right: state("open-right", true),
   page-numbering: state("page-numbering", "1/1"),
+  par-indent: state("par-indent", false),
   part-numbering: state("part-numbering", "1"),
   sidenotecounter: counter("sidenotecounter"),
   theme: state("theme"),
@@ -30,7 +31,8 @@
 #let default-config-options = (
   part-numbering: "1",
   open-right: true,
-  alt-margins: false
+  alt-margins: false,
+  par-indent: false,
 )
 
 #let default-fonts = (
