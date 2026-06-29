@@ -1,6 +1,7 @@
 #let fig-supplement = [Figure]
 #let text-size = 11pt
 #let paper-size = "a4"
+#let par-indent = 1.5em
 
 #let states = (
   alt-margins: state("alt-margins", false),
@@ -38,7 +39,7 @@
 #let default-fonts = (
   body: "New Computer Modern",
   math: "New Computer Modern Math",
-  raw: "Cascadia Code"
+  raw: "DejaVu Sans Mono",
 )
 
 #let default-colors = (

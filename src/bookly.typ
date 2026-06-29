@@ -42,19 +42,23 @@
   states.part-numbering.update(book-options.part-numbering)
 
   // Fonts
-  set text(font: fonts.body, lang: lang, size: text-size, ligatures: false)
+  let bookly-fonts = default-fonts + fonts
+  set text(font: bookly-fonts.body, lang: lang, size: text-size, ligatures: false)
 
   // Math font
-  show math.equation: set text(font: fonts.math, stylistic-set: 1)
+  show math.equation: set text(font: bookly-fonts.math, stylistic-set: 1)
   // Unnumbered equations
   show selector(<nonum-eq>): set math.equation(numbering: none)
+
+  // Raw font
+  show raw: set text(font: bookly-fonts.raw, size: 0.8*text-size)
 
   // Equations
   show: equate.with(breakable: true, sub-numbering: true)
 
   // Paragraphs 
   states.par-indent.update(book-options.par-indent)
-  set par(first-line-indent: (amount: 1.5em, all: true)) if book-options.par-indent
+  set par(first-line-indent: (amount: par-indent, all: true)) if book-options.par-indent
   set par(justify: true)
 
   // Localization

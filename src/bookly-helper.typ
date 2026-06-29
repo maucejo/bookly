@@ -14,6 +14,28 @@
   counter(footnote).update(0)
 }
 
+#let row-img(logo) = {
+  let n = logo.len()
+  grid(
+    columns: n,
+    column-gutter: 1fr,
+    ..logo.enumerate().map(((i, item)) => {
+      if n == 1 {
+        align(right + horizon)[#item]
+      } else if i == 0 {
+        align(left + horizon)[#item]
+      } else if i == n - 1 {
+        align(right + horizon)[#item]
+      } else {
+        align(center + horizon)[#item]
+      }
+    })
+  )
+}
+
+// No indent
+#let noindent = h(-par-indent)
+
 // Conditional set-show
 #let show-if(cond, func) = body => if cond { func(body) } else { body }
 
@@ -348,12 +370,7 @@
 
   set align(horizon)
 
-  if logo != none {
-    grid(columns : logo.len(),
-      column-gutter: 1fr,
-      ..logo.map((logos) => logos)
-    )
-  }
+  if logo != none {row-img(logo)}
 
   context{
     v(2em)

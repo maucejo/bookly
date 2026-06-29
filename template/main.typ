@@ -1,4 +1,4 @@
-// #import "@preview/bookly:3.2.0": *
+// #import "@preview/bookly:4.1.0": *
 #import "../src/bookly.typ": *
 // #import "custom-theme.typ": custom
 
@@ -75,8 +75,8 @@
 )
 
 #let logos = (
-  align(left)[#image("images/typst-logo.svg", width: 50%)],
-  align(right)[#image("images/typst-logo.svg", width: 50%)]
+  image("images/typst-logo.svg", width: 50%),
+  image("images/typst-logo.svg", width: 50%)
 )
 
 #back-cover(abstracts: abstracts-fr-en, logo: logos)
