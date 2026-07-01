@@ -213,7 +213,11 @@ let page-header = context {
     pagebreak(weak: true, to:"odd")
   }
 
-  let part-num = text(fill: states.colors.get().primary, size: 10em, weight: "bold")[#states.counter-part.display(states.part-numbering.get())]
+  let part-num = if states.part-numbering.get() != none {
+    text(fill: states.colors.get().primary, size: 10em, weight: "bold")[#states.counter-part.display(states.part-numbering.get())]
+  } else {
+    none
+  }
   let part-title = text(size: 3em)[*#title*]
 
   align(top)[
@@ -232,12 +236,14 @@ let page-header = context {
   show heading: none
   states.in-outline.update(true)
   heading(numbering: none)[
+    #let part-num-outline = if states.part-numbering.get() != none {box(fill: states.colors.get().primary.lighten(75%), inset: 0.5em)[#states.counter-part.display(states.part-numbering.get())] } else { none }
+
     #set text(size: 1.25em)
     #grid(
       columns: (auto, 1fr),
       align: center,
       column-gutter: 0.2em,
-      [#box(fill: states.colors.get().primary.lighten(75%), inset: 0.5em)[#states.counter-part.display(states.part-numbering.get())]],
+      [#part-num-outline],
       [
         #set text(fill: white)
         #box(fill: states.colors.get().primary, inset: 0.5em, width: 1fr)[*#title*]

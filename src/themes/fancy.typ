@@ -207,16 +207,24 @@
 
   wideblock(side: "both")[
     #line(stroke: 1.75pt + states.colors.get().primary, length: top-length)
-    #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
-    #line(stroke: 1.75pt + states.colors.get().primary, length: mid-length)
+    #if states.part-numbering.get() != none [
+      #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
+      #line(stroke: 1.75pt + states.colors.get().primary, length: mid-length)
+    ]
+
     #text(size: 3em)[*#title*]
     #line(stroke: 1.75pt + states.colors.get().primary, length: top-length)
   ]
 
   show heading: none
   heading(numbering: none)[
+    #let content = if states.part-numbering.get() != none {
+      [#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    } else {
+      title
+    }
     #v(1em)
-    #box[#text(fill:states.colors.get().primary)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]]
+    #box[#text(fill:states.colors.get().primary)[#content]]
   ]
 
   if states.open-right.get() {

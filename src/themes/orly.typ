@@ -148,7 +148,12 @@
   }
 
   let part = [
-    #text(size: 1.75em)[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get())*]
+
+    #if states.part-numbering.get() != none {
+      text(size: 1.75em)[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get())*]
+    } else {
+      hide(text(size: 1.75em)[*#upper[#states.localization.get().part]*])
+    }
     #v(-0.75em)
     #line(length: 100%, stroke: 0.5pt)
     #v(-2.5em)
@@ -159,11 +164,17 @@
 
   show heading: none
   heading(numbering: none)[
+    #let content = if states.part-numbering.get() != none {
+      [*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get()) -- #title*]
+    } else {
+      title
+    }
+
     #set text(1.15em)
     #v(1em)
     #line(length: 100%, stroke: 0.5pt)
     #v(-0.5em)
-    #box[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get()) -- #title*]
+    #box[#content]
   ]
 
   if states.open-right.get() {

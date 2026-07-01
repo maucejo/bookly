@@ -279,9 +279,11 @@
   place(top + center, dy: -11%)[
     #show: wideblock.with(side: "both")
     #rect(fill: gradient.linear(states.colors.get().primary, states.colors.get().primary.transparentize(55%), dir: ttb), height: 61%, width: 114%)[
-      #set align(center + horizon)
+      #if states.part-numbering.get() != none [
+        #set align(center + horizon)
 
-      #text(size: 5em, fill: white)[*#states.localization.get().part #states.counter-part.display(states.part-numbering.get())*]
+        #text(size: 5em, fill: white)[*#states.localization.get().part #states.counter-part.display(states.part-numbering.get())*]
+      ]
     ]
   ]
 
@@ -295,8 +297,13 @@
 
   show heading: none
   heading(numbering: none)[
+    #let content = if states.part-numbering.get() != none {
+      [#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    } else {
+      [#title]
+    }
     #v(1em)
-    #box[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    #box[#content]
   ]
 
   if states.open-right.get() {

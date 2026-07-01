@@ -19,7 +19,7 @@
   // theme: modern,
   // theme: obook,
   // theme: orly,
-  // theme: pretty,
+  theme: pretty,
   // tufte: true,
   lang: "en",
   // colors: config-colors,
@@ -34,7 +34,7 @@
     open-right: true,
     par-indent: true,
     // alt-margins: true,
-    // part-numbering: "A"
+    // part-numbering: none
   )
 )
 
@@ -75,8 +75,8 @@
 )
 
 #let logos = (
-  image("images/typst-logo.svg", width: 50%),
-  image("images/typst-logo.svg", width: 50%)
+  image("images/typst-logo.svg", width: 75%),
+  image("images/typst-logo.svg", width: 75%)
 )
 
 #back-cover(abstracts: abstracts-fr-en, logo: logos)

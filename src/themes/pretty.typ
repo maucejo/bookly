@@ -287,12 +287,18 @@
 
   let width = if states.tufte.get() {77.9%} else {90%}
 
-  stack(
-    dir: ttb,
-    box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
+  let part-name = if states.part-numbering.get() != none {
+     box(fill: states.colors.get().primary, inset: 1em, radius: (top: 2em))[
       #set text(size: 4.5em, fill: white, weight: "bold")
       #states.localization.get().part #states.counter-part.display(states.part-numbering.get())
-    ],
+    ]
+  } else {
+    none
+  }
+
+  stack(
+    dir: ttb,
+    part-name,
     box(width: width, inset: 5em, stroke: 2pt + states.colors.get().primary, radius: 2em)[
     #set text(size: 3em)
 
@@ -301,8 +307,13 @@
 
   show heading: none
   heading(numbering: none)[
+    #let content = if states.part-numbering.get() != none {
+      [#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    } else {
+      title
+    }
     #v(1em)
-    #box(width: 95%, stroke: (top: 0.5pt + states.colors.get().primary, left: 0.5pt + states.colors.get().primary), inset: 00.5em, radius: (top-left: 0.5em))[#text(fill:states.colors.get().primary)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]]
+    #box(width: 95%, stroke: (top: 0.5pt + states.colors.get().primary, left: 0.5pt + states.colors.get().primary), inset: 00.5em, radius: (top-left: 0.5em))[#text(fill:states.colors.get().primary)[#content]]
   ]
 
   if states.open-right.get() {

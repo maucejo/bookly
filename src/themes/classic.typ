@@ -184,15 +184,22 @@
   }
 
   wideblock(side: "both")[
-    #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
+    #if states.part-numbering.get() != none [
+      #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
     #v(1em)
+    ]
     #text(size: 3em)[*#title*]
   ]
 
   show heading: none
   heading(numbering: none)[
+    #let content = if states.part-numbering.get() != none {
+      [#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    } else {
+      title
+    }
     #v(1em)
-    #box[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
+    #box[#content]
   ]
 
   if states.open-right.get() {

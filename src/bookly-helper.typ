@@ -17,7 +17,7 @@
 #let row-img(logo) = {
   let n = logo.len()
   grid(
-    columns: n,
+    columns: (1fr,)*n,
     column-gutter: 1fr,
     ..logo.enumerate().map(((i, item)) => {
       if n == 1 {
