@@ -42,7 +42,7 @@ Based on the structure defined in the previous section, the main `main.typ` file
 #code-box[
 ```typ
 // main.typ
-#import "@preview/bookly:5.1.0": *
+#import "@preview/bookly:5.1.1": *
 
 #show: bookly.with(...)
 
@@ -145,7 +145,7 @@ Chapters can also be defined using the standard Typst markup language. This temp
 #code-box[
 ```typ
 	#chapter(
-		"First chapter",
+		title: "First chapter",
 		abstract: lorem(20),
 		label: <ch:1>
 	)[
@@ -159,7 +159,7 @@ Chapters can also be defined using the standard Typst markup language. This temp
 
 	#code-box[
 		```typ
-		#show: chapter.with("First chapter", abstract: lorem(20), toc: true, label: <ch:1>)
+		#show: chapter.with(title: "First chapter", abstract: lorem(20), toc: true, label: <ch:1>)
 
 		// Content of the chapter
 		== First section

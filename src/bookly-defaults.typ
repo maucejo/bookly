@@ -1,5 +1,5 @@
 #let fig-supplement = [Figure]
-#let par-indent = 1.5em
+#let par-indent-amount = 1.5em
 
 #let states = (
   alt-margins: state("alt-margins", false),

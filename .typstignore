@@ -15,3 +15,5 @@ docs
 template_tufte
 template_dev
 .edist
+devnotes.md
+*.DS_Store

@@ -44,7 +44,6 @@
             // Total height of the row = title height + top inset + bottom inset
             let row-h = title-h + 2 * title-inset
 
-            // set text(1.6em)
             grid(
               columns: (auto, 1fr),
               align: top + left,
@@ -325,10 +324,6 @@
     #v(1em)
     #box(width: 95%, stroke: (top: 0.5pt + states.colors.get().primary, left: 0.5pt + states.colors.get().primary), inset: 00.5em, radius: (top-left: 0.5em))[#text(fill:states.colors.get().primary)[#content]]
   ]
-
-  // if states.open-right.get() {
-  //   pagebreak(weak: true, to:"odd")
-  // }
 }
 
 // Minitoc

@@ -46,7 +46,15 @@
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
+
+  // Localization
+  let bookly-lang = if default-language.contains(lang) {
+    lang
+  } else {
+    "en"
+  }
   set text(font: bookly-fonts.body, lang: lang, size: bookly-fonts.size, ligatures: false)
+  states.localization.update(json("resources/i18n/" + bookly-lang + ".json"))
 
   // Math font
   show math.equation: set text(font: bookly-fonts.math, stylistic-set: 1)
@@ -60,16 +68,8 @@
   show: equate.with(breakable: true, sub-numbering: true)
 
   // Paragraphs
-  set par(first-line-indent: (amount: par-indent, all: true)) if book-options.par-indent
+  set par(first-line-indent: (amount: par-indent-amount, all: true)) if book-options.par-indent
   set par(justify: true)
-
-  // Localization
-  let bookly-lang = if default-language.contains(lang) {
-    lang
-  } else {
-    "en"
-  }
-  states.localization.update(json("resources/i18n/" + bookly-lang + ".json"))
 
   // References
   set ref(supplement: none)
@@ -79,11 +79,6 @@
     show regex("\[|\]"): it => text(fill: black)[#it]
     it
   }
-
-  // Footnotes
-  // show footnote.entry: it => {
-  //   [#h(it.indent) #text(fill: book-colors.primary, it.note) #it.note.body]
-  // }
 
   // Hide short titles by default
   show metadata.where(label: <bookly-title>): it => it.value.long
@@ -174,17 +169,13 @@
     let marginalia-book = if book-options.alt-margins {true} else {false}
 
     let m-config = margin-notes-config + (book: marginalia-book)
-    // let m-config = margin-notes-config + (book: false)
 
     show: marginalia.setup.with(..m-config)
     it
   })
 
-
-  // show: marginalia.show-frame.with(footer: false)
-
   // Headings
-  show: theme.theme.with(colors: book-colors)
+  show: bookly-theme.theme.with(colors: book-colors)
   show: show-if(book-options.open-right, it => {
     show: headings-on-odd-page
     it

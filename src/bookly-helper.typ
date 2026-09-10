@@ -32,7 +32,7 @@
 }
 
 // No indent
-#let noindent = h(-par-indent)
+#let noindent = h(-par-indent-amount)
 
 // Conditional set-show
 #let show-if(cond, func) = body => if cond { func(body) } else { body }
@@ -77,8 +77,6 @@
 )
 
 // Short or long title or caption for figures or tables
-// #let short-or-long(short, long) = context if states.is-short.get() { short } else { long }
-// Short or long title
 #let short-or-long(short, long) = [#metadata((short: short, long: long)) <bookly-title>]
 
 // Partial outline
@@ -432,6 +430,14 @@
 #let to-string(content) = {
   if type(content) == str {
     content
+  } else if type(content) == array {
+    content.map(to-string).join(", ")
+  } else if content == none {
+    ""
+  } else if type(content) in (int, float, bool) {
+    str(content)
+  } else if content == [ ] {
+    " "
   } else if content.has("text") {
     if type(content.text) == str {
       content.text
@@ -442,7 +448,7 @@
     content.children.map(to-string).join("")
   } else if content.has("body") {
     to-string(content.body)
-  } else if content == [ ] {
-    " "
+  } else {
+    ""
   }
 }

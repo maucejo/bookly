@@ -238,10 +238,6 @@
     #v(1em)
     #box[#text(fill:states.colors.get().primary)[#content]]
   ]
-
-  // if states.open-right.get() {
-  //   pagebreak(weak: true, to:"odd")
-  // }
 }
 
 // Minitoc

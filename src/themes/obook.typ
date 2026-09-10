@@ -278,10 +278,6 @@ let page-header = context {
     })
     #partial-outline
   ]
-
-  // if states.open-right.get() {
-  //   pagebreak(weak: true, to:"odd")
-  // }
 }
 
 // Minitoc

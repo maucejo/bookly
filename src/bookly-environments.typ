@@ -31,11 +31,6 @@
   states.num-pattern-subfig.update("1.1a")
   states.num-pattern-eq.update("(1.1a)")
 
-  // if states.open-right.get() {
-  //   counter(page).update(0)
-  // } else {
-  //   counter(page).update(1)
-  // }
   if states.open-right.get() {
     if states.tufte.get() {
       counter(page).update(1)
@@ -44,11 +39,6 @@
     }
   } else {
     counter(page).update(1)
-  }
-
-  // To be checked
-  if states.isfrontmatter.get() and states.tufte.get() and states.open-right.get() {
-    counter(page).update(page => page + 1)
   }
 
   body

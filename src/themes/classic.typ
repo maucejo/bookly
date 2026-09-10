@@ -207,10 +207,6 @@
     #v(1em)
     #box[#content]
   ]
-
-  // if states.open-right.get() {
-  //   pagebreak(weak: true, to:"odd")
-  // }
 }
 
 #let classic-minitoc = context {

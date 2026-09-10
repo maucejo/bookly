@@ -182,10 +182,6 @@
     #v(-0.5em)
     #box[#content]
   ]
-
-  // if states.open-right.get() {
-  //   pagebreak(weak: true, to:"odd")
-  // }
 }
 
 #let orly-minitoc = context {
@@ -201,7 +197,6 @@
     #v(0.5em)
   ]
 
-  // miniline
   v(0.5em)
   suboutline(target: heading.where(outlined: true, level: 2))
   miniline
