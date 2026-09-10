@@ -37,6 +37,14 @@
 // Conditional set-show
 #let show-if(cond, func) = body => if cond { func(body) } else { body }
 
+// `wideblock` only makes sense in the tufte layout (wide margins). Outside it, `marginalia.setup` is never called, so `wideblock` would still spin up marginalia's layout-coupled machinery (page-indexed state, position probing) for nothing -- a source of layout non-convergence. This wrapper is a plain  pass-through unless the tufte layout is active. Handles both the call form `wide-if-tufte(side: "both")[body]` and the show form `show: wide-if-tufte.with(side: "both")`.
+#let wide-if-tufte(..args) = context if states.tufte.get() {
+  wideblock(..args)
+} else {
+  let p = args.pos()
+  if p.len() > 0 { p.last() }
+}
+
 // Headings
 #let headings-on-odd-page(it) = {
   show heading.where(level: 1): it => {

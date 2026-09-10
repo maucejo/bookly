@@ -71,29 +71,39 @@
 // ]
 // ]
 
+// The `#pagebreak(to: "odd")` before each theme demo pins the page boundaries so
+// the theme switches perturb pagination less (layout convergence). A few `hydra`
+// warnings remain: re-applying a theme (hence a `hydra` running header) mid-book
+// keeps hydra's whole-document heading queries from settling within 5 passes.
+#pagebreak(to: "odd")
 #include "book-content/fancy.typ"
 
 #context[
+  #pagebreak(to: "odd")
   #show: reset-theme.with()
   #states.theme.update(classic)
   #show: classic.theme
   #include "book-content/classic.typ"
 
+  #pagebreak(to: "odd")
   #show: reset-theme.with()
   #states.theme.update(modern)
   #show: modern.theme
   #include "book-content/modern.typ"
 
+  #pagebreak(to: "odd")
   #show: reset-theme.with()
   #states.theme.update(orly)
   #show: orly.theme
   #include "book-content/orly.typ"
 
+  #pagebreak(to: "odd")
   #show: reset-theme.with()
   #states.theme.update(obook)
   #show: obook.theme
   #include "book-content/obook.typ"
 
+  #pagebreak(to: "odd")
   #show: reset-theme.with()
   #states.theme.update(pretty)
   #show: pretty.theme

@@ -138,7 +138,7 @@
     let current-page = counter(page).display()
 
     set align(center)
-    wideblock(side: "both", current-page)
+    wide-if-tufte(side: "both", current-page)
   }
 
   set page(
@@ -188,7 +188,7 @@
     pagebreak(weak: true, to:"odd")
   }
 
-  wideblock(side: "both")[
+  wide-if-tufte(side: "both")[
     #set par(justify: false) if not states.justify-headings.get()
     #if states.part-numbering.get() != none [
       #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]

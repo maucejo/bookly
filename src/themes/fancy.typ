@@ -150,7 +150,7 @@
     let page-final = counter(page).final().first()
 
     set align(center)
-    show: wideblock.with(side: "both")
+    show: wide-if-tufte.with(side: "both")
     if states.isfrontmatter.get() {
       [#current-page]
     } else {
@@ -216,7 +216,7 @@
     mid-length = 38%
   }
 
-  wideblock(side: "both")[
+  wide-if-tufte(side: "both")[
     #line(stroke: 1.75pt + states.colors.get().primary, length: top-length)
     #if states.part-numbering.get() != none [
       #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]

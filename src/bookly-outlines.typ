@@ -9,7 +9,7 @@
 
 // Table of contents
 #let tableofcontents = context {
-  show metadata.where(label: <bookly-title>): it => it.value.short
+  // show metadata.where(label: <bookly-title>): it => it.value.short
   show outline.entry: outline-entry
   outline(title: states.localization.get().toc, indent: 1em)
 }
