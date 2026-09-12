@@ -307,15 +307,15 @@ let page-header = context {
   )
 }
 
-#let obook-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context {
+#let obook-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true, body) = context {
   let box-title = move(dy: -0.5em)[#box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), text(fill: color)[*#title*])]
 
-  let box-content = block(breakable: true, box(fill: color.lighten(85%), stroke: 1pt + color, width: 100%, inset: (top: 1em, bottom: 1em, rest: 0.5em), radius: 0.5em)[#body])
+  let box-content = block(breakable: breakable, fill: color.lighten(85%), stroke: 1pt + color, width: 100%, inset: (top: 1em, bottom: 1em, rest: 0.5em), radius: 0.5em)[#body]
 
   stack(
-    dir: btt,
-    box-content,
+    dir: ttb,
     box-title,
+    box-content,
   )
 }
 

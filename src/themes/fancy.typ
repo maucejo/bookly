@@ -168,7 +168,7 @@
 }
 
 // Boxes - Definitions
-#let fancy-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = showybox(
+#let fancy-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true, body) = showybox(
   title: grid(
     columns: 2,
     align: (left + horizon, right + horizon),
@@ -188,7 +188,7 @@
     thickness: 1pt
   ),
   align: center,
-  breakable: true
+  breakable: breakable
 )[
   #body
   #v(0.5em)

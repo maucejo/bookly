@@ -255,7 +255,7 @@
 }
 
 // Boxes - Definitions
-#let pretty-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let pretty-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true, body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), [*#title*]),
     title-style: (
@@ -269,7 +269,7 @@
       thickness: 0.75pt,
       radius: (top-left: 2em, bottom-right: 2em, rest: 0em),
     ),
-    breakable: true
+    breakable: breakable
   )[#body]
 }
 

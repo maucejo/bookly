@@ -16,7 +16,7 @@
 #let boxeq(content) = context (states.theme.get().boxeq)(content)
 
 // Custom box
-#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (states.theme.get().custom-box)(title: title, icon: icon, color: color, body)
+#let custom-box(..args) = context (states.theme.get().custom-box)(..args)
 
 // Information box
 #let info-box = custom-box.with(title: context states.localization.get().note)

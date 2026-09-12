@@ -193,6 +193,7 @@ The information boxes described above are built using the #cmd("custom-box") fun
     title: none,
     icon: "info",
     color: rgb(29, 144, 208),
+    breakable: true,
   )
 )
 
@@ -211,6 +212,8 @@ Available icons are:
 ]
 
 #argument("color", default: [rgb(29, 144, 208)], type: mtype("color"))[Box color.]
+
+#argument("breakable", default: "true", type: mtype("bool"))[If `true`, the box can be broken across pages.]
 
 == Title pages
 

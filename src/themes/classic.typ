@@ -1,4 +1,4 @@
-
+w
 #import "../bookly-deps.typ": *
 #import "../bookly-helper.typ": *
 #import "../bookly-defaults.typ": *
@@ -151,7 +151,7 @@
 }
 
 // Boxes - Definitions
-#let classic-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let classic-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true,body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", white, width: 1em), [*#title*]),
     title-style: (
@@ -169,7 +169,7 @@
       body-inset: (top:2em, left: 1em, right: 1em, bottom: 1em)
     ),
     align: center,
-    breakable: true
+    breakable: breakable
   )[#body]
 }
 

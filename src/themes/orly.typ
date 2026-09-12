@@ -120,7 +120,7 @@
 }
 
 // Boxes - Definitions
-#let orly-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let orly-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true, body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), [*#title*]),
     title-style: (
@@ -134,7 +134,7 @@
       thickness: (left: 1.25pt),
       radius: 0pt,
     ),
-    breakable: true
+    breakable: breakable
   )[#body]
 }
 

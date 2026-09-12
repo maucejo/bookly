@@ -255,7 +255,7 @@
 }
 
 // Boxes - Definitions
-#let modern-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let modern-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), breakable: true, body) = {
   grid(
     columns: (auto, 1fr),
     column-gutter: 0.75em,
@@ -265,11 +265,12 @@
       #color-svg("resources/images/icons/" + icon + ".svg", color, width: 1.5em)
     ],
     [
-      #box(
+      #block(
       stroke: (left: 1.25pt + color),
       fill: color.lighten(90%),
       inset: 1em,
-      width: 100%
+      width: 100%,
+      breakable: breakable,
       )[#body]
     ]
   )
