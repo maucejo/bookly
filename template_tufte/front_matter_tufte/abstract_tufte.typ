@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.1.1": *
+#import "@preview/bookly:5.1.2": *
 // #import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "Abstract", toc: false)

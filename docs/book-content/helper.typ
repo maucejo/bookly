@@ -261,6 +261,9 @@ The template provides two functions to create title pages: one for a book and on
 #argument("version-usage", default: "none", type: [#mtype("string") | #mtype("content")])[Description of the version usage of the book. It can include the version number, the date or any licensing information. It is displayed in the footer of the title page.
 ]
 
+#argument("copyright", default: "none", type: [#mtype("string") | #mtype("content")])[Copyright information of the book. It is displayed in the footer of the title page.
+]
+
 #argument("show-cover-author", default: "true", type: mtype("bool"))[
   If `true`, the author name is displayed on the cover page.
 ]

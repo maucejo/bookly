@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:5.1.1": *
+#import "@preview/bookly:5.1.2": *
 ```
 ]
 
@@ -816,7 +816,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:5.1.1": *
+#import "@preview/bookly:5.1.2": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state

@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.1.1": *
+#import "@preview/bookly:5.1.2": *
 #import "custom-theme.typ": custom
 
 #let config-colors = (
@@ -35,6 +35,7 @@
     cover: image("images/book-cover.jpg", width: 45%),
     show-cover-author: true,
     version-usage: version-usage,
+    copyright: "© 2024 Author Name. All rights reserved."x
   ),
   config-options: (
     open-right: true,

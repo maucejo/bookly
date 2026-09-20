@@ -117,6 +117,7 @@
   cover: none,
   logo: none,
   version-usage: none,
+  copyright: none,
   show-cover-author: true
 ) = context {
   let header = {
@@ -194,7 +195,7 @@
       pagebreak(to: "odd")
     }
 
-    align(center + horizon)[
+    place(center + horizon)[
       #text(size: 3em)[*#states.title.get()*]
 
       #if subtitle != none {
@@ -218,12 +219,23 @@
 
     if logo != none {
       set image(width: 35%)
-      place(bottom + center, dy: -(height-ver + 4em), logo)
+      place(bottom + center, dy: -(height-ver + 8em), logo)
     }
 
-    place(bottom)[
-      #version-info
-    ]
+    v(1fr)
+    if version-usage != none {
+      text(size: 0.85em)[#version-usage]
+    } else {
+      text(size: 0.85em)[#states.localization.get().version-usage]
+    }
+
+    if copyright != none {
+      v(0.5em)
+      text(size: 0.85em)[#copyright]
+    } else {
+      v(0.5em)
+      text(size: 0.85em)[#sym.copyright #states.author.get(), #year.]
+    }
   }
 
   title-page
