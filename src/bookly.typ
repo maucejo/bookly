@@ -119,7 +119,8 @@
   set math.equation(numbering: numbering-eq)
 
   // Workaround to not indent the first paragraph after an equation
-  show math.equation: it => it + [#[ #[]<eq-end>]]
+  // (restricted to block equations to avoid extra spaces after inline equations)
+  show math.equation.where(block: true): it => it + [#[ #[]<eq-end>]]
   show parbreak: it => it + [#[]<eq-parbreak>]
   show par: it => {
     if it.first-line-indent.amount == 0pt {
