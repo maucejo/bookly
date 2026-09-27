@@ -35,7 +35,7 @@
     cover: image("images/book-cover.jpg", width: 45%),
     show-cover-author: true,
     version-usage: version-usage,
-    copyright: "© 2024 Author Name. All rights reserved."x
+    copyright: "© 2024 Author Name. All rights reserved."
   ),
   config-options: (
     open-right: true,
