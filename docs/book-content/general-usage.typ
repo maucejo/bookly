@@ -106,6 +106,7 @@ Supported languages:
 	- `open-right` #mtype("bool") -- If `true`, parts start on a right-hand page (default: `true`)
 	- `paper-size` #mtype("string") -- Size of the paper (default: `"a4"`)
 	- `par-indent` #mtype("bool") -- If `true`, paragraphs are indented (default: `false`)
+	- `par-indent-amount` #mtype("length") -- Amount of the paragraph indentation (default: `1.5em`). Chinese typesetting conventionally indents by two characters, which is `2em` for a CJK font.
 	- `part-numbering` #mtype("string") -- Numbering pattern (default: "1")
 
     #info-box[If `part-numbering` is set to #mtype("none"), the parts are not numbered. If it is set to `"1"`, the parts are numbered with Arabic numerals. If it is set to `"I"`, the parts are numbered with Roman numerals. Other numbering patterns are possible.]

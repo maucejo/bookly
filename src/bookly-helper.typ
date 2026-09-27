@@ -32,7 +32,7 @@
 }
 
 // No indent
-#let noindent = h(-par-indent-amount)
+#let noindent = context h(-states.par-indent-amount.get())
 
 // Conditional set-show
 #let show-if(cond, func) = body => if cond { func(body) } else { body }
@@ -142,6 +142,7 @@
   )
 
   let title-page = context {
+    set par(first-line-indent: 0em) if states.par-indent.get()
 
     align(horizon)[
       #move(dx: 2em)[

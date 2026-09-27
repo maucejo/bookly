@@ -1,5 +1,4 @@
 #let fig-supplement = [Figure]
-#let par-indent-amount = 1.5em
 
 #let states = (
   alt-margins: state("alt-margins", false),
@@ -20,6 +19,7 @@
   page-numbering: state("page-numbering", "1/1"),
   paper-size: state("paper-size", "a4"),
   par-indent: state("par-indent", false),
+  par-indent-amount: state("par-indent-amount", 1.5em),
   part-numbering: state("part-numbering", "1"),
   sidenotecounter: counter("sidenotecounter"),
   theme: state("theme"),
@@ -34,6 +34,7 @@
   open-right: true,
   alt-margins: false,
   par-indent: false,
+  par-indent-amount: 1.5em,
   paper-size: "a4",
   show-cover-author: true,
   justify-headings: true,
