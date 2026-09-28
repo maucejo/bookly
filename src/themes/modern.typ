@@ -220,6 +220,8 @@
   }
 
   let page-footer = context {
+    set par(first-line-indent: 0em) if states.par-indent.get()
+
     let cp = counter(page).get().first()
     let current-page = counter(page).display()
     set text(fill: white, weight: "bold")

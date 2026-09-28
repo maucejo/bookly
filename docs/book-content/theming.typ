@@ -151,6 +151,8 @@ If you want to reuse and combine elements of the existing themes, you can simply
 
 - `states.par-indent` -- #mtype("bool"): Indentation of paragraphs.
 
+- `states.par-indent-amount` -- #mtype("length"): Amount of the paragraph indentation.
+
 - `states.part-numbering` -- #mtype("string"): Numbering pattern for parts.
 
 - `states.sidenotecounter` -- #mtype("int"): Counter for sidenotes.

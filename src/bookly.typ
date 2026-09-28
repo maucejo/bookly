@@ -42,18 +42,15 @@
   states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
   states.par-indent.update(book-options.par-indent)
+  states.par-indent-amount.update(book-options.par-indent-amount)
   states.justify-headings.update(book-options.justify-headings)
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
 
   // Localization
-  let bookly-lang = if default-language.contains(lang) {
-    lang
-  } else {
-    "en"
-  }
-  set text(font: bookly-fonts.body, lang: lang, size: bookly-fonts.size, ligatures: false)
+  let bookly-lang = if default-language.contains(lang) { lang } else { "en" }
+  set text(font: bookly-fonts.body, lang: bookly-lang, size: bookly-fonts.size, ligatures: false)
   states.localization.update(json("resources/i18n/" + bookly-lang + ".json"))
 
   // Math font
@@ -68,7 +65,7 @@
   show: equate.with(breakable: true, sub-numbering: true)
 
   // Paragraphs
-  set par(first-line-indent: (amount: par-indent-amount, all: true)) if book-options.par-indent
+  set par(first-line-indent: (amount: book-options.par-indent-amount, all: true)) if book-options.par-indent
   set par(justify: true)
 
   // References
