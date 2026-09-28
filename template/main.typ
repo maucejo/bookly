@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.1.2": *
+#import "@preview/bookly:5.2.0": *
 #import "custom-theme.typ": custom
 
 #let config-colors = (
@@ -7,8 +7,7 @@
 )
 
 #let version-usage = [
-  #set text(size: 0.75em)
-  #noindent This is a template for writing books with Typst. It is part of the Bookly project, which provides tools and themes for book production. The template includes features such as a title page, table of contents, list of figures and tables, and support for chapters and appendices. It also includes a bibliography section for citing sources.
+  This is a template for writing books with Typst. It is part of the Bookly project, which provides tools and themes for book production. The template includes features such as a title page, table of contents, list of figures and tables, and support for chapters and appendices. It also includes a bibliography section for citing sources.
 ]
 
 #show: bookly.with(

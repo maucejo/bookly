@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.1.2": *
+#import "@preview/bookly:5.2.0": *
 
 = Foundations
 

@@ -13,7 +13,7 @@ This chapter provides an overview of the general usage of the Bookly template. I
 
 To use the `bookly` template, you need to include the following line at the beginning of your `typ` file:
 #code-box[```typ
-#import "@preview/bookly:5.1.2": *
+#import "@preview/bookly:5.2.0": *
 ```
 ]
 
@@ -51,7 +51,6 @@ After importing the template, you have to initialize the template by a show rule
   Title of the book.
 ]
 
-#pagebreak()
 #argument("author", default: ["Author Name"], type: [#mtype("string") | #mtype("content")])[Author of the book.]
 
 #argument("theme", default: "fancy", type: mtype("dictionary"))[Theme of the document. Possible values are:
@@ -222,5 +221,5 @@ The `bookly` template relies on several Typst packages to provide additional fun
 - `hydra:0.6.3` : for bibliography management.
 - `equate:0.3.3` : for advanced equation numbering.
 - `showybox:2.0.4` : for custom boxes.
-- `suboutline:0.3.0` : for mini tables of contents in chapters.
+- `suboutline:0.3.1` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.
