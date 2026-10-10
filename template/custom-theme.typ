@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.2.0": *
+#import "@preview/bookly:5.2.1": *
 #import "@preview/marginalia:0.3.1": *
 #import "@preview/suboutline:0.3.1": *
 

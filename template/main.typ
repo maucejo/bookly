@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.2.0": *
+#import "@preview/bookly:5.2.1": *
 #import "custom-theme.typ": custom
 
 #let config-colors = (
@@ -40,7 +40,7 @@
     open-right: true,
     par-indent: true,
     // show-cover-author: true,
-    paper-size: "a5",
+    // paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
   )

@@ -1,6 +1,6 @@
 
-#import "@preview/bookly:5.2.0": *
-// #import "@preview/bookly:5.2.0": *
+#import "@preview/bookly:5.2.1": *
+// #import "@preview/bookly:5.2.1": *
 
 #let custom(colors: default-colors, it) = {
   states.theme.update("custom")

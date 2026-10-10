@@ -121,14 +121,15 @@
   show-cover-author: true
 ) = context {
   let header = {
-    box(fill: states.colors.get().primary, width: 100%, inset: 1em)[
+    box(fill: states.colors.get().primary, width: 101%, inset: 1em)[
       #set align(center + horizon)
       #text(fill: white, size: 1.5em)[#strong(delta: 400)[#series]]
     ]
   }
 
   let footer = {
-    box(fill: states.colors.get().primary, width: 100%, inset: 1em)[
+    v(0.1em)
+    box(fill: states.colors.get().primary, width: 101%, inset: 1em)[
       #set align(center + horizon)
       #text(fill: white, size: 1.5em)[#strong(delta: 400)[#institution]]
     ]

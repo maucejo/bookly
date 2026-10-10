@@ -7,11 +7,14 @@
   states.num-pattern.update(none)
   states.isfrontmatter.update(true)
 
+  // Start on an odd page whatever the content placed before
   if states.open-right.get() {
-    counter(page).update(0)
-  } else {
-    counter(page).update(1)
+    {
+      set page(header: none, footer: none)
+      pagebreak(to: "odd", weak: true)
+    }
   }
+  counter(page).update(1)
 
   body
 }
@@ -31,15 +34,14 @@
   states.num-pattern-subfig.update("1.1a")
   states.num-pattern-eq.update("(1.1a)")
 
+  // Start on an odd page whatever the content placed before
   if states.open-right.get() {
-    if states.tufte.get() {
-      counter(page).update(1)
-    } else {
-      counter(page).update(0)
+    {
+      set page(header: none, footer: none)
+      pagebreak(to: "odd", weak: true)
     }
-  } else {
-    counter(page).update(1)
   }
+  counter(page).update(1)
 
   body
 }
