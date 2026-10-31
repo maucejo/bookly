@@ -38,7 +38,15 @@
   // Configuration options
   let book-options = default-config-options + config-options
   states.alt-margins.update(book-options.alt-margins)
-  states.open-right.update(book-options.open-right)
+  assert(
+    book-options.open-right in (true, false, "part", "chapter"),
+    message: "open-right must be true, false, \"part\" or \"chapter\""
+  )
+  let open-right-part = book-options.open-right in (true, "part")
+  let open-right-chapter = book-options.open-right in (true, "chapter")
+  states.open-right.update(book-options.open-right != false)
+  states.open-right-part.update(open-right-part)
+  states.open-right-chapter.update(open-right-chapter)
   states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
   states.par-indent.update(book-options.par-indent)
@@ -174,7 +182,7 @@
 
   // Headings
   show: bookly-theme.theme.with(colors: book-colors)
-  show: show-if(book-options.open-right, it => {
+  show: show-if(open-right-chapter, it => {
     show: headings-on-odd-page
     it
   })

@@ -6,7 +6,7 @@
   // Headings
   show heading.where(level: 1): it => {
     set par(first-line-indent: 0em) if states.par-indent.get()
-    if not states.open-right.get() {
+    if not states.open-right-chapter.get() {
       pagebreak(weak: true)
     }
 
@@ -284,7 +284,7 @@
 
   set align(center + horizon)
 
-  if states.open-right.get() {
+  if states.open-right-part.get() {
     pagebreak(weak: true, to:"odd")
   }
 

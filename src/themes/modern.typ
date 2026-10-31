@@ -5,7 +5,7 @@
 #let modern-theme(colors: default-colors, it) = {
     // Headings
     show heading.where(level: 1): it => context {
-      if not states.open-right.get() {
+      if not states.open-right-chapter.get() {
         pagebreak(weak: true)
       }
 
@@ -289,7 +289,7 @@
 
   set align(center + horizon)
 
-  if states.open-right.get() {
+  if states.open-right-part.get() {
     pagebreak(weak: true, to:"odd")
   }
 

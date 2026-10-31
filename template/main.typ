@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.2.1": *
+#import "@preview/bookly:5.3.0": *
 #import "custom-theme.typ": custom
 
 #let config-colors = (
@@ -17,7 +17,7 @@
     body: "Lato",
     math: "Lete Sans Math"
   ),
-  theme: custom,
+  // theme: custom,
   // theme: classic,
   // theme: fancy,
   // theme: modern,

@@ -15,7 +15,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #code-box[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:5.2.1": *
+#import "@preview/bookly:5.3.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -23,8 +23,8 @@ To implement a custom theme, you have to define a function that includes the `sh
 
 	// Heading Level 1 style
 	show heading.where(level: 1): it => {
-		// Page break before each part
-		if not states.open-right.get() {pagebreak(weak: true)}
+		// Page break before each chapter
+		if not states.open-right-chapter.get() {pagebreak(weak: true)}
 		...
 	}
 
@@ -143,7 +143,11 @@ If you want to reuse and combine elements of the existing themes, you can simply
 
 - `states.num-pattern-subfig` -- #mtype("string"): Numbering pattern for subfigures.
 
-- `states.open-right` -- #mtype("bool"): Indicates whether parts and chapters start on a right-hand page.
+- `states.open-right` -- #mtype("bool"): Indicates whether the document is laid out for two-sided printing (`true` unless the `open-right` option is `false`).
+
+- `states.open-right-chapter` -- #mtype("bool"): Indicates whether chapters start on a right-hand page.
+
+- `states.open-right-part` -- #mtype("bool"): Indicates whether parts start on a right-hand page.
 
 - `states.page-numbering` -- #mtype("string"): Numbering pattern for pages.
 

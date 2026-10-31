@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.2.1": *
+#import "@preview/bookly:5.3.0": *
 
 // #show: chapter-nonum.with()
 

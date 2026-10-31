@@ -1,4 +1,4 @@
-#import "@preview/bookly:5.2.1": *
+#import "@preview/bookly:5.3.0": *
 #import "@preview/marginalia:0.3.1": *
 #import "@preview/suboutline:0.3.1": *
 
@@ -7,7 +7,7 @@
   show heading.where(level: 1): it => {
     set par(first-line-indent: 0em) if states.par-indent.get()
 
-    if not states.open-right.get() {
+    if not states.open-right-chapter.get() {
       pagebreak(weak: true)
     }
 
@@ -147,7 +147,7 @@
 
   set align(center + horizon)
 
-  if states.open-right.get() {
+  if states.open-right-part.get() {
     pagebreak(weak: true, to:"odd")
   }
 
@@ -168,9 +168,7 @@
     #box[#states.localization.get().part #states.counter-part.display(states.part-numbering.get()) -- #title]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  pagebreak(weak: true)
 }
 
 #let custom-minitoc = context {

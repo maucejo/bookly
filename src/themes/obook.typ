@@ -4,7 +4,7 @@
 
 #let obook-theme(colors: default-colors, it) = {
   show heading.where(level: 1): it => context {
-      if not states.open-right.get() {
+      if not states.open-right-chapter.get() {
         pagebreak(weak: true)
       }
 
@@ -227,7 +227,7 @@ let page-header = context {
     numbering: none
   )
 
-  if states.open-right.get() {
+  if states.open-right-part.get() {
     pagebreak(weak: true, to:"odd")
   }
 

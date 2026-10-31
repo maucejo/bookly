@@ -4,7 +4,7 @@
 
 #let orly-theme(colors: default-colors, it) = {
   show heading.where(level:1): it => {
-    if not states.open-right.get() {
+    if not states.open-right-chapter.get() {
       pagebreak(weak: true)
     }
 
@@ -149,7 +149,7 @@
 
   set align(top + right)
 
-  if states.open-right.get() {
+  if states.open-right-part.get() {
     pagebreak(weak: true, to:"odd")
   }
 

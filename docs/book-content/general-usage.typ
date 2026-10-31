@@ -13,7 +13,7 @@ This chapter provides an overview of the general usage of the Bookly template. I
 
 To use the `bookly` template, you need to include the following line at the beginning of your `typ` file:
 #code-box[```typ
-#import "@preview/bookly:5.2.1": *
+#import "@preview/bookly:5.3.0": *
 ```
 ]
 
@@ -102,7 +102,13 @@ Supported languages:
 #argument("config-options", default: "default-config-options", type: mtype("dictionary"))[Configuration options of the document. It allows a more fine-grained control of some aspects of the template. It contains the following keys:
 	- `alt-margins` #mtype("bool") -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
 	- `justify-headings` #mtype("bool") -- If `true`, headings are justified (default: `true`)
-	- `open-right` #mtype("bool") -- If `true`, parts start on a right-hand page (default: `true`)
+	- `open-right` #mtype("bool") or #mtype("string") -- Controls which divisions start on a right-hand page (default: `true`)
+		- `true` -- Parts and chapters start on a right-hand page
+		- `false` -- Parts and chapters start on the next page
+		- `"part"` -- Only parts start on a right-hand page, chapters start on the next page
+		- `"chapter"` -- Only chapters start on a right-hand page, parts start on the next page
+
+		#info-box[Unless `open-right` is `false`, the front matter, the main matter, the title page and the back cover also start on the appropriate page for two-sided printing.]
 	- `paper-size` #mtype("string") -- Size of the paper (default: `"a4"`)
 	- `par-indent` #mtype("bool") -- If `true`, paragraphs are indented (default: `false`)
 	- `par-indent-amount` #mtype("length") -- Amount of the paragraph indentation (default: `1.5em`). Chinese typesetting conventionally indents by two characters, which is `2em` for a CJK font.

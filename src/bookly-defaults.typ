@@ -16,6 +16,8 @@
   num-pattern-fig: state("num-pattern-fig", "1.1"),
   num-pattern-subfig: state("num-pattern-subfig", "1.1a"),
   open-right: state("open-right", true),
+  open-right-chapter: state("open-right-chapter", true),
+  open-right-part: state("open-right-part", true),
   page-numbering: state("page-numbering", "1/1"),
   paper-size: state("paper-size", "a4"),
   par-indent: state("par-indent", false),
