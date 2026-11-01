@@ -1,0 +1,86 @@
+name: Feature request
+description: Suggest a new feature or an improvement for bookly.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement!
+        Please check the [manual](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf) first: the feature may already be available through an existing option.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which part of bookly does this request concern?
+      options:
+        - Themes / styling
+        - Tufte layout
+        - Title page
+        - Parts and chapters
+        - Outlines (table of contents, lists, minitoc)
+        - Environments (front/main/back matter, appendix)
+        - Components (boxes, figures, equations, etc.)
+        - Language / localization
+        - Fonts
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What problem are you trying to solve? Why is this feature useful?
+      placeholder: "When writing my thesis, I need to ... but currently ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the feature you would like. If possible, show how you would like to use it (API, parameters, etc.).
+      placeholder: |
+        For example, a new option in `config-options`:
+
+        #show: bookly.with(
+          config-options: (
+            my-new-option: true,
+          )
+        )
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you tried any workaround or alternative approach?
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / examples
+      description: Links or screenshots showing similar features in other templates (LaTeX classes, other Typst packages, books, etc.).
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Would you like to contribute?
+      options:
+        - "Yes, I can open a pull request"
+        - "Maybe, with some guidance"
+        - "No"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this feature has not been requested yet.
+          required: true

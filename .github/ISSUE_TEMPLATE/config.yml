@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User manual
+    url: https://github.com/maucejo/bookly/blob/main/docs/manual.pdf
+    about: Read the bookly manual before opening an issue.
+  - name: Typst forum
+    url: https://forum.typst.app/
+    about: For general Typst questions not specific to bookly.

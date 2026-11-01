@@ -1,0 +1,144 @@
+name: Bug report
+description: Report something that does not work as expected in bookly.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+        Before submitting, please check the [manual](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf) and [existing issues](https://github.com/maucejo/bookly/issues) to avoid duplicates.
+
+  - type: input
+    id: bookly-version
+    attributes:
+      label: bookly version
+      description: Version imported in your document (e.g. `@preview/bookly:5.3.0`).
+      placeholder: "5.3.0"
+    validations:
+      required: true
+
+  - type: input
+    id: typst-version
+    attributes:
+      label: Typst version
+      description: Output of `typst --version`, or "web app" if you use typst.app.
+      placeholder: "typst 0.14.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where do you compile your document?
+      options:
+        - Typst CLI
+        - typst.app (web app)
+        - Tinymist (VS Code / other editor)
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      description: Which theme(s) are affected?
+      multiple: true
+      options:
+        - classic
+        - modern
+        - fancy
+        - obook
+        - orly
+        - pretty
+        - Custom theme
+        - Not theme-related
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layout
+    attributes:
+      label: Layout
+      options:
+        - Standard layout
+        - Tufte layout (`tufte: true`)
+        - Both
+    validations:
+      required: true
+
+  - type: input
+    id: lang
+    attributes:
+      label: Document language
+      description: Value of the `lang` parameter.
+      placeholder: "en"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: A clear and concise description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproducible example
+      description: |
+        The smallest Typst code that reproduces the issue, including the `#show: bookly.with(...)` call.
+        Please remove anything not needed to trigger the bug.
+      render: typst
+      placeholder: |
+        #import "@preview/bookly:5.3.0": *
+
+        #show: bookly.with(
+          title: "Test",
+          theme: modern,
+        )
+
+        = Chapter
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include the full compiler error message if any.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If relevant, add screenshots of the rendered output (you can drag & drop images here).
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help (fonts used, other packages imported, workaround found, etc.).
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this bug has not been reported yet.
+          required: true
+        - label: I have checked that the bug still occurs with the latest version of bookly.
+          required: false
