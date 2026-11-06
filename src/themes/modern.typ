@@ -17,6 +17,28 @@
 
       let right-margin = marginalia.get-right()
       let dxc = -right-margin.far
+      // Chapter pill: single-line height (unconstrained measure) and wrapped height (width-constrained)
+      let pill-outset = 0.9em
+      let pill-max-width = 80%
+      let pill-h1 = measure(text(size: 1.5em)[#it.body]).height
+      let chapter-pill = box(outset: pill-outset, radius: pill-h1 / 2 + pill-outset, stroke: none, fill: colors.primary)[
+        #set par(justify: false)
+        #set align(right)
+        #text(size: 1.5em, fill: white)[#it.body]
+      ]
+      let placed-pill(dy) = place(top + right, dy: dy)[
+        #show: show-if(states.tufte.get(), it => {
+          show: wideblock.with(side: "both")
+          it
+        })
+        #block(width: pill-max-width, align(right, chapter-pill))
+      ]
+      // Extra vertical space taken by a title spanning several lines
+      let pill-extra = layout(size => {
+        let h = measure(block(width: pill-max-width * size.width, align(right, chapter-pill))).height
+        v(calc.max(0pt, h - pill-h1))
+      })
+
       if it.numbering != none {
         place(top, dx: dxc, dy: -11%)[
           #show: wideblock.with(side: "both")
@@ -31,40 +53,20 @@
           #text(size: 2.5em, fill: white)[#type-chapter #counter(heading).display(states.num-heading.get())]
         ]
 
-        let chapter-pill = box(outset: 0.9em, radius: 50%, stroke: none, fill: states.colors.get().primary)[#text(size: 1.5em, fill: white)[#it.body]]
-
-        let chapter-pill-height = measure(chapter-pill).height
-        let banner-bottom = 24%
-
-        place(top + right, dy: banner-bottom - chapter-pill-height / 2)[
-          #show: show-if(states.tufte.get(), it => {
-            show: wideblock.with(side: "both")
-              it
-          })
-          #chapter-pill
-        ]
+        placed-pill(24% - pill-h1 / 2)
 
         v(15em)
+        pill-extra
       } else {
         place(top, dx: dxc, dy: -11%)[
           #show: wideblock.with(side: "both")
           #rect(fill: gradient.linear(colors.primary, colors.primary.transparentize(65%), dir: ltr), width: 114%, height: 10%)
         ]
 
-        let chapter-pill-unnumbered = box(outset: 0.9em, radius: 50%, stroke: none,fill: colors.primary)[#text(size: 1.5em, fill: white)[#it.body]]
-
-        let chapter-pill-unnumbered-height = measure(chapter-pill-unnumbered).height
-        let banner-bottom-unnumbered = -1%
-
-        place(top + right, dy: banner-bottom-unnumbered - chapter-pill-unnumbered-height / 2)[
-          #show: show-if(states.tufte.get(), it => {
-            show: wideblock.with(side: "both")
-            it
-          })
-          #chapter-pill-unnumbered
-        ]
+        placed-pill(-1% - pill-h1 / 2)
 
         v(3em)
+        pill-extra
     }
   }
 
