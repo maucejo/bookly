@@ -40,7 +40,7 @@
     open-right: true,
     par-indent: true,
     // show-cover-author: true,
-    // paper-size: "a5",
+    // paper-size: "us-trade",
     // alt-margins: true,
     // part-numbering: none
   )
