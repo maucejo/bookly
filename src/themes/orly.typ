@@ -111,7 +111,6 @@
   }
 
   set page(
-    paper: states.paper-size.get(),
     header: anchor(),
     footer: page-footer,
   )

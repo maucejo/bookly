@@ -164,6 +164,9 @@
     it
   }
 
+  // Paper size
+  set page(paper: book-options.paper-size)
+
   // Title page
   if title-page != none {
     title-page

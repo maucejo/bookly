@@ -142,7 +142,6 @@ w
   }
 
   set page(
-    paper: states.paper-size.get(),
     header: page-header,
     footer: page-footer
   )

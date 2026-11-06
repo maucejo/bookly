@@ -59,7 +59,6 @@
 // Default Title page
 #let default-title-page = context {
   set page(
-    paper: default-config-options.paper-size,
     header: none,
     footer: none,
     margin: auto
