@@ -5,7 +5,7 @@
 [![Stable documentation](https://img.shields.io/badge/docs-stable-mediumpurple)](https://maucejo.github.io/bookly/)
 
 <p align="center">
-<img src="docs/manual-images/bookly-logo.png" alt="drawing" width="200"/>
+<img src="docs/assets/bookly-full.svg" alt="drawing" width="200"/>
 </p>
 
 The `bookly` template is a Typst package designed for writing academic documents such as theses, French habilitations, or scientific books. It provides a structured format that adheres to academic standards, making it easier for authors to focus on content rather than formatting.
