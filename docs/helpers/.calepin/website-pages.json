@@ -1,0 +1,324 @@
+[
+  {
+    "excerpt": "Bookly provides environments to structure the content of a book. Each environment is activated with a show rule placed in the main typ file at the desired location, and applies until the next environment.",
+    "href": "book-content/environments.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "book content",
+        "environments",
+        "front matter",
+        "main matter",
+        "appendix"
+      ]
+    },
+    "path": "book-content/environments.typ",
+    "pdf": null,
+    "title": "Environments",
+    "translation_key": "book-content/environments",
+    "translations": {}
+  },
+  {
+    "excerpt": "When writing a long document, such as a book or a thesis manuscript, it is preferable to adopt a multi-file organization to avoid having one very long main file. This is especially important during proofreading and correction, as well as when several people write together.",
+    "href": "book-content/file-organization.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "book content",
+        "file organization",
+        "main file"
+      ]
+    },
+    "path": "book-content/file-organization.typ",
+    "pdf": null,
+    "title": "File organization",
+    "translation_key": "book-content/file-organization",
+    "translations": {}
+  },
+  {
+    "excerpt": "This page explains how to structure the content of your book with parts, chapters and sections.",
+    "href": "book-content/parts-chapters.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "book content",
+        "parts",
+        "chapters",
+        "sections"
+      ]
+    },
+    "path": "book-content/parts-chapters.typ",
+    "pdf": null,
+    "title": "Parts and chapters",
+    "translation_key": "book-content/parts-chapters",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly defines several commands to create tables of contents. Their titles are translated according to the lang argument of #bookly.with.",
+    "href": "book-content/tables-of-contents.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "book content",
+        "table of contents",
+        "list of figures",
+        "list of tables",
+        "minitoc"
+      ]
+    },
+    "path": "book-content/tables-of-contents.typ",
+    "pdf": null,
+    "title": "Tables of contents",
+    "translation_key": "book-content/tables-of-contents",
+    "translations": {}
+  },
+  {
+    "excerpt": "This section gives an overview of the general usage of the Bookly template. It covers how to import and initialize the template, the available configuration options, and the supported layouts.",
+    "href": "getting-started.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "getting started",
+        "import",
+        "basic usage",
+        "themes",
+        "layout"
+      ]
+    },
+    "path": "getting-started.typ",
+    "pdf": null,
+    "title": "Getting started",
+    "translation_key": "getting-started",
+    "translations": {}
+  },
+  {
+    "excerpt": "The #back-cover function creates the back cover of the document. It displays the author and the title of the document, taken from #bookly.with, followed by one or several abstracts. It is usually the last command of the main file.",
+    "href": "helpers/back-cover.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "back cover",
+        "abstract"
+      ]
+    },
+    "path": "helpers/back-cover.typ",
+    "pdf": null,
+    "title": "Back cover",
+    "translation_key": "helpers/back-cover",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly provides several types of boxes to highlight different kinds of content. Their style is defined by the current theme, and their titles are translated according to the lang argument of #bookly.with. The previews below use the default fancy theme.",
+    "href": "helpers/callout-boxes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "callout boxes",
+        "info-box",
+        "custom-box"
+      ]
+    },
+    "path": "helpers/callout-boxes.typ",
+    "pdf": null,
+    "title": "Callout boxes",
+    "translation_key": "helpers/callout-boxes",
+    "translations": {}
+  },
+  {
+    "excerpt": "Equations are numbered by chapter (e.g., (1.1)), and sub-numbering of multiline equations is handled by the equate package. Bookly also provides helpers to highlight an equation or to remove its number.",
+    "href": "helpers/equations.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "equations",
+        "boxeq",
+        "numbering"
+      ]
+    },
+    "path": "helpers/equations.typ",
+    "pdf": null,
+    "title": "Equations",
+    "translation_key": "helpers/equations",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly provides several other helper functions to facilitate the writing of a book or a thesis and the creation of custom themes.",
+    "href": "helpers/miscellaneous.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "miscellaneous",
+        "counters",
+        "indentation",
+        "outline"
+      ]
+    },
+    "path": "helpers/miscellaneous.typ",
+    "pdf": null,
+    "title": "Miscellaneous",
+    "translation_key": "helpers/miscellaneous",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly provides the #short-or-long function to manage long and short versions of a title or a caption.",
+    "href": "helpers/short-long-titles.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "short title",
+        "caption",
+        "list of figures"
+      ]
+    },
+    "path": "helpers/short-long-titles.typ",
+    "pdf": null,
+    "title": "Short or long titles",
+    "translation_key": "helpers/short-long-titles",
+    "translations": {}
+  },
+  {
+    "excerpt": "Figures are usually inserted with Typst's #figure function. However, Typst does not currently provide a mechanism for handling subfigures (numbering and referencing). To address this limitation, Bookly includes a #subfigure function that numbers and references subfigures…",
+    "href": "helpers/subfigures.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "subfigures",
+        "figures"
+      ]
+    },
+    "path": "helpers/subfigures.typ",
+    "pdf": null,
+    "title": "Subfigures",
+    "translation_key": "helpers/subfigures",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly provides two functions to create title pages, one for a book and one for a thesis. They are passed to the title-page argument of #bookly.with.",
+    "href": "helpers/title-pages.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "title page",
+        "book",
+        "thesis",
+        "cover"
+      ]
+    },
+    "path": "helpers/title-pages.typ",
+    "pdf": null,
+    "title": "Title pages",
+    "translation_key": "helpers/title-pages",
+    "translations": {}
+  },
+  {
+    "excerpt": "When the tufte layout is enabled (tufte: true in #bookly.with, see Layout), several customizations adapt the appearance of figures, tables and equations to the Tufte style. Bookly also provides the following functions, based on the marginalia package, to place content in the…",
+    "href": "helpers/tufte.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "helpers",
+        "tufte",
+        "side notes",
+        "marginalia",
+        "wideblock"
+      ]
+    },
+    "path": "helpers/tufte.typ",
+    "pdf": null,
+    "title": "Tufte helpers",
+    "translation_key": "helpers/tufte",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly is a Typst template for writing and publishing structured books, theses and reports. It provides a consistent look out of the box, a set of ready-to-use themes, and the helpers needed to handle front matter, parts, chapters, appendices and everything in between.",
+    "href": "index.html",
+    "language": null,
+    "meta": {
+      "layout": "layouts/site-landing.html",
+      "tags": [
+        "overview",
+        "getting started"
+      ]
+    },
+    "path": "index.typ",
+    "pdf": null,
+    "title": "Bookly Documentation",
+    "translation_key": "index",
+    "translations": {}
+  },
+  {
+    "excerpt": "Bookly provides a set of built-in themes that define the appearance of your book: parts, chapters, headings, mini tables of contents, callout boxes and equation boxes. All themes share the same API, so you can switch from one to another without touching your content.",
+    "href": "theming/built-in-themes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "built-in themes",
+        "themes gallery"
+      ]
+    },
+    "path": "theming/built-in-themes.typ",
+    "pdf": null,
+    "title": "Built-in themes",
+    "translation_key": "theming/built-in-themes",
+    "translations": {}
+  },
+  {
+    "excerpt": "Using one of the built-in themes is a great way to get started with Bookly, but you may want to create your own theme to match your branding or personal style. This section explains how Bookly's theming system works, how to create a custom theme and how to apply it to your book.",
+    "href": "theming/custom-themes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "custom themes",
+        "states"
+      ]
+    },
+    "path": "theming/custom-themes.typ",
+    "pdf": null,
+    "title": "Custom themes",
+    "translation_key": "theming/custom-themes",
+    "translations": {}
+  },
+  {
+    "excerpt": "Sometimes, you may want to use a built-in theme, but customize the fonts and colors of your book to match your branding or personal preferences. Bookly allows you to override the default fonts and colors by providing your own definitions to the fonts and colors arguments of…",
+    "href": "theming/fonts-colors.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "fonts",
+        "colors"
+      ]
+    },
+    "path": "theming/fonts-colors.typ",
+    "pdf": null,
+    "title": "Fonts and colors",
+    "translation_key": "theming/fonts-colors",
+    "translations": {}
+  },
+  {
+    "excerpt": "The template currently supports two layouts: standard and tufte.",
+    "href": "theming/layout.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "built-in themes",
+        "layout"
+      ]
+    },
+    "path": "theming/layout.typ",
+    "pdf": null,
+    "title": "Layout",
+    "translation_key": "theming/layout",
+    "translations": {}
+  }
+]

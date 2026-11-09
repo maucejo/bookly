@@ -1,0 +1,105 @@
+title = "Bookly"
+description = "Simple yet powerful presentation framework for Typst."
+base_url = "https://maucejo.github.io/bookly"
+logo = "assets/bookly-logo.svg"
+logo_alt = "Bookly logo"
+theme = "./theme"
+output-dir = "./_site"
+pdf = false
+typ = false
+minify = true
+search = "pagefind"
+favicon = "assets/bookly-icon.svg"
+highlight-light = "assets/Catppuccin-Latte.tmTheme"
+
+[executables]
+typst = "typst"
+
+[toc]
+enabled = true
+depth = 2
+floating = true
+
+[static]
+include = ["assets/**"]
+
+[menus]
+
+  [[menus.main]]
+  target = "./getting-started.typ"
+  label = "Documentation"
+
+  [[menus.social]]
+  target = "https://github.com/maucejo/bookly"
+  label = "{icon:github}"
+  aria-label = "GitHub"
+
+[footer]
+
+  [[footer.item]]
+  label = "© 2026 Mathieu Aucejo"
+
+  [[footer.item]]
+  label = "Made with Calepin."
+  target = "https://vincentarelbundock.github.io/calepin"
+
+[sidebar]
+fold = true
+
+[[sidebar.section]]
+  [[sidebar.section.item]]
+  target = "./getting-started.typ"
+
+[[sidebar.section]]
+title = "Theming"
+  [[sidebar.section.item]]
+    target = "theming/built-in-themes.typ"
+
+  [[sidebar.section.item]]
+    target = "theming/layout.typ"
+
+  [[sidebar.section.item]]
+    target = "theming/fonts-colors.typ"
+
+  [[sidebar.section.item]]
+    target = "theming/custom-themes.typ"
+
+[[sidebar.section]]
+title = "Book content"
+  [[sidebar.section.item]]
+    target = "book-content/file-organization.typ"
+
+  [[sidebar.section.item]]
+    target = "book-content/environments.typ"
+
+  [[sidebar.section.item]]
+    target = "book-content/parts-chapters.typ"
+
+  [[sidebar.section.item]]
+    target = "book-content/tables-of-contents.typ"
+
+[[sidebar.section]]
+title = "Helpers"
+  [[sidebar.section.item]]
+    target = "helpers/short-long-titles.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/subfigures.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/equations.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/callout-boxes.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/title-pages.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/back-cover.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/tufte.typ"
+
+  [[sidebar.section.item]]
+    target = "helpers/miscellaneous.typ"

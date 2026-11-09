@@ -1,0 +1,1778 @@
+{
+  "schema": 1,
+  "images": {
+    "../assets/helpers/back-cover.png": {
+      "path": "assets/helpers/back-cover.png",
+      "xxh3": "cbac00af7f77718f",
+      "bytes": 29976,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 576630273
+    },
+    "/_site/assets/helpers/back-cover.png": {
+      "path": "_site/assets/helpers/back-cover.png",
+      "xxh3": "cbac00af7f77718f",
+      "bytes": 29976,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 576630273
+    },
+    "/_site/assets/helpers/book-title-page-2.png": {
+      "path": "_site/assets/helpers/book-title-page-2.png",
+      "xxh3": "ed3ee563e6d7314e",
+      "bytes": 31484,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 426277943
+    },
+    "/_site/assets/helpers/book-title-page.png": {
+      "path": "_site/assets/helpers/book-title-page.png",
+      "xxh3": "bac42d84fdb83025",
+      "bytes": 204904,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 424130450
+    },
+    "/_site/assets/helpers/box-code.png": {
+      "path": "_site/assets/helpers/box-code.png",
+      "xxh3": "01bdd4d6a1a38006",
+      "bytes": 10707,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 117676375
+    },
+    "/_site/assets/helpers/box-custom.png": {
+      "path": "_site/assets/helpers/box-custom.png",
+      "xxh3": "f934f00821db6b0a",
+      "bytes": 11774,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 203839670
+    },
+    "/_site/assets/helpers/box-important.png": {
+      "path": "_site/assets/helpers/box-important.png",
+      "xxh3": "5fb79a67de60a29d",
+      "bytes": 12083,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 890428470
+    },
+    "/_site/assets/helpers/box-info.png": {
+      "path": "_site/assets/helpers/box-info.png",
+      "xxh3": "54dd969123c0336d",
+      "bytes": 12439,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 673373613
+    },
+    "/_site/assets/helpers/box-proof.png": {
+      "path": "_site/assets/helpers/box-proof.png",
+      "xxh3": "a2cfc6e69f091ff3",
+      "bytes": 10628,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 965589718
+    },
+    "/_site/assets/helpers/box-question.png": {
+      "path": "_site/assets/helpers/box-question.png",
+      "xxh3": "0cef42dcad2c7304",
+      "bytes": 13604,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 43035959
+    },
+    "/_site/assets/helpers/box-tip.png": {
+      "path": "_site/assets/helpers/box-tip.png",
+      "xxh3": "2bf6db15271e5c5f",
+      "bytes": 9121,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 746387035
+    },
+    "/_site/assets/helpers/box-warning.png": {
+      "path": "_site/assets/helpers/box-warning.png",
+      "xxh3": "654a5d4fd8aa6743",
+      "bytes": 12057,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 816424551
+    },
+    "/_site/assets/helpers/eq-boxeq.png": {
+      "path": "_site/assets/helpers/eq-boxeq.png",
+      "xxh3": "b40590481de093d9",
+      "bytes": 8534,
+      "width": 945,
+      "height": 120,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 795603620
+    },
+    "/_site/assets/helpers/eq-nonum.png": {
+      "path": "_site/assets/helpers/eq-nonum.png",
+      "xxh3": "b6c57bef0176f093",
+      "bytes": 7253,
+      "width": 945,
+      "height": 138,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 798247653
+    },
+    "/_site/assets/helpers/icons/alert.svg": {
+      "path": "_site/assets/helpers/icons/alert.svg",
+      "xxh3": "83676efd550f590e",
+      "bytes": 409,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136326518
+    },
+    "/_site/assets/helpers/icons/code.svg": {
+      "path": "_site/assets/helpers/icons/code.svg",
+      "xxh3": "a6416c77886bdaec",
+      "bytes": 287,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136671850
+    },
+    "/_site/assets/helpers/icons/info.svg": {
+      "path": "_site/assets/helpers/icons/info.svg",
+      "xxh3": "9fc4be3fa3d608bc",
+      "bytes": 354,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136868433
+    },
+    "/_site/assets/helpers/icons/question.svg": {
+      "path": "_site/assets/helpers/icons/question.svg",
+      "xxh3": "e43d7c631aff7be9",
+      "bytes": 759,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137054266
+    },
+    "/_site/assets/helpers/icons/report.svg": {
+      "path": "_site/assets/helpers/icons/report.svg",
+      "xxh3": "3ed0c06d70cfa8f6",
+      "bytes": 524,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137277015
+    },
+    "/_site/assets/helpers/icons/stop.svg": {
+      "path": "_site/assets/helpers/icons/stop.svg",
+      "xxh3": "8fc7e93d1b9a50c0",
+      "bytes": 493,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137448306
+    },
+    "/_site/assets/helpers/icons/tip.svg": {
+      "path": "_site/assets/helpers/icons/tip.svg",
+      "xxh3": "8e8c45664ce5fc77",
+      "bytes": 800,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137618472
+    },
+    "/_site/assets/helpers/subfigure.png": {
+      "path": "_site/assets/helpers/subfigure.png",
+      "xxh3": "a53a1f519df0e17d",
+      "bytes": 27833,
+      "width": 945,
+      "height": 441,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 800675770
+    },
+    "/_site/assets/helpers/thesis-title-page.png": {
+      "path": "_site/assets/helpers/thesis-title-page.png",
+      "xxh3": "c4d9a48ccb7c93b7",
+      "bytes": 65114,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 502661146
+    },
+    "/_site/assets/theming/chapter-classic.png": {
+      "path": "_site/assets/theming/chapter-classic.png",
+      "xxh3": "24cbdaddf4119b35",
+      "bytes": 40422,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442706846
+    },
+    "/_site/assets/theming/chapter-fancy.png": {
+      "path": "_site/assets/theming/chapter-fancy.png",
+      "xxh3": "b0e373b8ed7fc491",
+      "bytes": 92348,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443046095
+    },
+    "/_site/assets/theming/chapter-modern.png": {
+      "path": "_site/assets/theming/chapter-modern.png",
+      "xxh3": "eaf2b8f8c98cd4bc",
+      "bytes": 164149,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443426052
+    },
+    "/_site/assets/theming/chapter-nonum-classic.png": {
+      "path": "_site/assets/theming/chapter-nonum-classic.png",
+      "xxh3": "5ccb582b2b674f78",
+      "bytes": 98570,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443734926
+    },
+    "/_site/assets/theming/chapter-nonum-fancy.png": {
+      "path": "_site/assets/theming/chapter-nonum-fancy.png",
+      "xxh3": "b871de7be43b4821",
+      "bytes": 97756,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444126674
+    },
+    "/_site/assets/theming/chapter-nonum-modern.png": {
+      "path": "_site/assets/theming/chapter-nonum-modern.png",
+      "xxh3": "d6de7efa187ba667",
+      "bytes": 130427,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444467048
+    },
+    "/_site/assets/theming/chapter-nonum-obook.png": {
+      "path": "_site/assets/theming/chapter-nonum-obook.png",
+      "xxh3": "a0d3eb66139a814f",
+      "bytes": 59298,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444800880
+    },
+    "/_site/assets/theming/chapter-nonum-orly.png": {
+      "path": "_site/assets/theming/chapter-nonum-orly.png",
+      "xxh3": "ab20a7b2f31b7c49",
+      "bytes": 66250,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445146338
+    },
+    "/_site/assets/theming/chapter-nonum-pretty.png": {
+      "path": "_site/assets/theming/chapter-nonum-pretty.png",
+      "xxh3": "e9672d0e31dcaa06",
+      "bytes": 56641,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445400628
+    },
+    "/_site/assets/theming/chapter-obook.png": {
+      "path": "_site/assets/theming/chapter-obook.png",
+      "xxh3": "e3b6cb7086208b07",
+      "bytes": 35456,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445618836
+    },
+    "/_site/assets/theming/chapter-orly.png": {
+      "path": "_site/assets/theming/chapter-orly.png",
+      "xxh3": "9147cf27560854f4",
+      "bytes": 37624,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445965918
+    },
+    "/_site/assets/theming/chapter-pretty.png": {
+      "path": "_site/assets/theming/chapter-pretty.png",
+      "xxh3": "10f5d35cf81b74cd",
+      "bytes": 31939,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446163751
+    },
+    "/_site/assets/theming/part-classic.png": {
+      "path": "_site/assets/theming/part-classic.png",
+      "xxh3": "f1ab275a1eb1d14a",
+      "bytes": 14484,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 439863939
+    },
+    "/_site/assets/theming/part-fancy.png": {
+      "path": "_site/assets/theming/part-fancy.png",
+      "xxh3": "c81ecd440517d2ee",
+      "bytes": 35164,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440226396
+    },
+    "/_site/assets/theming/part-modern.png": {
+      "path": "_site/assets/theming/part-modern.png",
+      "xxh3": "e8591a20c2f6890b",
+      "bytes": 28783,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440555770
+    },
+    "/_site/assets/theming/part-obook.png": {
+      "path": "_site/assets/theming/part-obook.png",
+      "xxh3": "522e7b76cb0cb9f9",
+      "bytes": 22679,
+      "width": 613,
+      "height": 870,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441302517
+    },
+    "/_site/assets/theming/part-orly.png": {
+      "path": "_site/assets/theming/part-orly.png",
+      "xxh3": "a1af812026bcacc0",
+      "bytes": 15272,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441846849
+    },
+    "/_site/assets/theming/part-pretty.png": {
+      "path": "_site/assets/theming/part-pretty.png",
+      "xxh3": "6aeea3149c1e2cf3",
+      "bytes": 14263,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442308722
+    },
+    "/_site/assets/theming/sections-classic.png": {
+      "path": "_site/assets/theming/sections-classic.png",
+      "xxh3": "770636abe2e1aae6",
+      "bytes": 72144,
+      "width": 691,
+      "height": 955,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446570291
+    },
+    "/_site/assets/theming/sections-fancy.png": {
+      "path": "_site/assets/theming/sections-fancy.png",
+      "xxh3": "46194b77c1af6ba1",
+      "bytes": 222534,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446934623
+    },
+    "/_site/assets/theming/sections-modern.png": {
+      "path": "_site/assets/theming/sections-modern.png",
+      "xxh3": "d6635337c7e49048",
+      "bytes": 61775,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447333830
+    },
+    "/_site/assets/theming/sections-obook.png": {
+      "path": "_site/assets/theming/sections-obook.png",
+      "xxh3": "1c2da46eaf97f62e",
+      "bytes": 54248,
+      "width": 613,
+      "height": 869,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447571496
+    },
+    "/_site/assets/theming/sections-orly.png": {
+      "path": "_site/assets/theming/sections-orly.png",
+      "xxh3": "1d2cdf841e5a3554",
+      "bytes": 60846,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448081328
+    },
+    "/_site/assets/theming/sections-pretty.png": {
+      "path": "_site/assets/theming/sections-pretty.png",
+      "xxh3": "dc39b4293b0ed035",
+      "bytes": 52603,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448329702
+    },
+    "/_site/assets/theming/tufte-citations.png": {
+      "path": "_site/assets/theming/tufte-citations.png",
+      "xxh3": "e9e6dbee39bbcbc7",
+      "bytes": 50192,
+      "width": 637,
+      "height": 904,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 365949635
+    },
+    "/_site/assets/theming/tufte-figures.png": {
+      "path": "_site/assets/theming/tufte-figures.png",
+      "xxh3": "a82943417a3ac6a2",
+      "bytes": 79205,
+      "width": 633,
+      "height": 900,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 373652609
+    },
+    "/_site/assets/theming/tufte-wide.png": {
+      "path": "_site/assets/theming/tufte-wide.png",
+      "xxh3": "0f2ec708da938b44",
+      "bytes": 48210,
+      "width": 631,
+      "height": 901,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 380310962
+    },
+    "/assets/helpers/back-cover.png": {
+      "path": "assets/helpers/back-cover.png",
+      "xxh3": "cbac00af7f77718f",
+      "bytes": 29976,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 576630273
+    },
+    "/assets/helpers/book-title-page-2.png": {
+      "path": "assets/helpers/book-title-page-2.png",
+      "xxh3": "ed3ee563e6d7314e",
+      "bytes": 31484,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 426277943
+    },
+    "/assets/helpers/book-title-page.png": {
+      "path": "assets/helpers/book-title-page.png",
+      "xxh3": "bac42d84fdb83025",
+      "bytes": 204904,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 424130450
+    },
+    "/assets/helpers/box-code.png": {
+      "path": "assets/helpers/box-code.png",
+      "xxh3": "01bdd4d6a1a38006",
+      "bytes": 10707,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 117676375
+    },
+    "/assets/helpers/box-custom.png": {
+      "path": "assets/helpers/box-custom.png",
+      "xxh3": "f934f00821db6b0a",
+      "bytes": 11774,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 203839670
+    },
+    "/assets/helpers/box-important.png": {
+      "path": "assets/helpers/box-important.png",
+      "xxh3": "5fb79a67de60a29d",
+      "bytes": 12083,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 890428470
+    },
+    "/assets/helpers/box-info.png": {
+      "path": "assets/helpers/box-info.png",
+      "xxh3": "54dd969123c0336d",
+      "bytes": 12439,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 673373613
+    },
+    "/assets/helpers/box-proof.png": {
+      "path": "assets/helpers/box-proof.png",
+      "xxh3": "a2cfc6e69f091ff3",
+      "bytes": 10628,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 965589718
+    },
+    "/assets/helpers/box-question.png": {
+      "path": "assets/helpers/box-question.png",
+      "xxh3": "0cef42dcad2c7304",
+      "bytes": 13604,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 43035959
+    },
+    "/assets/helpers/box-tip.png": {
+      "path": "assets/helpers/box-tip.png",
+      "xxh3": "2bf6db15271e5c5f",
+      "bytes": 9121,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 746387035
+    },
+    "/assets/helpers/box-warning.png": {
+      "path": "assets/helpers/box-warning.png",
+      "xxh3": "654a5d4fd8aa6743",
+      "bytes": 12057,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 816424551
+    },
+    "/assets/helpers/eq-boxeq.png": {
+      "path": "assets/helpers/eq-boxeq.png",
+      "xxh3": "b40590481de093d9",
+      "bytes": 8534,
+      "width": 945,
+      "height": 120,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 795603620
+    },
+    "/assets/helpers/eq-nonum.png": {
+      "path": "assets/helpers/eq-nonum.png",
+      "xxh3": "b6c57bef0176f093",
+      "bytes": 7253,
+      "width": 945,
+      "height": 138,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 798247653
+    },
+    "/assets/helpers/icons/alert.svg": {
+      "path": "assets/helpers/icons/alert.svg",
+      "xxh3": "83676efd550f590e",
+      "bytes": 409,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136326518
+    },
+    "/assets/helpers/icons/code.svg": {
+      "path": "assets/helpers/icons/code.svg",
+      "xxh3": "a6416c77886bdaec",
+      "bytes": 287,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136671850
+    },
+    "/assets/helpers/icons/info.svg": {
+      "path": "assets/helpers/icons/info.svg",
+      "xxh3": "9fc4be3fa3d608bc",
+      "bytes": 354,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136868433
+    },
+    "/assets/helpers/icons/question.svg": {
+      "path": "assets/helpers/icons/question.svg",
+      "xxh3": "e43d7c631aff7be9",
+      "bytes": 759,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137054266
+    },
+    "/assets/helpers/icons/report.svg": {
+      "path": "assets/helpers/icons/report.svg",
+      "xxh3": "3ed0c06d70cfa8f6",
+      "bytes": 524,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137277015
+    },
+    "/assets/helpers/icons/stop.svg": {
+      "path": "assets/helpers/icons/stop.svg",
+      "xxh3": "8fc7e93d1b9a50c0",
+      "bytes": 493,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137448306
+    },
+    "/assets/helpers/icons/tip.svg": {
+      "path": "assets/helpers/icons/tip.svg",
+      "xxh3": "8e8c45664ce5fc77",
+      "bytes": 800,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137618472
+    },
+    "/assets/helpers/subfigure.png": {
+      "path": "assets/helpers/subfigure.png",
+      "xxh3": "a53a1f519df0e17d",
+      "bytes": 27833,
+      "width": 945,
+      "height": 441,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 800675770
+    },
+    "/assets/helpers/thesis-title-page.png": {
+      "path": "assets/helpers/thesis-title-page.png",
+      "xxh3": "c4d9a48ccb7c93b7",
+      "bytes": 65114,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 502661146
+    },
+    "/assets/theming/chapter-classic.png": {
+      "path": "assets/theming/chapter-classic.png",
+      "xxh3": "24cbdaddf4119b35",
+      "bytes": 40422,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442706846
+    },
+    "/assets/theming/chapter-fancy.png": {
+      "path": "assets/theming/chapter-fancy.png",
+      "xxh3": "b0e373b8ed7fc491",
+      "bytes": 92348,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443046095
+    },
+    "/assets/theming/chapter-modern.png": {
+      "path": "assets/theming/chapter-modern.png",
+      "xxh3": "eaf2b8f8c98cd4bc",
+      "bytes": 164149,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443426052
+    },
+    "/assets/theming/chapter-nonum-classic.png": {
+      "path": "assets/theming/chapter-nonum-classic.png",
+      "xxh3": "5ccb582b2b674f78",
+      "bytes": 98570,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443734926
+    },
+    "/assets/theming/chapter-nonum-fancy.png": {
+      "path": "assets/theming/chapter-nonum-fancy.png",
+      "xxh3": "b871de7be43b4821",
+      "bytes": 97756,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444126674
+    },
+    "/assets/theming/chapter-nonum-modern.png": {
+      "path": "assets/theming/chapter-nonum-modern.png",
+      "xxh3": "d6de7efa187ba667",
+      "bytes": 130427,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444467048
+    },
+    "/assets/theming/chapter-nonum-obook.png": {
+      "path": "assets/theming/chapter-nonum-obook.png",
+      "xxh3": "a0d3eb66139a814f",
+      "bytes": 59298,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444800880
+    },
+    "/assets/theming/chapter-nonum-orly.png": {
+      "path": "assets/theming/chapter-nonum-orly.png",
+      "xxh3": "ab20a7b2f31b7c49",
+      "bytes": 66250,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445146338
+    },
+    "/assets/theming/chapter-nonum-pretty.png": {
+      "path": "assets/theming/chapter-nonum-pretty.png",
+      "xxh3": "e9672d0e31dcaa06",
+      "bytes": 56641,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445400628
+    },
+    "/assets/theming/chapter-obook.png": {
+      "path": "assets/theming/chapter-obook.png",
+      "xxh3": "e3b6cb7086208b07",
+      "bytes": 35456,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445618836
+    },
+    "/assets/theming/chapter-orly.png": {
+      "path": "assets/theming/chapter-orly.png",
+      "xxh3": "9147cf27560854f4",
+      "bytes": 37624,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445965918
+    },
+    "/assets/theming/chapter-pretty.png": {
+      "path": "assets/theming/chapter-pretty.png",
+      "xxh3": "10f5d35cf81b74cd",
+      "bytes": 31939,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446163751
+    },
+    "/assets/theming/part-classic.png": {
+      "path": "assets/theming/part-classic.png",
+      "xxh3": "f1ab275a1eb1d14a",
+      "bytes": 14484,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 439863939
+    },
+    "/assets/theming/part-fancy.png": {
+      "path": "assets/theming/part-fancy.png",
+      "xxh3": "c81ecd440517d2ee",
+      "bytes": 35164,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440226396
+    },
+    "/assets/theming/part-modern.png": {
+      "path": "assets/theming/part-modern.png",
+      "xxh3": "e8591a20c2f6890b",
+      "bytes": 28783,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440555770
+    },
+    "/assets/theming/part-obook.png": {
+      "path": "assets/theming/part-obook.png",
+      "xxh3": "522e7b76cb0cb9f9",
+      "bytes": 22679,
+      "width": 613,
+      "height": 870,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441302517
+    },
+    "/assets/theming/part-orly.png": {
+      "path": "assets/theming/part-orly.png",
+      "xxh3": "a1af812026bcacc0",
+      "bytes": 15272,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441846849
+    },
+    "/assets/theming/part-pretty.png": {
+      "path": "assets/theming/part-pretty.png",
+      "xxh3": "6aeea3149c1e2cf3",
+      "bytes": 14263,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442308722
+    },
+    "/assets/theming/sections-classic.png": {
+      "path": "assets/theming/sections-classic.png",
+      "xxh3": "770636abe2e1aae6",
+      "bytes": 72144,
+      "width": 691,
+      "height": 955,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446570291
+    },
+    "/assets/theming/sections-fancy.png": {
+      "path": "assets/theming/sections-fancy.png",
+      "xxh3": "46194b77c1af6ba1",
+      "bytes": 222534,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446934623
+    },
+    "/assets/theming/sections-modern.png": {
+      "path": "assets/theming/sections-modern.png",
+      "xxh3": "d6635337c7e49048",
+      "bytes": 61775,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447333830
+    },
+    "/assets/theming/sections-obook.png": {
+      "path": "assets/theming/sections-obook.png",
+      "xxh3": "1c2da46eaf97f62e",
+      "bytes": 54248,
+      "width": 613,
+      "height": 869,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447571496
+    },
+    "/assets/theming/sections-orly.png": {
+      "path": "assets/theming/sections-orly.png",
+      "xxh3": "1d2cdf841e5a3554",
+      "bytes": 60846,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448081328
+    },
+    "/assets/theming/sections-pretty.png": {
+      "path": "assets/theming/sections-pretty.png",
+      "xxh3": "dc39b4293b0ed035",
+      "bytes": 52603,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448329702
+    },
+    "/assets/theming/tufte-citations.png": {
+      "path": "assets/theming/tufte-citations.png",
+      "xxh3": "e9e6dbee39bbcbc7",
+      "bytes": 50192,
+      "width": 637,
+      "height": 904,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 365949635
+    },
+    "/assets/theming/tufte-figures.png": {
+      "path": "assets/theming/tufte-figures.png",
+      "xxh3": "a82943417a3ac6a2",
+      "bytes": 79205,
+      "width": 633,
+      "height": 900,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 373652609
+    },
+    "/assets/theming/tufte-wide.png": {
+      "path": "assets/theming/tufte-wide.png",
+      "xxh3": "0f2ec708da938b44",
+      "bytes": 48210,
+      "width": 631,
+      "height": 901,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 380310962
+    },
+    "_site/assets/helpers/back-cover.png": {
+      "path": "_site/assets/helpers/back-cover.png",
+      "xxh3": "cbac00af7f77718f",
+      "bytes": 29976,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 576630273
+    },
+    "_site/assets/helpers/book-title-page-2.png": {
+      "path": "_site/assets/helpers/book-title-page-2.png",
+      "xxh3": "ed3ee563e6d7314e",
+      "bytes": 31484,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 426277943
+    },
+    "_site/assets/helpers/book-title-page.png": {
+      "path": "_site/assets/helpers/book-title-page.png",
+      "xxh3": "bac42d84fdb83025",
+      "bytes": 204904,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 424130450
+    },
+    "_site/assets/helpers/box-code.png": {
+      "path": "_site/assets/helpers/box-code.png",
+      "xxh3": "01bdd4d6a1a38006",
+      "bytes": 10707,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 117676375
+    },
+    "_site/assets/helpers/box-custom.png": {
+      "path": "_site/assets/helpers/box-custom.png",
+      "xxh3": "f934f00821db6b0a",
+      "bytes": 11774,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 203839670
+    },
+    "_site/assets/helpers/box-important.png": {
+      "path": "_site/assets/helpers/box-important.png",
+      "xxh3": "5fb79a67de60a29d",
+      "bytes": 12083,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 890428470
+    },
+    "_site/assets/helpers/box-info.png": {
+      "path": "_site/assets/helpers/box-info.png",
+      "xxh3": "54dd969123c0336d",
+      "bytes": 12439,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 673373613
+    },
+    "_site/assets/helpers/box-proof.png": {
+      "path": "_site/assets/helpers/box-proof.png",
+      "xxh3": "a2cfc6e69f091ff3",
+      "bytes": 10628,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 965589718
+    },
+    "_site/assets/helpers/box-question.png": {
+      "path": "_site/assets/helpers/box-question.png",
+      "xxh3": "0cef42dcad2c7304",
+      "bytes": 13604,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 43035959
+    },
+    "_site/assets/helpers/box-tip.png": {
+      "path": "_site/assets/helpers/box-tip.png",
+      "xxh3": "2bf6db15271e5c5f",
+      "bytes": 9121,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 746387035
+    },
+    "_site/assets/helpers/box-warning.png": {
+      "path": "_site/assets/helpers/box-warning.png",
+      "xxh3": "654a5d4fd8aa6743",
+      "bytes": 12057,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 816424551
+    },
+    "_site/assets/helpers/eq-boxeq.png": {
+      "path": "_site/assets/helpers/eq-boxeq.png",
+      "xxh3": "b40590481de093d9",
+      "bytes": 8534,
+      "width": 945,
+      "height": 120,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 795603620
+    },
+    "_site/assets/helpers/eq-nonum.png": {
+      "path": "_site/assets/helpers/eq-nonum.png",
+      "xxh3": "b6c57bef0176f093",
+      "bytes": 7253,
+      "width": 945,
+      "height": 138,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 798247653
+    },
+    "_site/assets/helpers/icons/alert.svg": {
+      "path": "_site/assets/helpers/icons/alert.svg",
+      "xxh3": "83676efd550f590e",
+      "bytes": 409,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136326518
+    },
+    "_site/assets/helpers/icons/code.svg": {
+      "path": "_site/assets/helpers/icons/code.svg",
+      "xxh3": "a6416c77886bdaec",
+      "bytes": 287,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136671850
+    },
+    "_site/assets/helpers/icons/info.svg": {
+      "path": "_site/assets/helpers/icons/info.svg",
+      "xxh3": "9fc4be3fa3d608bc",
+      "bytes": 354,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136868433
+    },
+    "_site/assets/helpers/icons/question.svg": {
+      "path": "_site/assets/helpers/icons/question.svg",
+      "xxh3": "e43d7c631aff7be9",
+      "bytes": 759,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137054266
+    },
+    "_site/assets/helpers/icons/report.svg": {
+      "path": "_site/assets/helpers/icons/report.svg",
+      "xxh3": "3ed0c06d70cfa8f6",
+      "bytes": 524,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137277015
+    },
+    "_site/assets/helpers/icons/stop.svg": {
+      "path": "_site/assets/helpers/icons/stop.svg",
+      "xxh3": "8fc7e93d1b9a50c0",
+      "bytes": 493,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137448306
+    },
+    "_site/assets/helpers/icons/tip.svg": {
+      "path": "_site/assets/helpers/icons/tip.svg",
+      "xxh3": "8e8c45664ce5fc77",
+      "bytes": 800,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137618472
+    },
+    "_site/assets/helpers/subfigure.png": {
+      "path": "_site/assets/helpers/subfigure.png",
+      "xxh3": "a53a1f519df0e17d",
+      "bytes": 27833,
+      "width": 945,
+      "height": 441,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 800675770
+    },
+    "_site/assets/helpers/thesis-title-page.png": {
+      "path": "_site/assets/helpers/thesis-title-page.png",
+      "xxh3": "c4d9a48ccb7c93b7",
+      "bytes": 65114,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 502661146
+    },
+    "_site/assets/theming/chapter-classic.png": {
+      "path": "_site/assets/theming/chapter-classic.png",
+      "xxh3": "24cbdaddf4119b35",
+      "bytes": 40422,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442706846
+    },
+    "_site/assets/theming/chapter-fancy.png": {
+      "path": "_site/assets/theming/chapter-fancy.png",
+      "xxh3": "b0e373b8ed7fc491",
+      "bytes": 92348,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443046095
+    },
+    "_site/assets/theming/chapter-modern.png": {
+      "path": "_site/assets/theming/chapter-modern.png",
+      "xxh3": "eaf2b8f8c98cd4bc",
+      "bytes": 164149,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443426052
+    },
+    "_site/assets/theming/chapter-nonum-classic.png": {
+      "path": "_site/assets/theming/chapter-nonum-classic.png",
+      "xxh3": "5ccb582b2b674f78",
+      "bytes": 98570,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443734926
+    },
+    "_site/assets/theming/chapter-nonum-fancy.png": {
+      "path": "_site/assets/theming/chapter-nonum-fancy.png",
+      "xxh3": "b871de7be43b4821",
+      "bytes": 97756,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444126674
+    },
+    "_site/assets/theming/chapter-nonum-modern.png": {
+      "path": "_site/assets/theming/chapter-nonum-modern.png",
+      "xxh3": "d6de7efa187ba667",
+      "bytes": 130427,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444467048
+    },
+    "_site/assets/theming/chapter-nonum-obook.png": {
+      "path": "_site/assets/theming/chapter-nonum-obook.png",
+      "xxh3": "a0d3eb66139a814f",
+      "bytes": 59298,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444800880
+    },
+    "_site/assets/theming/chapter-nonum-orly.png": {
+      "path": "_site/assets/theming/chapter-nonum-orly.png",
+      "xxh3": "ab20a7b2f31b7c49",
+      "bytes": 66250,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445146338
+    },
+    "_site/assets/theming/chapter-nonum-pretty.png": {
+      "path": "_site/assets/theming/chapter-nonum-pretty.png",
+      "xxh3": "e9672d0e31dcaa06",
+      "bytes": 56641,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445400628
+    },
+    "_site/assets/theming/chapter-obook.png": {
+      "path": "_site/assets/theming/chapter-obook.png",
+      "xxh3": "e3b6cb7086208b07",
+      "bytes": 35456,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445618836
+    },
+    "_site/assets/theming/chapter-orly.png": {
+      "path": "_site/assets/theming/chapter-orly.png",
+      "xxh3": "9147cf27560854f4",
+      "bytes": 37624,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445965918
+    },
+    "_site/assets/theming/chapter-pretty.png": {
+      "path": "_site/assets/theming/chapter-pretty.png",
+      "xxh3": "10f5d35cf81b74cd",
+      "bytes": 31939,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446163751
+    },
+    "_site/assets/theming/part-classic.png": {
+      "path": "_site/assets/theming/part-classic.png",
+      "xxh3": "f1ab275a1eb1d14a",
+      "bytes": 14484,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 439863939
+    },
+    "_site/assets/theming/part-fancy.png": {
+      "path": "_site/assets/theming/part-fancy.png",
+      "xxh3": "c81ecd440517d2ee",
+      "bytes": 35164,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440226396
+    },
+    "_site/assets/theming/part-modern.png": {
+      "path": "_site/assets/theming/part-modern.png",
+      "xxh3": "e8591a20c2f6890b",
+      "bytes": 28783,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440555770
+    },
+    "_site/assets/theming/part-obook.png": {
+      "path": "_site/assets/theming/part-obook.png",
+      "xxh3": "522e7b76cb0cb9f9",
+      "bytes": 22679,
+      "width": 613,
+      "height": 870,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441302517
+    },
+    "_site/assets/theming/part-orly.png": {
+      "path": "_site/assets/theming/part-orly.png",
+      "xxh3": "a1af812026bcacc0",
+      "bytes": 15272,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441846849
+    },
+    "_site/assets/theming/part-pretty.png": {
+      "path": "_site/assets/theming/part-pretty.png",
+      "xxh3": "6aeea3149c1e2cf3",
+      "bytes": 14263,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442308722
+    },
+    "_site/assets/theming/sections-classic.png": {
+      "path": "_site/assets/theming/sections-classic.png",
+      "xxh3": "770636abe2e1aae6",
+      "bytes": 72144,
+      "width": 691,
+      "height": 955,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446570291
+    },
+    "_site/assets/theming/sections-fancy.png": {
+      "path": "_site/assets/theming/sections-fancy.png",
+      "xxh3": "46194b77c1af6ba1",
+      "bytes": 222534,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446934623
+    },
+    "_site/assets/theming/sections-modern.png": {
+      "path": "_site/assets/theming/sections-modern.png",
+      "xxh3": "d6635337c7e49048",
+      "bytes": 61775,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447333830
+    },
+    "_site/assets/theming/sections-obook.png": {
+      "path": "_site/assets/theming/sections-obook.png",
+      "xxh3": "1c2da46eaf97f62e",
+      "bytes": 54248,
+      "width": 613,
+      "height": 869,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447571496
+    },
+    "_site/assets/theming/sections-orly.png": {
+      "path": "_site/assets/theming/sections-orly.png",
+      "xxh3": "1d2cdf841e5a3554",
+      "bytes": 60846,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448081328
+    },
+    "_site/assets/theming/sections-pretty.png": {
+      "path": "_site/assets/theming/sections-pretty.png",
+      "xxh3": "dc39b4293b0ed035",
+      "bytes": 52603,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448329702
+    },
+    "_site/assets/theming/tufte-citations.png": {
+      "path": "_site/assets/theming/tufte-citations.png",
+      "xxh3": "e9e6dbee39bbcbc7",
+      "bytes": 50192,
+      "width": 637,
+      "height": 904,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 365949635
+    },
+    "_site/assets/theming/tufte-figures.png": {
+      "path": "_site/assets/theming/tufte-figures.png",
+      "xxh3": "a82943417a3ac6a2",
+      "bytes": 79205,
+      "width": 633,
+      "height": 900,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 373652609
+    },
+    "_site/assets/theming/tufte-wide.png": {
+      "path": "_site/assets/theming/tufte-wide.png",
+      "xxh3": "0f2ec708da938b44",
+      "bytes": 48210,
+      "width": 631,
+      "height": 901,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 380310962
+    },
+    "assets/helpers/back-cover.png": {
+      "path": "assets/helpers/back-cover.png",
+      "xxh3": "cbac00af7f77718f",
+      "bytes": 29976,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 576630273
+    },
+    "assets/helpers/book-title-page-2.png": {
+      "path": "assets/helpers/book-title-page-2.png",
+      "xxh3": "ed3ee563e6d7314e",
+      "bytes": 31484,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 426277943
+    },
+    "assets/helpers/book-title-page.png": {
+      "path": "assets/helpers/book-title-page.png",
+      "xxh3": "bac42d84fdb83025",
+      "bytes": 204904,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 424130450
+    },
+    "assets/helpers/box-code.png": {
+      "path": "assets/helpers/box-code.png",
+      "xxh3": "01bdd4d6a1a38006",
+      "bytes": 10707,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 117676375
+    },
+    "assets/helpers/box-custom.png": {
+      "path": "assets/helpers/box-custom.png",
+      "xxh3": "f934f00821db6b0a",
+      "bytes": 11774,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 203839670
+    },
+    "assets/helpers/box-important.png": {
+      "path": "assets/helpers/box-important.png",
+      "xxh3": "5fb79a67de60a29d",
+      "bytes": 12083,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 890428470
+    },
+    "assets/helpers/box-info.png": {
+      "path": "assets/helpers/box-info.png",
+      "xxh3": "54dd969123c0336d",
+      "bytes": 12439,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 673373613
+    },
+    "assets/helpers/box-proof.png": {
+      "path": "assets/helpers/box-proof.png",
+      "xxh3": "a2cfc6e69f091ff3",
+      "bytes": 10628,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 965589718
+    },
+    "assets/helpers/box-question.png": {
+      "path": "assets/helpers/box-question.png",
+      "xxh3": "0cef42dcad2c7304",
+      "bytes": 13604,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216358,
+      "mtime_nanos": 43035959
+    },
+    "assets/helpers/box-tip.png": {
+      "path": "assets/helpers/box-tip.png",
+      "xxh3": "2bf6db15271e5c5f",
+      "bytes": 9121,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 746387035
+    },
+    "assets/helpers/box-warning.png": {
+      "path": "assets/helpers/box-warning.png",
+      "xxh3": "654a5d4fd8aa6743",
+      "bytes": 12057,
+      "width": 945,
+      "height": 213,
+      "mtime_secs": 1794216357,
+      "mtime_nanos": 816424551
+    },
+    "assets/helpers/eq-boxeq.png": {
+      "path": "assets/helpers/eq-boxeq.png",
+      "xxh3": "b40590481de093d9",
+      "bytes": 8534,
+      "width": 945,
+      "height": 120,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 795603620
+    },
+    "assets/helpers/eq-nonum.png": {
+      "path": "assets/helpers/eq-nonum.png",
+      "xxh3": "b6c57bef0176f093",
+      "bytes": 7253,
+      "width": 945,
+      "height": 138,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 798247653
+    },
+    "assets/helpers/icons/alert.svg": {
+      "path": "assets/helpers/icons/alert.svg",
+      "xxh3": "83676efd550f590e",
+      "bytes": 409,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136326518
+    },
+    "assets/helpers/icons/code.svg": {
+      "path": "assets/helpers/icons/code.svg",
+      "xxh3": "a6416c77886bdaec",
+      "bytes": 287,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136671850
+    },
+    "assets/helpers/icons/info.svg": {
+      "path": "assets/helpers/icons/info.svg",
+      "xxh3": "9fc4be3fa3d608bc",
+      "bytes": 354,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 136868433
+    },
+    "assets/helpers/icons/question.svg": {
+      "path": "assets/helpers/icons/question.svg",
+      "xxh3": "e43d7c631aff7be9",
+      "bytes": 759,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137054266
+    },
+    "assets/helpers/icons/report.svg": {
+      "path": "assets/helpers/icons/report.svg",
+      "xxh3": "3ed0c06d70cfa8f6",
+      "bytes": 524,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137277015
+    },
+    "assets/helpers/icons/stop.svg": {
+      "path": "assets/helpers/icons/stop.svg",
+      "xxh3": "8fc7e93d1b9a50c0",
+      "bytes": 493,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137448306
+    },
+    "assets/helpers/icons/tip.svg": {
+      "path": "assets/helpers/icons/tip.svg",
+      "xxh3": "8e8c45664ce5fc77",
+      "bytes": 800,
+      "width": 16,
+      "height": 16,
+      "mtime_secs": 1794216339,
+      "mtime_nanos": 137618472
+    },
+    "assets/helpers/subfigure.png": {
+      "path": "assets/helpers/subfigure.png",
+      "xxh3": "a53a1f519df0e17d",
+      "bytes": 27833,
+      "width": 945,
+      "height": 441,
+      "mtime_secs": 1794216379,
+      "mtime_nanos": 800675770
+    },
+    "assets/helpers/thesis-title-page.png": {
+      "path": "assets/helpers/thesis-title-page.png",
+      "xxh3": "c4d9a48ccb7c93b7",
+      "bytes": 65114,
+      "width": 909,
+      "height": 1286,
+      "mtime_secs": 1794216409,
+      "mtime_nanos": 502661146
+    },
+    "assets/theming/chapter-classic.png": {
+      "path": "assets/theming/chapter-classic.png",
+      "xxh3": "24cbdaddf4119b35",
+      "bytes": 40422,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442706846
+    },
+    "assets/theming/chapter-fancy.png": {
+      "path": "assets/theming/chapter-fancy.png",
+      "xxh3": "b0e373b8ed7fc491",
+      "bytes": 92348,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443046095
+    },
+    "assets/theming/chapter-modern.png": {
+      "path": "assets/theming/chapter-modern.png",
+      "xxh3": "eaf2b8f8c98cd4bc",
+      "bytes": 164149,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443426052
+    },
+    "assets/theming/chapter-nonum-classic.png": {
+      "path": "assets/theming/chapter-nonum-classic.png",
+      "xxh3": "5ccb582b2b674f78",
+      "bytes": 98570,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 443734926
+    },
+    "assets/theming/chapter-nonum-fancy.png": {
+      "path": "assets/theming/chapter-nonum-fancy.png",
+      "xxh3": "b871de7be43b4821",
+      "bytes": 97756,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444126674
+    },
+    "assets/theming/chapter-nonum-modern.png": {
+      "path": "assets/theming/chapter-nonum-modern.png",
+      "xxh3": "d6de7efa187ba667",
+      "bytes": 130427,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444467048
+    },
+    "assets/theming/chapter-nonum-obook.png": {
+      "path": "assets/theming/chapter-nonum-obook.png",
+      "xxh3": "a0d3eb66139a814f",
+      "bytes": 59298,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 444800880
+    },
+    "assets/theming/chapter-nonum-orly.png": {
+      "path": "assets/theming/chapter-nonum-orly.png",
+      "xxh3": "ab20a7b2f31b7c49",
+      "bytes": 66250,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445146338
+    },
+    "assets/theming/chapter-nonum-pretty.png": {
+      "path": "assets/theming/chapter-nonum-pretty.png",
+      "xxh3": "e9672d0e31dcaa06",
+      "bytes": 56641,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445400628
+    },
+    "assets/theming/chapter-obook.png": {
+      "path": "assets/theming/chapter-obook.png",
+      "xxh3": "e3b6cb7086208b07",
+      "bytes": 35456,
+      "width": 613,
+      "height": 868,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445618836
+    },
+    "assets/theming/chapter-orly.png": {
+      "path": "assets/theming/chapter-orly.png",
+      "xxh3": "9147cf27560854f4",
+      "bytes": 37624,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 445965918
+    },
+    "assets/theming/chapter-pretty.png": {
+      "path": "assets/theming/chapter-pretty.png",
+      "xxh3": "10f5d35cf81b74cd",
+      "bytes": 31939,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446163751
+    },
+    "assets/theming/part-classic.png": {
+      "path": "assets/theming/part-classic.png",
+      "xxh3": "f1ab275a1eb1d14a",
+      "bytes": 14484,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 439863939
+    },
+    "assets/theming/part-fancy.png": {
+      "path": "assets/theming/part-fancy.png",
+      "xxh3": "c81ecd440517d2ee",
+      "bytes": 35164,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440226396
+    },
+    "assets/theming/part-modern.png": {
+      "path": "assets/theming/part-modern.png",
+      "xxh3": "e8591a20c2f6890b",
+      "bytes": 28783,
+      "width": 650,
+      "height": 921,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 440555770
+    },
+    "assets/theming/part-obook.png": {
+      "path": "assets/theming/part-obook.png",
+      "xxh3": "522e7b76cb0cb9f9",
+      "bytes": 22679,
+      "width": 613,
+      "height": 870,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441302517
+    },
+    "assets/theming/part-orly.png": {
+      "path": "assets/theming/part-orly.png",
+      "xxh3": "a1af812026bcacc0",
+      "bytes": 15272,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 441846849
+    },
+    "assets/theming/part-pretty.png": {
+      "path": "assets/theming/part-pretty.png",
+      "xxh3": "6aeea3149c1e2cf3",
+      "bytes": 14263,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 442308722
+    },
+    "assets/theming/sections-classic.png": {
+      "path": "assets/theming/sections-classic.png",
+      "xxh3": "770636abe2e1aae6",
+      "bytes": 72144,
+      "width": 691,
+      "height": 955,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446570291
+    },
+    "assets/theming/sections-fancy.png": {
+      "path": "assets/theming/sections-fancy.png",
+      "xxh3": "46194b77c1af6ba1",
+      "bytes": 222534,
+      "width": 894,
+      "height": 1270,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 446934623
+    },
+    "assets/theming/sections-modern.png": {
+      "path": "assets/theming/sections-modern.png",
+      "xxh3": "d6635337c7e49048",
+      "bytes": 61775,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447333830
+    },
+    "assets/theming/sections-obook.png": {
+      "path": "assets/theming/sections-obook.png",
+      "xxh3": "1c2da46eaf97f62e",
+      "bytes": 54248,
+      "width": 613,
+      "height": 869,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 447571496
+    },
+    "assets/theming/sections-orly.png": {
+      "path": "assets/theming/sections-orly.png",
+      "xxh3": "1d2cdf841e5a3554",
+      "bytes": 60846,
+      "width": 612,
+      "height": 867,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448081328
+    },
+    "assets/theming/sections-pretty.png": {
+      "path": "assets/theming/sections-pretty.png",
+      "xxh3": "dc39b4293b0ed035",
+      "bytes": 52603,
+      "width": 542,
+      "height": 769,
+      "mtime_secs": 1794211241,
+      "mtime_nanos": 448329702
+    },
+    "assets/theming/tufte-citations.png": {
+      "path": "assets/theming/tufte-citations.png",
+      "xxh3": "e9e6dbee39bbcbc7",
+      "bytes": 50192,
+      "width": 637,
+      "height": 904,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 365949635
+    },
+    "assets/theming/tufte-figures.png": {
+      "path": "assets/theming/tufte-figures.png",
+      "xxh3": "a82943417a3ac6a2",
+      "bytes": 79205,
+      "width": 633,
+      "height": 900,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 373652609
+    },
+    "assets/theming/tufte-wide.png": {
+      "path": "assets/theming/tufte-wide.png",
+      "xxh3": "0f2ec708da938b44",
+      "bytes": 48210,
+      "width": 631,
+      "height": 901,
+      "mtime_secs": 1794214438,
+      "mtime_nanos": 380310962
+    }
+  }
+}

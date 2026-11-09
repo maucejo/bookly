@@ -2,7 +2,7 @@
 
 [![Generic badge](https://img.shields.io/badge/Version-5.3.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/5.3.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/bookly/blob/main/LICENSE)
-[![User Manual](https://img.shields.io/badge/Manual-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
+[![Stable documentation](https://img.shields.io/badge/docs-stable-mediumpurple)](https://maucejo.github.io/bookly/)
 
 <p align="center">
 <img src="docs/manual-images/bookly-logo.png" alt="drawing" width="200"/>
@@ -12,7 +12,7 @@ The `bookly` template is a Typst package designed for writing academic documents
 
 ## Basic usage
 
-This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf).
+This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](https://maucejo.github.io/bookly/).
 
 To use the `bookly` template, you need to include the following line at the beginning of your typ file:
 

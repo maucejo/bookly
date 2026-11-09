@@ -1,0 +1,37 @@
+{
+  "schema": 3,
+  "calepin_version": "0.0.61",
+  "input": "theming/custom-themes.typ",
+  "generation": "d34006ac02f24060-1349cde127705c16",
+  "store": {},
+  "chunks": {
+    "chunk-1": {
+      "label": "chunk-1",
+      "engine": "json",
+      "source": "    {\n      \"and\": \" and \",\n      \"appendix\": \"Appendix\",\n      \"authored\": \"authored by\",\n      \"chapter\": \"Chapter\",\n      \"committee\": \"Defense committee\",\n      \"cosupervisor\": \"Co-supervisor:\",\n      \"cosupervisors\": \"Co-supervisors:\",\n      \"defended\": \"defended on\",\n      \"discipline\": \"Discipline:\",\n      \"doctoral-school\": \"DOCTORAL SCHOOL\",\n      \"habilitation\": \"French Habilitation to supervise research\",\n      \"lof\": \"List of figures\",\n      \"lot\": \"List of tables\",\n      \"minitoc\": \"Content\",\n      \"note\": \"Note\",\n      \"part\": \"Part\",\n      \"phd\": \"Doctoral thesis\",\n      \"proof\": \"Proof\",\n      \"specialty\": \"Specialty:\",\n      \"sponsor\": \"Sponsor:\",\n      \"sponsors\": \"Sponsors:\",\n      \"supervisor\": \"Supervisor:\",\n      \"supervisors\": \"Supervisors:\",\n      \"tip\": \"Tip\",\n      \"toc\": \"Table of contents\",\n      \"version-usage\": \"This version can be viewed and downloaded free of charge for personal use only. It must not be redistributed, sold, or used in derivative works.\",\n      \"warning\": \"Warning\"\n    }\n",
+      "status": "unavailable",
+      "options": {
+        "echo": true,
+        "results": "render",
+        "results-location": "statement",
+        "warning": true,
+        "message": true,
+        "fig-width": "70%",
+        "fig-height": null,
+        "fig-align": "center",
+        "fig-responsive": true,
+        "fig-link": null,
+        "fig-caption": null,
+        "fig-cap-location": null,
+        "fig-alt-text": null,
+        "fig-subcaptions": null,
+        "fig-layout-columns": null,
+        "fig-layout-rows": null,
+        "tbl-caption": null,
+        "lst-caption": null,
+        "kind": null
+      },
+      "items": []
+    }
+  }
+}

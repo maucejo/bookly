@@ -1,0 +1,194 @@
+:root{
+  --calepin-font-body: "Lato", system-ui, sans-serif;
+  --calepin-font-heading: "Lato", "Space Grotesk", sans-serif;
+  --calepin-font-mono: "Cascadia Code", ui-monospace, monospace;
+  /* bookly default-colors (src/bookly-defaults.typ) */
+  --bookly-primary: #c1002a;    /* primary */
+  --bookly-secondary: #bcbcbc;  /* secondary: #dddddd darkened 15% */
+  --calepin-color-link: var(--bookly-primary);
+  --calepin-color-link-hover: #e0334f; /* lighter primary */
+  --bg-color: #fbe6ea;                 /* light tint of primary */
+  --li-color: #8a001e;                 /* darker primary */
+}
+
+/* Mobile drawer styles */
+button.calepin-site-theme-toggle {
+    display: none;
+    /* background-color: var(--bg-color); */
+}
+
+button.calepin-website-nav-toggle {
+    background-color: var(--bg-color);
+}
+
+button.calepin-website-nav-toggle[aria-expanded="false"] {
+  background-color: var(--bg-color);
+}
+
+button.calepin-website-nav-toggle[aria-expanded="true"] {
+  background-color: var(--bg-color);
+}
+
+.calepin-website-mobile-drawer-nav li {
+  color: var(--calepin-color-link);
+}
+
+.calepin-website-mobile-drawer-nav a.active {
+  background-color: var(--bg-color);
+}
+
+.calepin-website-mobile-drawer-nav a[aria-label="Documentation"] {
+  background-color: var(--bg-color);
+}
+
+/* General styles */
+h2 {
+  color: var(--calepin-color-link);
+}
+
+h3 {
+  color: var(--calepin-color-link);
+}
+
+.calepin-site-nav li {
+    color: var(--calepin-color-link);
+}
+
+/* .calepin-website-topbar {
+    background-color: var(--calepin-color-link);
+} */
+
+/* Website theme customizations */
+/* .calepin-website-view-mode-item {
+    display: none;
+} */
+
+input[type = "search"]:focus {
+    border-color: var(--calepin-color-link);
+    box-shadow: 0 0 0 1px var(--calepin-color-link);
+}
+
+.calepin-website-theme-item {
+    display: none;
+}
+
+/* Arrondi du tiroir de la barre de recherche */
+[role=search]>:last-child {
+    border-radius: 1rem;
+    /* border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem; */
+}
+
+/* Sidebar styles */
+/* Cibler le texte au survol du summary */
+aside nav summary:hover {
+  color: var(--calepin-color-link); /* Couleur au survol */
+}
+
+/* Couleur du lien actif/sélectionné */
+aside nav details a[aria-current="page"] {
+  color: var(--calepin-color-link);
+  padding: 0rem 0rem 0em 0.25rem;
+} */
+
+.calepin-website-sidebar-link {
+    color: var(--calepin-color-link);
+}
+
+.calepin-website-sidebar-link a {
+  color: var(--calepin-color-link);
+  padding: 0.5rem 1rem 0em 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.calepin-website-sidebar-link a.active{
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem 0em 1rem;
+}
+
+.calepin-website-sidebar-link a:hover,
+.calepin-website-sidebar-link a.hover{
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem 0em 1rem;
+}
+
+aside nav details.calepin-website-sidebar-section[open] summary{
+  color: var(--calepin-color-link);
+  padding: 0rem 0rem 0em 0.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.9rem;
+}
+
+aside nav details.calepin-website-sidebar-section:not([open]) summary {
+  color: var(--calepin-color-link);
+  padding: 0rem 0rem 0em 0.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.9rem;
+}
+
+.calepin-website-sidebar-section {
+  color: var(--calepin-color-link);
+  padding: 0rem 1rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a {
+  color: var(--calepin-color-link);
+  padding: 0rem 0rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a.active{
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
+  padding: 0rem 0rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a:hover,
+.calepin-website-sidebar-section a.hover{
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
+  padding: 0rem 0rem 0em 1rem;
+}
+
+/* Table of contents styles */
+.calepin-website-toc-title {
+    color: var(--calepin-color-link);
+}
+
+.calepin-website-toc a:hover,
+.calepin-website-toc a.hover {
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
+  border-radius: 0.35rem;
+}
+
+.calepin-website-toc a.active{
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
+}
+
+/* Item styles */
+.calepin-website-main ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.calepin-website-main ul > li {
+  list-style-type: disc;
+}
+
+li::marker {
+  color: var(--li-color);
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+div.calepin-callout-body {
+  text-align: justify;
+  text-justify: inter-character;
+}
