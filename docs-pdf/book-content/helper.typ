@@ -284,7 +284,6 @@ The template provides two functions to create title pages: one for a book and on
   )
 )
 
-#pagebreak()
 #argument("type", default: "phd", type: mtype("string"))[
 		Type of thesis. Two values are possible:
 		- `"phd"` for a doctoral thesis

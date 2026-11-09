@@ -44,38 +44,10 @@
 #show: appendix
 #part[Themes in action!]
 
-// #[
-// #context[
-// #states.tufte.update(true)
-// #set figure.caption(position: top) if states.tufte.get()
-// #show: show-if(states.tufte.get(), it => {
-//   show figure.caption.where(position: top): note.with(
-//     alignment: "top",
-//     counter: none,
-//     shift: "avoid",
-//     keep-order: true,
-//   )
-//   it
-// })
-
-// #let m-config = (
-//   inner: (far: 1.25cm, width: 0cm, sep: 0cm),
-//   outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
-//   book: false
-//   )
-
-// #show: marginalia.setup.with(..m-config)
-// #include "book-content/tufte.typ"
-// #set page(margin: auto)
-// #states.tufte.update(false)
-// ]
-// ]
-
-// The `#pagebreak(to: "odd")` before each theme demo pins the page boundaries so
-// the theme switches perturb pagination less (layout convergence). A few `hydra`
-// warnings remain: re-applying a theme (hence a `hydra` running header) mid-book
-// keeps hydra's whole-document heading queries from settling within 5 passes.
-#pagebreak(to: "odd")
+#[
+  #set page(header: none, footer: none)
+  #pagebreak(to: "odd")
+]
 #include "book-content/fancy.typ"
 
 #context[
@@ -108,6 +80,6 @@
   #states.theme.update(pretty)
   #show: pretty.theme
   #include "book-content/pretty.typ"
-
-  #bibliography("book-content/sample.bib")
 ]
+
+#bibliography("book-content/sample.bib")

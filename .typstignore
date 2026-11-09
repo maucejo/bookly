@@ -12,6 +12,7 @@
 scripts
 justfile
 docs
+docs-pdf
 template_tufte
 template_dev
 .edist
