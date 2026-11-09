@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maucejo.github.io/bookly/sitemap.xml
